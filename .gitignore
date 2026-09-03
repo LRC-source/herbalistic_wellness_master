@@ -1,0 +1,19 @@
+﻿# Server-side secrets (never commit these - copy them on the server)
+*.php
+products.json
+products_cache.json
+announcement_banner.json
+chats.json
+firebase_config.php
+*.env
+
+# OS / build artifacts
+.DS_Store
+Thumbs.db
+*.log
+*.zip
+
+# Vite dev server build artifacts (contain credentials)
+collective/server.cjs
+collective/server.cjs.map
+

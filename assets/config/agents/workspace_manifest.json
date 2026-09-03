@@ -1,0 +1,37 @@
+{
+  "workspace_name": "my_agents",
+  "environment": "Google Antigravity Native SDK v2026.5",
+  "database_backend": "Google Firebase / Cloud Firestore",
+  "core_empire": [
+    {
+      "name": "Herbalistic Wellness",
+      "description": "High-Margin Premium Artisan Commerce"
+    },
+    {
+      "name": "The Formulators Collective",
+      "description": "LMS Education Platform"
+    },
+    {
+      "name": "LRC Holistic Digital Marketing Agency",
+      "description": "High-Ticket B2B Automation Consulting"
+    }
+  ],
+  "agent_orchestration": {
+    "total_synthetic_agents": 11,
+    "model_configuration": {
+      "priority_instance": "Gemini 3.1 Pro",
+      "fallback_instance": "Gemini 3.0 Pro"
+    },
+    "phase_1_priority_nodes": [
+      "Sage",
+      "Orbit",
+      "Scout",
+      "Flora"
+    ]
+  },
+  "global_lifestyle_hooks": {
+    "ecommerce_sync": "enabled",
+    "lms_progress_tracking": "enabled",
+    "b2b_lead_automation": "enabled"
+  }
+}

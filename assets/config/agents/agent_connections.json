@@ -1,0 +1,45 @@
+{
+  "integration_version": "1.0.0",
+  "workspace_reference": "my_agents",
+  "nodes": {
+    "Agent_01_Sage": {
+      "config_path": "assets/config/agents/sage_node.json",
+      "channels": {
+        "storefront_tracking_endpoint": "track.php",
+        "log_diagnostic_sink": "purchase_journey.log",
+        "onboarding_fields": {
+          "trigger_event": "herbalistic_wellness.order.state_completed",
+          "target_sku": "PROTOCOL-01-CELLULAR",
+          "action_payload": "Cellular Resilience Protocol Guide.pdf"
+        }
+      }
+    },
+    "Agent_04_Flora": {
+      "config_path": "assets/config/agents/flora_node.json",
+      "channels": {
+        "lms_tracking_endpoint": "firebase_timestamp_sync",
+        "onboarding_fields": {
+          "trigger_event": "formulators_lms.user_created",
+          "user_partition": "formulators_lms_db"
+        },
+        "progress_vectors": {
+          "lesson_completed": "Lesson_Completed",
+          "conversion_timeline_day": 21,
+          "target_pitch_schema": "firebase_user_routing.json"
+        }
+      }
+    },
+    "Agent_08_Orbit": {
+      "config_path": "assets/config/agents/orbit_node.json",
+      "channels": {
+        "client_audit_endpoint": "lrc_agency.initialize_client_audit",
+        "diagnostics_directory": "outputs/client_audits/",
+        "hygiene_scopes": [
+          "Security Risk Identification",
+          "Financial Optimization Check",
+          "Structural Hygiene Score"
+        ]
+      }
+    }
+  }
+}

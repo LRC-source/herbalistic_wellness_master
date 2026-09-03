@@ -1,0 +1,387 @@
+# 1. Force HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Set the Base to your folder
+<IfModule mod_rewrite.c>
+
+# Strip .html extension for clean URLs
+RewriteCond %{THE_REQUEST} ^GET.*\.html [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,NC,L]
+
+# Automatically append .html to extensionless URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+    # === START LINK TRACKER REDIRECTS ===
+    # Automatically mapped by Link Tracker Optimizer
+    RewriteRule ^brand/herbalistic-wellness/page/2/?(.*)$ index.html?product=butterfly-pea-lavender-chamomile-calming-signature-blend-herbalistic-wellness#shop [NE,NC,R=301,L]
+    RewriteRule ^brand/herbalistic-wellness/page/3/?(.*)$ index.html?product=butterfly-pea-lavender-chamomile-calming-signature-blend-herbalistic-wellness#shop [NE,NC,R=301,L]
+    RewriteRule ^ccbc-alumni-discount/?(.*)$ alumni-discount [NE,NC,R=301,L]
+    RewriteRule ^checkout/?$ checkout.html [NC,L]
+    RewriteRule ^event/ccbc-holiday-bazaar-essex/?(.*)$ index.html#events [NE,NC,R=301,L]
+    RewriteRule ^herbalistic_marketplace/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^herbalisticwellness\.com/s/home-remedies/mullein-leaf-by-herbalistic-wellness/?(.*)$ index.html?blog=1399#blog [NE,NC,R=301,L]
+    RewriteRule ^home/categories/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^home/contact-us/?(.*)$ index.html#contact [NE,NC,R=301,L]
+    RewriteRule ^home/privacy-policy/?(.*)$ privacy-policy [NE,NC,R=301,L]
+    RewriteRule ^home/refund_returns/?(.*)$ refund-policy [NE,NC,R=301,L]
+    RewriteRule ^mission/?(.*)$ index.html [NE,NC,R=301,L]
+    RewriteRule ^my-account/wishlist/?(.*)$ wishlist [NE,NC,R=301,L]
+    RewriteRule ^product-category/categories/bestsellers/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^product-category/categories/dried-herbs/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^product-category/categories/feed/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^product-category/categories/herbal-infused-oils/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^product-category/categories/page/3/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^product-category/categories/salves/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^product-tag/botanical-formulation-course-discount/?(.*)$ index.html#education [NE,NC,R=301,L]
+    RewriteRule ^product-tag/elderberry-tincture/?(.*)$ index.html?product=elderberry#shop [NE,NC,R=301,L]
+    RewriteRule ^product-tag/herbal-extract/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^product-tag/herbalistic-wellness/?(.*)$ index.html?product=butterfly-pea-lavender-chamomile-calming-signature-blend-herbalistic-wellness#shop [NE,NC,R=301,L]
+    RewriteRule ^product-tag/lemongrass/?(.*)$ index.html?product=lemongrass-leaf#shop [NE,NC,R=301,L]
+    RewriteRule ^product-tag/rosemary-leaf/?(.*)$ index.html?product=rosemary-peppermint-hair-growth-serum#shop [NE,NC,R=301,L]
+    RewriteRule ^s/afflilate-marketplace/affiliate-megafood/complex-c-mineral-supplement-30-day-30ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/afflilate-marketplace/affiliate-megafood/magnesium-mineral-supplement-90-day-90ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/afflilate-marketplace/affiliate-megafood/magnesium-mineral-supplement-90-day-90ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/afflilate-marketplace/affiliate-megafood/turmeric-curcumin-minis-whole-body-food-herbal-formula-30-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/afflilate-marketplace/affiliate-megafood/turmeric-curcumin-minis-whole-body-food-herbal-formula-30-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/afflilate-marketplace/turmeric-curcumin-extra-strength-whole-body-food-herbal-formula-30-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/afflilate-marketplace/turmeric-curcumin-extra-strength-whole-body-food-herbal-formula-30-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/author/lrenee/page/20/?(.*)$ index.html [NE,NC,R=301,L]
+    RewriteRule ^s/author/lrenee/page/28/?(.*)$ index.html [NE,NC,R=301,L]
+    RewriteRule ^s/author/lrenee/page/4/?(.*)$ index.html [NE,NC,R=301,L]
+    RewriteRule ^s/category/afflilate-marketplace/page/2/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/category/afflilate-marketplace/page/4/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/category/home-remedies/page/5/?(.*)$ index.html?blog=51#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/12-natural-sore-throat-remedies-for-fast-relief/?(.*)$ index.html?blog=51#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/6-home-remedies-for-a-sore-throat/?(.*)$ index.html?blog=51#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/6-home-remedies-for-a-sore-throat/www\.HerbalisticWellness\.com/?(.*)$ index.html?blog=51#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/adaptogens-stress-busters/?(.*)$ index.html?blog=11303#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/ancestral-headache-remedies/?(.*)$ index.html?blog=5002#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/ancient-roots-global-wisdom-an-overview-of-diverse-herbal-traditions/?(.*)$ index.html?blog=11587#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/anti-inflammatory-benefits-and-uses-of-turmeric-root/?(.*)$ index.html?blog=796#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/arnica-oil-muscle-inflammation-pain-carpal-tunnel-oil-skin-hair-oil-handcrafted-100-all-natural-herbal-infused-oil-by-herbalisticwellness-2/?(.*)$ index.html?blog=7372#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/b12-energy-gummies-ginger-multivitamin-35-day-70ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/b12-energy-gummies-ginger-multivitamin-35-day-70ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/b12-energy-gummies-ginger-multivitamin-35-day-70ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/baby-me-2-postnatal-multi-mineral-supplement-30-day-60ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/baby-me-2-postnatal-multi-mineral-supplement-30-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/baby-me-2-postnatal-multi-mineral-supplement-60-day-120ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/baby-me-2-postnatal-multi-mineral-supplement-60-day-120ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/baby-me-2-postnatal-multi-mineral-supplement-60-day-120ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/baby-me-2-prenatal-dha-choline-mineral-supplement-30-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/baby-me-2-prenatal-dha-choline-mineral-supplement-30-day-60ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/baby-me-2-prenatal-dha-choline-mineral-supplement-30-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/baby-me-2-prenatal-multi-minis-mineral-supplement-30-day-120ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/baby-me-2-prenatal-multi-minis-mineral-supplement-30-day-120ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/baby-me-2-prenatal-probiotic-prebiotic-30-billion-live-cultures-mineral-supplement-30-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/baby-me-2-prenatal-probiotic-prebiotic-30-billion-live-cultures-mineral-supplement-30-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/best-natural-supplement-of-2023-mega-food-daily-c-protect-nutrient-booster/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/blood-buildera-iron-supplement-multivitamin-energy-boost-180-day-180ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/blood-buildera-iron-supplement-multivitamin-energy-boost-180-day-180ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/burdock-root-natural-reset-pre-holiday-detox/?(.*)$ index.html?blog=12983#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/butterfly-pea-flower-organic-herb-tea-bags-included-loose-whole-flowers-by-herbalisticwellness-10/?(.*)$ index.html?blog=229#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/butterfly-pea-flower-organic-herb-tea-bags-included-loose-whole-flowers-by-herbalisticwellness-4/?(.*)$ index.html?blog=229#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/butterfly-pea-flower-organic-herb-tea-bags-included-loose-whole-flowers-by-herbalisticwellness-6/?(.*)$ index.html?blog=229#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/butterfly-pea-flower-organic-herb-tea-bags-included-loose-whole-flowers-by-herbalisticwellness-7/?(.*)$ index.html?blog=229#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/butterfly-pea-flowers-by-herbalisticwellness/?(.*)$ index.html?blog=229#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/c-defense-daily-immunity-support-gummies-multivitamin-energy-boost-35-day-70ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/c-defense-daily-immunity-support-gummies-multivitamin-energy-boost-35-day-70ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/complex-c-mineral-supplement-60-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/complex-c-mineral-supplement-60-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/d3-2000-iu-gummies-50-mcg/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/d3-2000-iu-gummies-50-mcg/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/daily-immunity-support-multivitamin-energy-boost-60-day-60ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/daily-immunity-support-multivitamin-energy-boost-60-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/diy-herbal-farms-elevate-your-gardening-with-high-mowing-organic-seeds/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/diy-winter-wellness-kit/?(.*)$ index.html?blog=12785#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/diy-winter-wellness-kit/Herbalisticwellness\.com/?(.*)$ index.html?blog=12785#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/drop-by-drop-unlocking-the-potent-power-of-herbal-tinctures-and-extracts/?(.*)$ index.html?blog=11507#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/eco-friendly-herbal-living-sustainable-practices-for-health-and-wellness/?(.*)$ index.html?blog=3736#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/elderberry-immunity-support-gummies-multivitamin-energy-boost-27-day-54ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/elderberry-immunity-support-gummies-multivitamin-energy-boost-27-day-54ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/frankincense-myrrh-body-butter-bestseller-herbal-infused-body-moisturizer-by-herbalisticwellness/?(.*)$ index.html?blog=7372#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/gardyn-home-4-0-review/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/gardyn-vs-traditional-gardening/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/gingko-biloba/?(.*)$ index.html?blog=990#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herb-soul-podcast-a-personal-invitation-from-latoya-renee/?(.*)$ index.html#podcast [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/best-herb-for-depression-in-2023-st-johns-wor/?(.*)$ index.html?blog=103#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/best-herb-for-depression-in-2023-st-johns-wor/www\.herbalisticwellness\.com/?(.*)$ index.html?blog=103#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/burdock-root-for-gout/?(.*)$ index.html?blog=1043#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/burdock-root-for-gout/1043/?(.*)$ index.html?blog=1043#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/embracing-an-herbalistic-holiday-nurturing-wellness-amidst-the-festivities/?(.*)$ index.html?blog=13273#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/embracing-herb-wellness-for-a-holistic-lifestyle-your-ultimate-source/?(.*)$ index.html?blog=1366#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/exploring-the-amazing-benefits-of-herbalistic-wellness-online-apothecary/?(.*)$ index.html?blog=876#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/exploring-the-amazing-benefits-of-herbalistic-wellness-online-apothecary/herbalisticwellness\.com/?(.*)$ index.html?blog=876#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/happy-earth-day-herbies/?(.*)$ index.html?blog=1000#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/plant-fertilizers-uncovering-the-unpleasant-reality-of-plant-health/?(.*)$ index.html?blog=1297#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/the-benefits-of-meditation-why-you-should-start-meditating-today/?(.*)$ index.html?blog=256#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/the-benefits-of-meditation-why-you-should-start-meditating-today/www\.herbalisticwellness\.com/?(.*)$ index.html?blog=256#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/turmeric-inflammation-response-gummies-food-herbal-formula-20-day-40ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/unlocking-the-digestive-benefits-of-oregon-grape-root-a-comprehensive-guide/?(.*)$ index.html?blog=1600#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/what-the-tea-on-the-jackery-solar-power-generators/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/your-health-our-priority-navigating-safety-in-herbal-medicine/?(.*)$ index.html?blog=11565#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-shop-finding-the-best-a-guide-to-quality-and-authenticity/?(.*)$ index.html?blog=7922#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbalist-point-of-view-top-10-must-have-herbs-for-wellness-enthusiasts/?(.*)$ index.html?blog=3595#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/how-to-use-ginger-root-to-alleviate-nausea-and-stomach-upset/?(.*)$ index.html?blog=245#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/how-to-use-ginger-root-to-alleviate-nausea-and-stomach-upset/www\.herbalisticwellness\.com/?(.*)$ index.html?blog=245#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/how-to-use-nettle-tea-allergies-and-inflammation/?(.*)$ index.html?blog=257#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/iron-energy-gummies-multivitamin-60-day-60ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/iron-energy-gummies-multivitamin-60-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/is-gardyn-worth-it-the-gardyn-home/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/kids-multi-gummies-multivitamin-30-day-60ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/kids-multi-gummies-multivitamin-30-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/lavender-flowers-lavandula-by-herbalisticwellness/?(.*)$ index.html?blog=1319#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/lemongrass-organic-cymbopogon-by-herbalisticwellness/?(.*)$ index.html?blog=3729#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/megafloraa-probiotic-prebiotic-with-turmeric-14-strains-50-billion-live-cultures-food-herbal-formula-30-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/megafloraa-probiotic-prebiotic-with-turmeric-14-strains-50-billion-live-cultures-food-herbal-formula-45-day-90ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/megafloraa-probiotic-prebiotic-with-turmeric-14-strains-50-billion-live-cultures-food-herbal-formula-45-day-90ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/megafloraa-womens-probiotic-prebiotic-14-strains-50-billion-live-cultures-multivitamin-30-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/megafloraa-womens-probiotic-prebiotic-14-strains-50-billion-live-cultures-multivitamin-30-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/megafloraa-womens-probiotic-prebiotic-14-strains-50-billion-live-cultures-multivitamin-45-day-90ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/megafloraa-womens-probiotic-prebiotic-14-strains-50-billion-live-cultures-multivitamin-45-day-90ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/melatonin-sleep-gummies-3mg-27-day-54ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/melatonin-sleep-gummies-3mg-27-day-54ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/mens-one-daily-multivitamin-probiotic-30-day-30ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/mens-one-daily-multivitamin-probiotic-30-day-30ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/mens-one-daily-multivitamin-probiotic-60-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/mens-one-daily-multivitamin-probiotic-60-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/mens-one-daily-multivitamin-probiotic-90-day-90ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/mens-one-daily-multivitamin-probiotic-90-day-90ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/mullein-leaf-by-herbalistic-wellness/?(.*)$ index.html?blog=1399#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/mullien-leaf-by-herbalisticwellness-2/?(.*)$ index.html?blog=1399#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/mullien-leaf-by-herbalisticwellness-4/?(.*)$ index.html?blog=1399#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/natures-stress-shield-understanding-adaptogens-and-finding-your-balance/?(.*)$ index.html?blog=11465#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/one-daily-multivitamin-60-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/peach-mango-body-butter-body-cream-body-lotionmoisturizer-by-herbalisticwellness/?(.*)$ index.html?blog=8083#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/peppermint-leaf-by-herbalisticwellness-3/?(.*)$ index.html?blog=7327#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/relax-calm-magnesium-soft-chews-grape-mineral-supplement-30-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/rosemary-peppermint-hair-serum-by-herbalisticwellness/?(.*)$ index.html?blog=7617#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/st-johns-body-oil-massage-oil-sunburn-oil-rubbing-oil-by-herbalisticwellness-2/?(.*)$ index.html?blog=7280#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/stress-protect-mineral-supplement-30-day-60ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/stress-protect-mineral-supplement-30-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/the-business-of-black-herbalism-reclaiming-ownership-in-a-commercialized-world/?(.*)$ index.html?blog=195#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/the-deeper-power-of-b12-for-brain-health-fueling-your-brain-nerves-and-energy/?(.*)$ index.html?blog=11901#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/the-power-of-ashwagandha-natures-stress-energy-balancer/?(.*)$ index.html?blog=10306#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/the-strength-of-comfrey-root-a-powerful-natural-remedy/?(.*)$ index.html?blog=4126#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/turmeric-curcumin-extra-strength-whole-body-food-herbal-formula-45-day-90ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/turmeric-curcumin-extra-strength-whole-body-food-herbal-formula-45-day-90ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/turmeric-ginger-lemon-body-oil-ance-reducing-oil-massage-oil-skin-oil-herbal-infused-oil-by-herbalisticwellness/?(.*)$ index.html?blog=3909#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/turmeric-ginger-lemon-body-oil-ance-reducing-oil-massage-oil-skin-oil-herbal-infused-oil-by-herbalisticwellness-2/?(.*)$ index.html?blog=3909#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/turmeric-ginger-lemon-body-oil-ance-reducing-oil-massage-oil-skin-oil-herbal-infused-oil-by-herbalisticwellness-3/?(.*)$ index.html?blog=3909#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/turmeric-inflammation-response-gummies-food-herbal-formula-20-day-40ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/turmeric-lemon-ginger-glow-serum-herbs-for-radiant-skin/?(.*)$ index.html?blog=3909#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/turmeric-root-soap-etsy/?(.*)$ index.html?blog=7201#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/turmeric-root-soap-etsy-2/?(.*)$ index.html?blog=7201#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/ultra-c-400-mg-mineral-supplement-90-day-90ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/ultra-c-400-mg-mineral-supplement-90-day-90ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/ultra-c-400-mg-mineral-supplement-90-day-90ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/unveiling-the-power-of-adaptogenic-herbs/?(.*)$ index.html?blog=4788#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/vegan-b12-multivitamin-energy-boost-30-day-30ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/vegan-b12-multivitamin-energy-boost-30-day-30ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/vegan-b12-multivitamin-energy-boost-30-day-30ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/vitamin-d3-1000-iu-25-mcg-mineral-supplement-60-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/vitamin-d3-1000-iu-25-mcg-mineral-supplement-60-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/vitamin-d3-1000-iu-25-mcg-mineral-supplement-90-day-90ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/vitamin-d3-1000-iu-25-mcg-mineral-supplement-90-day-90ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/vitamin-d3-5000-iu-125-mcg-plus-k-k2-mineral-supplement-120-day-120ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/vitamin-d3-5000-iu-125-mcg-plus-k-k2-mineral-supplement-120-day-120ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/vitamin-d3-5000-iu-125-mcg-plus-k-k2-mineral-supplement-120-day-120ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/vitamin-d3-5000-iu-125-mcg-plus-k-k2-mineral-supplement-60-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/vitamin-d3-5000-iu-125-mcg-plus-k-k2-mineral-supplement-60-day-60ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/vitamin-d3-5000-iu-125-mcg-plus-k-k2-mineral-supplement-60-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/whats-the-tea-mullein-leaf-benefits-and-uses/?(.*)$ index.html?blog=990#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/whats-the-tea-on-butterfly-blend-tea/?(.*)$ index.html?blog=1364#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/whats-the-tea-on-butterfly-pea-flower-lavender-lemonade/?(.*)$ index.html?blog=229#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/whats-the-tea-on-butterfly-pea-flower-lavender-lemonade/1319/?(.*)$ index.html?blog=229#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/whats-the-tea-on-butterfly-pea-tincture/?(.*)$ index.html?blog=229#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/whats-the-tea-on-butterfly-pea-tincture/www\.herbalisticwellness\.com/?(.*)$ index.html?blog=229#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/whats-the-tea-on-the-power-of-tonic-herbs/herbalisticwelleness\.com/?(.*)$ index.html?blog=872#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/womens-40-one-daily-multivitamin-30-day-30ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/womens-40-one-daily-multivitamin-30-day-30ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/womens-40-one-daily-multivitamin-60-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/womens-40-one-daily-multivitamin-60-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/womens-ensemble-by-megafooda-pms-support-liquid-beadlet-capsule-multivitamin-30-day-30ct/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/womens-multi-gummies-multivitamin-30-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/womens-multi-gummies-multivitamin-30-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/womens-one-daily-multivitamin-30-day-30ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/womens-one-daily-multivitamin-60-day-60ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/womens-one-daily-multivitamin-60-day-60ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/womens-one-daily-multivitamin-90-day-90ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/womens-one-daily-multivitamin-90-day-90ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/your-homegrown-apothecary-tips-for-growing-potent-medicinal-herbs-at-home/?(.*)$ index.html?blog=11536#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/zinc-mineral-supplement-120-day-120ct-megafood-food-based-vitamins-supplements/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/zinc-mineral-supplement-120-day-120ct-megafood-food-based-vitamins-supplements/(url)/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/zinc-mineral-supplement-120-day-120ct-megafood-food-based-vitamins-supplements/HerbalisticWellness\.com/?(.*)$ affiliate-marketplace [NE,NC,R=301,L]
+    RewriteRule ^s/home/shop/face-body-mask/?(.*)$ index.html?product=butterfly-pea-sea-moss-face-mask#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/activated-charcoal-black-soap/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/all-items/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/ashwagandha/?(.*)$ index.html?blog=10306#blog [NE,NC,R=301,L]
+    RewriteRule ^s/shop/bath-scrub-2/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/burdock-root/?(.*)$ index.html?product=burdock-root#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/butterfly-pea-flower-organic-herb-loose-leaf-whole-flowers-smart-plant-nootropic-memory-booster-collagen-building-eye-health/?(.*)$ index.html?product=butterfly-pea-flower#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/butterfly-pea-flower-tincture/?(.*)$ index.html?product=butterfly-pea-flower#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/butterfly-pea-lavender-chamomile-calming-nootropic-tea-blend-anxiety-relaxation-smart-plant-infusion129/?(.*)$ index.html?product=butterfly-pea-flower#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/butterfly-pea-lavender-chamomile-calming-signature-blend-herbalistic-wellness/?(.*)$ index.html?product=butterfly-pea-flower#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/chickweed-premium-organic-herb-2/?(.*)$ index.html?product=chickweed-calendula-lavender-ezcema-cream#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/comfrey-root-2/?(.*)$ index.html?product=comfrey-oil#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/dried-herbs/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/frankincense-and-myrrh-body-butter-wholesale/?(.*)$ index.html?product=frankincense-myrrh-body-butter#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/ginger-grapefruit-body-butter/?(.*)$ index.html?product=ginger-grapefruit-body-butter#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/ginkgo-biloba/?(.*)$ index.html?blog=990#blog [NE,NC,R=301,L]
+    RewriteRule ^s/shop/herbal-treasure-storage-guide/?(.*)$ index.html#blog [NE,NC,R=301,L]
+    RewriteRule ^s/shop/hibiscus-leaf/?(.*)$ index.html?product=hibiscus-leaf#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-ezcema-bath-scrub/?(.*)$ index.html?product=frankincense-myrrh-body-butter-holiday-bestseller-body-cream-lotion-herbal-infused-body-moisturizer#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/lemongrass-leaf/?(.*)$ index.html?product=lemongrass-leaf#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/maca-root-powdered-2/?(.*)$ index.html?product=maca-root-powdered#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/natural-soaps-2/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/oregon-grape-root/?(.*)$ index.html?product=oregon-grape-root-premium-organic-cut-and-sifted-dried-herb#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/st-johns-body-oil-massage-oil-sunburn-oil-rubbing-oil/?(.*)$ index.html?product=st-john-s-body-oil-massage-oil-sunburn-oil-rubbing-oil#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/the-formulators-collective-full-course-lifetime-pass/?(.*)$ index.html?product=the-formulators-collective-founder-circle-pass#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/turmeric-/?(.*)$ index.html?product=turmeric-frankincense-and-myrrh-artisan-soap-herbalistic-wellness#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/turmeric-frankincense-and-myrrh-artisan-soap-herbalistic-wellness/?(.*)$ index.html?product=turmeric-frankincense-and-myrrh-artisan-soap-herbalistic-wellness#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/turmeric-frankincense-and-myrrh-artisan-soap-herbalistic-wellness-2/?(.*)$ index.html?product=turmeric-frankincense-and-myrrh-artisan-soap-herbalistic-wellness#shop [NE,NC,R=301,L]
+    RewriteRule ^s/shop/turmeric-ginger-lemon-glow-serum/?(.*)$ index.html?product=turmeric-ginger-lemon-body-oil-ance-reducing-oil-massage-oil-skin-oil-herbal-infused-oil#shop [NE,NC,R=301,L]
+    RewriteRule ^shop/(.+)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^shop/page/2/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^shop/page/3/?(.*)$ index.html#shop [NE,NC,R=301,L]
+    RewriteRule ^stories/?(.*)$ index.html#blog [NE,NC,R=301,L]
+    RewriteRule ^universal/?(.*)$ index.html [NE,NC,R=301,L]
+    RewriteRule ^whats-the-tea-blog/?(.*)$ index.html [L,NC]
+    RewriteRule ^wp-content/plugins/*/?(.*)$ index.html?product=anti-viral-flush-herbal-blend-tea-cough-suppressant-tea-strep-throat-tea-cold-flu-tea-virus-ease-tea#shop [NE,NC,R=301,L]
+    # === END LINK TRACKER REDIRECTS ===
+    RewriteEngine On
+    RewriteBase /
+    
+    # 1. Core 1-to-1 Page Redirects (R=301 for SEO permanence)
+    RewriteRule ^shop/?$ index.html [L,NC]
+    RewriteRule ^blog/?$ index.html [L,NC]
+    RewriteRule ^whats-the-tea/?$ index.html [L,NC]
+    RewriteRule ^podcast/?$ index.html [L,NC]
+    RewriteRule ^herb-and-soul/?$ index.html [L,NC]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^collective/?$ index.html [L,NC]
+    RewriteRule ^education/?$ index.html [L,NC]
+    RewriteRule ^about-us/?$ index.html#about [NE,NC,R=301,L]
+    RewriteRule ^about/?$ index.html#about [NE,NC,R=301,L]
+    RewriteRule ^contact-us/?$ index.html [L,NC]
+    RewriteRule ^contact/?$ index.html [L,NC]
+    RewriteRule ^login/?$ index.html [L,NC]
+    RewriteRule ^my-account/?$ index.html [L,NC]
+    RewriteRule ^account/?$ index.html [L,NC]
+    
+    # Strip .html extension from direct browser requests for clean URLs
+    RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+    RewriteCond %{REQUEST_URI} !^/404\.html$ [NC]
+    RewriteRule ^/(.+)\.html$ /$1 [R=301,L]
+
+    # Standalone Subpages (internal rewrite to actual HTML files for clean URLs)
+    RewriteRule ^store/?$ store.php [NC,L]
+    RewriteRule ^products/?$ store.php [NC,L]
+    RewriteRule ^wishlist/?$ wishlist.html [NC,L]
+    RewriteRule ^privacy-policy/?$ privacy-policy.html [NC,L]
+    RewriteRule ^refund-policy/?$ refund-policy.html [NC,L]
+    RewriteRule ^shipping-policy-faq/?$ shipping-policy-faq.html [NC,L]
+    RewriteRule ^reviews/?$ reviews.html [NC,L]
+    RewriteRule ^wholesale-shopping/?$ wholesale-shopping.html [NC,L]
+    RewriteRule ^affiliate-marketplace/?$ affiliate-marketplace.html [NC,L]
+    RewriteRule ^alumni-discount/?$ alumni-discount.html [NC,L]
+    # 1.5 Specific Affiliate Link Redirects (R=301 for SEO permanence)
+
+    # SPA pushState fallback - serve index.html for any non-file, non-dir path
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !\.(php|json|xml|txt|css|js|png|jpg|jpeg|gif|webp|svg|ico|woff|woff2|ttf|otf|eot|pdf|zip)$ [NC]
+    RewriteRule ^(?!blog/)(.*)$ index.html [L,NC]
+
+    RewriteCond %{REQUEST_URI} !affiliate-marketplace [NC]
+    RewriteCond %{QUERY_STRING} (shareasale|amazon-adsystem) [NC,OR]
+    RewriteCond %{REQUEST_URI} (shareasale|amazon-adsystem|afflilate-marketplace|affiliate-marketplace) [NC]
+    RewriteRule ^(.*)$ affiliate-marketplace [R=301,L]
+
+    # 1.6 Specific Blog Article Mappings (R=301 for SEO permanence)
+    RewriteRule ^s/home-remedies/diy-winter-wellness-kit/?(.*)$ index.html?blog=12785#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/the-benefits-of-meditation-why-you-should-start-meditating-today/?(.*)$ index.html?blog=256#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/6-home-remedies-for-a-sore-throat/?(.*)$ index.html?blog=51#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/best-herb-for-depression-in-2023-st-johns-wor/?(.*)$ index.html?blog=103#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/whats-the-tea-on-butterfly-pea-tincture/?(.*)$ index.html?blog=1330#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/how-to-use-ginger-root-to-alleviate-nausea-and-stomach-upset/?(.*)$ index.html?blog=245#blog [NE,NC,R=301,L]
+    RewriteRule ^s/home-remedies/herbal-remedies-archive/embracing-herb-wellness-for-a-holistic-lifestyle-your-ultimate-source/?(.*)$ index.html?blog=1366#blog [NE,NC,R=301,L]
+
+    # 1.7 Specific Product Page Mappings -> product.html
+    RewriteRule ^product/Butterfly_pea_flower/113/?$ product.html?slug=butterfly-pea-flower [L,QSA]
+    RewriteRule ^product/butterfly-pea-flower-tincture/118/?$ product.html?slug=butterfly-pea-flower-tincture [L,QSA]
+    RewriteRule ^product/Dandelion-Root/100/?$ product.html?slug=dandelion-root [L,QSA]
+    RewriteRule ^product/Peppermint_Leaf/102/?$ product.html?slug=peppermint-leaf-organic-premium-loose-herb [L,QSA]
+    RewriteRule ^product/Valerian_Root/97/?$ product.html?slug=valerian-root [L,QSA]
+    RewriteRule ^product/Hibiscus_leaf/130/?$ product.html?slug=hibiscus-leaf [L,QSA]
+    RewriteRule ^product/South_African_Roobios/104/?$ product.html?slug=south-african-rooibos [L,QSA]
+    RewriteRule ^product/Dried_Chamomile_Flowers/92/?$ product.html?slug=chamomile-dried-flowers [L,QSA]
+    RewriteRule ^product/Lavender_Flowers/101/?$ product.html?slug=lavender-flowers [L,QSA]
+    RewriteRule ^product/Gotukola/136/?$ product.html?slug=gotu-kola [L,QSA]
+    RewriteRule ^product/Mullein_Leaf/91/?$ product.html?slug=mullein-leaf [L,QSA]
+
+    # 1.8 Specific Shop Internal Mappings -> product.html
+    RewriteRule ^s/shop/echinacea-purpurea-2/?(.*)$ product.html?slug=echinacea-purpurea [L,QSA]
+    RewriteRule ^s/shop/st-johns-body-oil-massage-oil-sunburn-oil-rubbing-oil/?(.*)$ product.html?slug=st-john-s-body-oil-massage-oil-sunburn-oil-rubbing-oil [L,QSA]
+    RewriteRule ^s/shop/maca-root-powdered-2/?(.*)$ product.html?slug=maca-root-powdered [L,QSA]
+    RewriteRule ^s/shop/butterfly-pea-lavender-chamomile-calming-nootropic-tea-blend-anxiety-relaxation-smart-plant-infusion129/?(.*)$ product.html?slug=butterfly-pea-lavender-chamomile-calming-signature-blend-herbalistic-wellness [L,QSA]
+    RewriteRule ^s/shop/butterfly-pea-flower-organic-herb-loose-leaf-whole-flowers-smart-plant-nootropic-memory-booster-collagen-building-eye-health/?(.*)$ product.html?slug=butterfly-pea-flower [L,QSA]
+
+    # 2. Dynamic Blog and Podcast Pattern Fallbacks
+    # Squarespace Blog Articles: /s/home-remedies/* -> index.html#blog
+    RewriteRule ^s/home-remedies/(.*)$ index.html#blog [NE,NC,R=301,L]
+    # Squarespace Podcast Episodes: /s/episode/* -> index.html#podcast
+    RewriteRule ^s/episode/(.*)$ index.html#podcast [NE,NC,R=301,L]
+
+# ─── INDIVIDUAL PRODUCT PAGE SLUG ROUTES ─────────────────────────────────────────
+# Route /products/<slug>, /product/<slug>, and /s/shop/<slug> directly to product.html
+RewriteRule ^products/([^/]+)/?$ product.html?slug=$1 [L,QSA]
+RewriteRule ^product/([^/]+)/?$ product.html?slug=$1 [L,QSA]
+RewriteRule ^s/shop/([^/]+)/?$ product.html?slug=$1 [L,QSA]
+RewriteRule ^product-category/([^/]+)/?$ product.html?slug=$1 [L,QSA]
+
+    # Blog Category Tag Archives: /category/* -> index.html#blog
+    RewriteRule ^category/(.*)$ index.html#blog [NE,NC,R=301,L]
+    RewriteRule ^tag/(.*)$ index.html#blog [NE,NC,R=301,L]
+
+
+    # 3. Trailing Domain Glitch Eraser
+    RewriteCond %{REQUEST_URI} ^(.*)/Herbalistic[Ww]ellness\.com/?$ [NC]
+    RewriteRule ^(.*)/Herbalistic[Ww]ellness\.com/?$ index.html [R=301,NC,L]
+
+    # 404 Fallback
+    ErrorDocument 404 /404.php
+</IfModule>
+
+# 5. Housekeeping: Caching & Security Headers
+<IfModule mod_headers.c>
+    # Change Cache-Control header to max-age=31536000, public for static assets (css, png, jpg, jpeg, webp, fonts)
+    <FilesMatch "\.(css|png|jpg|jpeg|webp|woff|woff2|ttf|otf|eot)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+
+    # Replace X-Frame-Options with Content-Security-Policy frame-ancestors 'self'
+    Header set Content-Security-Policy "frame-ancestors 'self';"
+
+    # Remove deprecated Pragma header if present
+    Header unset Pragma
+</IfModule>
+
+# 6. Enable GZIP/DEFLATE compression
+<IfModule mod_deflate.c>
+    # Compress HTML, CSS, JavaScript, Text, XML and fonts
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-otf image/svg+xml
+
+    # Deactivate compression for buggy browsers
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+

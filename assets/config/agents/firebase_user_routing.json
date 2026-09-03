@@ -1,0 +1,47 @@
+{
+  "routing_schema": {
+    "security_rules": {
+      "strict_partitioning": true,
+      "partition_key": "user_id"
+    },
+    "collections": {
+      "users": {
+        "document_id": "{user_id}",
+        "fields": {
+          "user_id": "string",
+          "email": "string",
+          "created_at": "timestamp"
+        },
+        "subcollections": {
+          "herbalistic_store_db": {
+            "description": "E-commerce client data",
+            "document_id": "{order_id}",
+            "fields": {
+              "order_id": "string",
+              "purchase_event": "string",
+              "product_name": "string",
+              "purchase_date": "timestamp",
+              "status": "string"
+            },
+            "example": {
+              "purchase_event": "Protocol No. 1: Cellular Resilience Kit"
+            }
+          },
+          "formulators_lms_db": {
+            "description": "LMS Student user profiles",
+            "document_id": "{course_id}",
+            "fields": {
+              "course_id": "string",
+              "access_provisioning": "number",
+              "enrollment_date": "timestamp",
+              "completion_status": "string"
+            },
+            "example": {
+              "access_provisioning": 35
+            }
+          }
+        }
+      }
+    }
+  }
+}

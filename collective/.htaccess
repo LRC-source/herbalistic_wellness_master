@@ -1,0 +1,10 @@
+# Formulators Collective - SPA routing
+RewriteEngine On
+
+# Serve existing files and directories directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# All other requests serve the collective SPA index.html
+RewriteRule ^ index.html [L]

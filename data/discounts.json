@@ -1,0 +1,14 @@
+﻿{
+  "HERBAL10": {
+    "type": "percent",
+    "value": 10,
+    "restriction": "all",
+    "active": true
+  },
+  "WELLNESS15": {
+    "type": "percent",
+    "value": 15,
+    "restriction": "pickup",
+    "active": true
+  }
+}

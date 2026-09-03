@@ -1,0 +1,102 @@
+{
+  "agent_name": "Orbit",
+  "role": "B2B Workspace Hygiene Auditor & Lead Generator",
+  "runtime_engines": {
+    "primary": "Gemini 3.5 Flash"
+  },
+  "workflow_hooks": [
+    {
+      "trigger": {
+        "source": "local_app_action",
+        "event_name": "lrc_agency.initialize_client_audit",
+        "payload_requirements": [
+          "client_token"
+        ]
+      },
+      "action": {
+        "type": "establish_read_only_bridge",
+        "execution": "index_metadata",
+        "parameters": [
+          "file_configurations",
+          "access_states",
+          "sharing_policies"
+        ]
+      }
+    },
+    {
+      "trigger": {
+        "source": "system_state",
+        "event_name": "audit_data_intake_complete",
+        "phase": "processing"
+      },
+      "action": {
+        "type": "run_analysis_loops",
+        "loops": {
+          "loop_a": {
+            "name": "Security Risk Identification",
+            "focus": [
+              "public_facing_sensitive_documents",
+              "external_storage_risks"
+            ]
+          },
+          "loop_b": {
+            "name": "Financial Optimization Check",
+            "focus": [
+              "abandoned_folders",
+              "orphan_files",
+              "clutter_draining_resource_space"
+            ]
+          },
+          "loop_c": {
+            "name": "Structural Hygiene Score",
+            "focus": [
+              "taxonomy"
+            ],
+            "scoring_range": "1_to_100"
+          }
+        }
+      }
+    },
+    {
+      "trigger": {
+        "source": "system_state",
+        "event_name": "analysis_execution_completed"
+      },
+      "action": {
+        "type": "compile_report",
+        "report_title": "LRC Strategic Workspace Hygiene Audit",
+        "format": "markdown",
+        "delivery_destination": "/outputs/client_audits/"
+      }
+    }
+  ],
+  "execution_rules": {
+    "zero_exfiltration_guarantee": {
+      "enabled": true,
+      "forbidden_actions": [
+        "downloading_files",
+        "caching_file_contents",
+        "reading_file_contents"
+      ],
+      "allowed_actions": [
+        "read_metadata",
+        "parse_metadata",
+        "analyze_metadata"
+      ],
+      "metadata_scope": [
+        "names",
+        "paths",
+        "dates",
+        "permissions"
+      ]
+    },
+    "delivery_style": {
+      "tone": "deeply_technical_and_data_driven",
+      "forbidden_elements": [
+        "generic_filler_text",
+        "basic_definitions"
+      ],
+      "focus": "structural_metrics_justifying_elite_systems_architects_value"
+    }
+  }
+}

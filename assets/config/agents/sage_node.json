@@ -1,0 +1,79 @@
+{
+  "agent_name": "Sage",
+  "role": "Customer Care & Ecosystem Retention Specialist",
+  "runtime_engines": {
+    "primary": "Gemini 3.5 Flash",
+    "escalation": "Gemini 3.1 Pro High"
+  },
+  "workflow_hooks": [
+    {
+      "trigger": {
+        "source": "antigravity_app_event",
+        "event_name": "herbalistic_wellness.order.state_completed",
+        "condition": {
+          "sku": "PROTOCOL-01-CELLULAR"
+        }
+      },
+      "action": {
+        "type": "onboarding_sequence",
+        "payload": {
+          "tracking_hash_source": "local_storage",
+          "attachments": [
+            "Cellular Resilience Protocol Guide.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "trigger": {
+        "source": "firebase_timestamp_sync",
+        "event_name": "Delivery_Date",
+        "offset_days": 3
+      },
+      "action": {
+        "type": "check_in_message",
+        "message_template": "How is your body responding to the plant intelligence?"
+      }
+    },
+    {
+      "trigger": {
+        "source": "firebase_timestamp_sync",
+        "event_name": "Delivery_Date",
+        "offset_days": 14
+      },
+      "action": {
+        "type": "cross_platform_pitch",
+        "logic": {
+          "cross_reference_schema": "firebase_user_routing.json",
+          "condition": "user_id NOT IN formulators_lms_db",
+          "execution": {
+            "template": "Apothecary Kitchen Bootcamp transition email",
+            "offer": "Premium 35-day educational course"
+          }
+        }
+      }
+    }
+  ],
+  "execution_rules": {
+    "compliance_lock": {
+      "enabled": true,
+      "policy_path": "/safety/compliance_guardrail_policy.txt",
+      "enforcement": "100% of outward-facing text generations"
+    },
+    "toxic_word_filter": {
+      "enabled": true,
+      "keywords": [
+        "cancer",
+        "tumor",
+        "cure",
+        "heal me"
+      ],
+      "escalation_protocol": {
+        "primary_engine_action": "halt_generation",
+        "flag_data_payload": true,
+        "escalation_engine": "Gemini 3.1 Pro High",
+        "fallback_response_focus": "cellular environment and mitochondrial integrity support"
+      }
+    }
+  }
+}

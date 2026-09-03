@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    // Force HTTPS secure connection for Square SDK compatibility
+    if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+      window.location.href = window.location.href.replace('http:', 'https:');
+    }
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Secure Checkout — Complete your botanical remedies order securely via Square."/>
+  <meta name="theme-color" content="#1A3021"/>
+  <title>Secure Checkout — Herbalistic Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  
+  <!-- Critical CSS overrides for Checkout styling -->
+  <style>
+    body {
+      background-color: var(--color-cream) !important;
+      color: var(--color-purple) !important;
+      font-family: var(--font-ui), sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    #cursor-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(216, 140, 67, 0.08) 0%, rgba(72, 44, 106, 0.05) 45%, transparent 70%);
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 1;
+      mix-blend-mode: screen;
+    }
+
+    .checkout-wrapper {
+      padding: var(--space-20) var(--space-6) var(--space-16);
+      background: var(--color-cream);
+      position: relative;
+      z-index: 5;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .checkout-container {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      position: relative;
+      z-index: 10;
+    }
+
+    @media (max-width: 860px) {
+      .checkout-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .checkout-panel {
+      background: #FFFFFF;
+      border: 1px solid rgba(72, 44, 106, 0.1);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      box-shadow: 0 20px 40px rgba(72, 44, 106, 0.08);
+      backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel-title {
+      font-family: var(--font-editorial);
+      font-size: 2.25rem;
+      font-weight: 300;
+      color: var(--color-purple);
+      margin-bottom: var(--space-6);
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid rgba(72, 44, 106, 0.1);
+      padding-bottom: var(--space-4);
+    }
+    
+    .panel-title em {
+      font-style: italic;
+      color: var(--color-amber);
+    }
+
+    /* Cart Summary details */
+    .cart-summary-list {
+      flex-grow: 1;
+      overflow-y: auto;
+      max-height: 350px;
+      margin-bottom: var(--space-6);
+      padding-right: var(--space-2);
+    }
+    
+    .cart-summary-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid rgba(72, 44, 106, 0.1);
+    }
+
+    .item-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item-name {
+      font-weight: 500;
+      color: var(--color-purple);
+    }
+
+    .item-meta {
+      font-size: var(--text-xs);
+      color: var(--color-purple);
+      margin-top: 2px;
+    }
+
+    .item-price {
+      font-weight: 500;
+      color: var(--color-purple);
+    }
+
+    .checkout-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: var(--space-6);
+      border-top: 1px solid rgba(72, 44, 106, 0.1);
+      margin-top: auto;
+    }
+
+    .total-label {
+      font-family: var(--font-ui);
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-purple);
+    }
+
+    .total-amount {
+      font-family: var(--font-editorial);
+      font-size: 2.5rem;
+      color: var(--color-amber);
+    }
+
+    /* Square Payments SDK secure styles container */
+    .payment-form-group {
+      margin-bottom: var(--space-5);
+    }
+
+    .payment-label {
+      display: block;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-purple);
+      margin-bottom: var(--space-2);
+      font-weight: 500;
+    }
+
+    .payment-input-container {
+      background: #FFFFFF;
+      border: 1px solid rgba(72, 44, 106, 0.2);
+      border-radius: var(--radius-md);
+      padding: var(--space-3) var(--space-4);
+      transition: all 0.3s ease;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .payment-input-container:focus-within {
+      border-color: var(--color-amber);
+      box-shadow: 0 0 10px rgba(216, 140, 67, 0.15);
+      background: #FFFFFF;
+    }
+
+    
+    .checkout-input {
+      background-color: #FFFFFF !important;
+      color: #482C6A !important; /* Force dark purple text */
+    }
+    .checkout-input::placeholder {
+      color: #7C8D7C !important;
+    }
+    .payment-label {
+      color: #482C6A !important;
+    }
+    #card-container {
+      width: 100%;
+      min-height: 48px; /* Give Square iframe room to render */
+    }
+
+    /* Embedded card container styles */
+    #card-container {
+      width: 100%;
+    }
+
+    .btn-submit-payment {
+      background: var(--color-cream);
+      color: var(--color-spruce);
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: var(--space-4);
+      border: none;
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      margin-top: var(--space-4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-submit-payment:hover:not(:disabled) {
+      background: var(--color-amber);
+      color: var(--color-cream);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(216, 140, 67, 0.3);
+    }
+
+    .btn-submit-payment:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .btn-back-shop {
+      align-self: flex-start;
+      background: none;
+      border: 1px solid rgba(72, 44, 106, 0.3);
+      color: var(--color-purple);
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      text-decoration: none;
+    }
+    
+    .btn-back-shop:hover {
+      border-color: var(--color-purple);
+      background: rgba(72, 44, 106, 0.05);
+    }
+    
+    #payment-status-message {
+      margin-top: var(--space-4);
+      font-size: var(--text-sm);
+      text-align: center;
+      font-weight: 400;
+      padding: var(--space-3);
+      border-radius: var(--radius-md);
+      display: none;
+    }
+    
+    .status-success {
+      background: rgba(46, 117, 89, 0.15);
+      border: 1px solid rgba(46, 117, 89, 0.3);
+      color: #2E7559;
+    }
+    
+    .status-error {
+      background: rgba(230, 74, 25, 0.15);
+      border: 1px solid rgba(230, 74, 25, 0.3);
+      color: #D84A19;
+    }
+
+    /* Customer details form fields */
+    .checkout-input {
+      width: 100%;
+      background: #FFFFFF;
+      border: 1px solid rgba(72, 44, 106, 0.2);
+      border-radius: var(--radius-md);
+      padding: var(--space-3) var(--space-4);
+      color: var(--color-purple);
+      font-family: var(--font-ui);
+      font-size: var(--text-sm);
+      transition: all 0.3s ease;
+    }
+
+        .checkout-input:focus {
+      outline: none;
+      border-color: var(--color-amber);
+      background: #FFFFFF;
+    }
+
+    .checkout-input::placeholder {
+      color: #7C8D7C;
+      opacity: 1;
+    }
+
+    .tip-btn.active {
+      background: var(--color-cream) !important;
+      color: var(--color-spruce) !important;
+      border-color: var(--color-purple) !important;
+      font-weight: 500;
+    }
+
+    /* Screen reader only helper class */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+  <!-- Load Square Web Payments SDK (Production CDN) -->
+  <script src="https://web.squarecdn.com/v1/square.js" defer></script>
+  <!-- Load Custom Payment controller script (Square SDK is loaded dynamically based on environment configuration) -->
+  <script src="checkout.js" defer></script>
+  <script>
+    function handleLogoFallback() {
+      var logoImg = document.getElementById('business-logo');
+      var logoText = document.getElementById('logo-text-fallback');
+      if (logoImg) {
+        if (logoImg.src.indexOf('assets/images/logo.png') !== -1) {
+          // assets/images path failed — try root fallback
+          logoImg.src = 'logo.png';
+        } else {
+          // If both fail, hide image and show elegant serif text fallback
+          logoImg.style.display = 'none';
+          if (logoText) {
+            logoText.style.display = 'block';
+          }
+        }
+      }
+    }
+  </script>
+
+    <script>
+      
+      window.toggleShippingSame = function() {
+          var chk = document.getElementById('billing-same');
+          var flds = document.getElementById('shipping-address-fields');
+          if (chk && flds) {
+              flds.style.display = chk.checked ? 'none' : 'block';
+          }
+      };
+
+      window.toggleFulfillment = function() {
+        var val = document.querySelector('input[name="fulfillment_method"]:checked').value;
+        var pickupGroup = document.getElementById('pickup-details');
+        var shippingGroup = document.getElementById('shipping-address-group');
+        
+        if (val === 'pickup') {
+          if (pickupGroup) pickupGroup.style.display = 'block';
+          if (shippingGroup) shippingGroup.style.display = 'none';
+        } else {
+          if (pickupGroup) pickupGroup.style.display = 'none';
+          if (shippingGroup) shippingGroup.style.display = 'block';
+        }
+        
+        if (typeof updateTotalDisplay === 'function') {
+          updateTotalDisplay();
+        }
+      };
+      window.applyDiscount = function() {
+        const codeInput = document.getElementById('discount-code');
+        const msgDiv = document.getElementById('discount-msg');
+        if (!codeInput || !msgDiv) return;
+        
+        const code = codeInput.value.trim().toUpperCase();
+        if (!code) {
+          msgDiv.textContent = 'Please enter a code.';
+          msgDiv.style.color = '#e27b7b';
+          return;
+        }
+        
+        msgDiv.textContent = 'Validating...';
+        msgDiv.style.color = 'var(--color-sage)';
+        
+        fetch('validate_discount.php', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({code: code})
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.valid && data.discount) {
+            window.appliedDiscount = data.discount;
+            window.appliedDiscount.code = code;
+            
+            let currentFulfillMethod = document.querySelector('input[name="fulfillment_method"]:checked');
+            let currentFulfillVal = currentFulfillMethod ? currentFulfillMethod.value : 'shipping';
+            let restriction = data.discount.restriction || 'all';
+            
+            if (restriction !== 'all' && restriction !== currentFulfillVal) {
+              msgDiv.textContent = 'This code is only valid for ' + (restriction === 'pickup' ? 'local pickup' : 'shipping') + ' orders.';
+              msgDiv.style.color = '#e27b7b';
+            } else {
+              msgDiv.textContent = 'Discount applied successfully!';
+              msgDiv.style.color = '#a2e0a2';
+            }
+
+            if (typeof updateTotalDisplay === 'function') {
+              updateTotalDisplay();
+            }
+          } else {
+            window.appliedDiscount = null;
+            msgDiv.textContent = data.error || 'Invalid code.';
+            msgDiv.style.color = '#e27b7b';
+            if (typeof updateTotalDisplay === 'function') {
+              updateTotalDisplay();
+            }
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          msgDiv.textContent = 'Error validating code.';
+          msgDiv.style.color = '#e27b7b';
+        });
+      };
+
+    </script>
+  
+    <script>
+      function enforcePickupRules() {
+        const pickupInput = document.getElementById('pickup-time');
+        if (!pickupInput) return;
+
+        function getEarliestPickupTime() {
+            let now = new Date();
+            let currentHour = now.getHours();
+            let currentMinute = now.getMinutes();
+            let target = new Date(now.getTime());
+            
+            // If Sunday, move to Monday 10 AM
+            if (target.getDay() === 0) {
+                target.setDate(target.getDate() + 1);
+                target.setHours(10, 0, 0, 0);
+                return target;
+            }
+            
+            // If before 7:00 AM, earliest is 10:00 AM today
+            if (currentHour < 7) {
+                target.setHours(10, 0, 0, 0);
+                return target;
+            }
+            
+            // If strictly after 3:00 PM, move to 10 AM next valid day
+            if (currentHour > 15 || (currentHour === 15 && currentMinute > 0)) {
+                let addDays = target.getDay() === 6 ? 2 : 1; // Skip Sunday if today is Saturday
+                target.setDate(target.getDate() + addDays);
+                target.setHours(10, 0, 0, 0);
+                return target;
+            }
+            
+            // Otherwise, it's between 7 AM and 3 PM -> +3 hours
+            target = new Date(target.getTime() + (3 * 60 * 60 * 1000));
+            return target;
+        }
+
+        function toLocalISOString(date) {
+            let tzoffset = date.getTimezoneOffset() * 60000;
+            return (new Date(date.getTime() - tzoffset)).toISOString().slice(0,16);
+        }
+
+        // 1. Set the hard minimum limit dynamically on page load
+        const earliest = getEarliestPickupTime();
+        pickupInput.min = toLocalISOString(earliest);
+
+        // 2. Add strict logic if user types or selects invalid data
+        pickupInput.addEventListener('change', function() {
+            let selectedDate = new Date(this.value);
+            if (isNaN(selectedDate.getTime())) return;
+
+            let day = selectedDate.getDay();
+            let hours = selectedDate.getHours();
+            let minutes = selectedDate.getMinutes();
+
+            // Check Sundays
+            if (day === 0) {
+                alert("We are closed for pickups on Sundays. Please select a time between Monday and Saturday.");
+                this.value = '';
+                return;
+            }
+
+            // Check Time Window (10:00 AM to 6:00 PM)
+            let timeVal = hours + (minutes/60);
+            if (timeVal < 10 || timeVal > 18) {
+                alert("Pickup times are strictly between 10:00 AM and 6:00 PM.");
+                this.value = '';
+                return;
+            }
+
+            // Check Minimum 3-Hour Notice
+            if (selectedDate < getEarliestPickupTime()) {
+                alert("Orders require a minimum 3-hour preparation window. The earliest available pickup time is " + getEarliestPickupTime().toLocaleString([], {weekday:'short', hour: '2-digit', minute:'2-digit'}));
+                this.value = toLocalISOString(getEarliestPickupTime());
+                return;
+            }
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', enforcePickupRules);
+    </script>
+</head>
+
+
+<body>
+
+  <div id="cursor-glow"></div>
+
+  <main class="checkout-wrapper">
+    <!-- PREMIUM BUSINESS LOGO HEADER -->
+    <div class="checkout-logo-container" style="width: 100%; max-width: 1000px; margin: 0 auto var(--space-8) auto; text-align: center; display: flex; justify-content: center; z-index: 10; position: relative;">
+      <div style="display: inline-flex; align-items: center; justify-content: center; padding: var(--space-4) var(--space-8); min-width: 250px; min-height: 80px;">
+        <img id="business-logo" src="assets/images/logo.png" alt="Herbalistic Wellness" style="max-height: 123px; max-width: 100%; width: auto; height: auto; display: block; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));" onerror="handleLogoFallback()"/>
+        <div id="logo-text-fallback" style="display: none; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; letter-spacing: 0.15em; color: var(--color-purple); text-transform: uppercase; border: 1px solid rgba(216, 140, 67, 0.3); padding: var(--space-2) var(--space-4); border-radius: var(--radius-sm); text-shadow: 0 2px 4px rgba(0,0,0,0.5);">HERBALISTIC WELLNESS</div>
+      </div>
+    </div>
+
+    <div class="checkout-container">
+      
+      <!-- LEFT PANEL: Order & Cart Review -->
+      <section class="checkout-panel">
+        <a href="index.html#shop" class="btn-back-shop">
+          <span>←</span> Back to Apothecary
+        </a>
+        
+        <h2 class="panel-title">Your <em>Order</em></h2>
+        
+        <div class="cart-summary-list" id="checkout-cart-list">
+          <!-- Dynamically populated via JS -->
+        </div>
+        
+        <div style="margin-bottom:15px; border-top: 1px solid rgba(72, 44, 106, 0.1); padding-top:15px;">
+           <div style="display:flex; gap:10px; margin-bottom:5px;">
+              <input type="text" id="discount-code" class="checkout-input" placeholder="Promo code" style="flex:1; padding:5px 10px; min-height:30px;">
+              <button type="button" onclick="applyDiscount()" style="background:var(--color-purple); color:#fff; border:none; border-radius:4px; padding:0 15px; cursor:pointer;">Apply</button>
+           </div>
+           <div id="discount-msg" style="font-size:12px; color:var(--color-purple); font-weight:bold;"></div>
+        </div>
+        <div style="margin-bottom:15px;">
+            <textarea id="order-note" class="checkout-input" placeholder="Special instructions or order notes..." rows="2" style="min-height:unset;"></textarea>
+        </div>
+
+        <div id="checkout-summary-breakdown" style="padding-bottom:15px; border-bottom: 1px solid rgba(72, 44, 106, 0.1); margin-bottom:15px;"></div>
+          <div class="checkout-total-row">
+          <span class="total-label">Order Total</span>
+          <span class="total-amount" id="checkout-cart-total">$0.00</span>
+        </div>          <!-- Fulfillment Toggle -->
+          <div style="border-top: 1px solid rgba(72, 44, 106, 0.1); margin-top: 20px; padding-top: 20px;" class="payment-form-group" id="fulfillment-group">
+            <label class="payment-label">Fulfillment Method</label>
+            <div style="display:flex; gap:10px; margin-bottom:15px;">
+              <label style="color:var(--color-purple);"><input type="radio" name="fulfillment_method" value="shipping" checked onchange="toggleFulfillment()"> Ship to me</label>
+              <label style="color:var(--color-purple);"><input type="radio" name="fulfillment_method" value="pickup" onchange="toggleFulfillment()"> Local Pickup</label>
+            </div>
+          </div>
+          
+          <!-- Pickup Details -->
+          <div class="payment-form-group" id="pickup-details" style="display:none; background:rgba(72,44,106,0.05); padding:10px; border-radius:8px; margin-bottom:15px;">
+             <label class="payment-label">Select Pickup Time (Mon-Sat, 10am-6pm)</label>
+             <input type="datetime-local" id="pickup-time" class="checkout-input" style="margin-bottom:10px;">
+             <p style="color:var(--color-purple); font-size:12px; margin:0;">You will receive the pickup address upon payment success.</p>
+          </div>
+      </section>
+
+      <!-- RIGHT PANEL: Secure Payment Form -->
+      <section class="checkout-panel">
+        <h2 class="panel-title">Secure <em>Payment</em></h2>
+        
+        <form id="payment-form">
+          <!-- Customer Email -->
+          <div class="payment-form-group">
+            <label class="payment-label" for="customer-email">Email Address</label>
+            <input type="email" id="customer-email" class="checkout-input" required placeholder="name@domain.com"/>
+          </div>
+
+          <!-- Customer Name -->
+          <div class="payment-form-group">
+            <label class="payment-label" for="customer-name">Full Name</label>
+            <input type="text" id="customer-name" class="checkout-input" required placeholder="Full Name"/>
+          </div>
+
+          
+          <!-- Billing Address -->
+          <div class="payment-form-group" id="billing-address-group">
+            <label class="payment-label" for="billing-address">Billing Address</label>
+            <input type="text" id="billing-address" class="checkout-input" required placeholder="Street Address" style="margin-bottom: var(--space-2);"/>
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--space-2);">
+              <label for="billing-city" class="sr-only">City</label>
+              <input type="text" id="billing-city" class="checkout-input" required placeholder="City"/>
+              <label for="billing-state" class="sr-only">State</label>
+              <input type="text" id="billing-state" class="checkout-input" required placeholder="State"/>
+              <label for="billing-zip" class="sr-only">ZIP</label>
+              <input type="text" id="billing-zip" class="checkout-input" required placeholder="ZIP"/>
+            </div>
+          </div>
+
+          
+
+          <!-- Shipping Address -->
+          <div class="payment-form-group" id="shipping-address-group">
+            <label class="payment-label" for="shipping-address">Shipping Address</label>
+            <input type="text" id="shipping-address" class="checkout-input" required placeholder="Street Address" style="margin-bottom: var(--space-2);"/>
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--space-2);">
+              <label for="shipping-city" class="sr-only">City</label>
+              <input type="text" id="shipping-city" class="checkout-input" required placeholder="City"/>
+              <label for="shipping-state" class="sr-only">State</label>
+              <input type="text" id="shipping-state" class="checkout-input" required placeholder="State"/>
+              <label for="shipping-zip" class="sr-only">ZIP</label>
+              <input type="text" id="shipping-zip" class="checkout-input" required placeholder="ZIP"/>
+            </div>
+          </div>
+
+          <!-- Secure Card Details (Square SDK) -->
+          <div class="payment-form-group">
+            <label class="payment-label">Card Details</label>
+            <div class="payment-input-container">
+              <div id="card-container"></div>
+            </div>
+          </div>
+
+          <button id="card-button" type="button" class="btn-submit-payment" disabled>
+            Pay Securely
+          </button>
+        </form>
+        
+        <div id="payment-status-message"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // Global subtotal and tip amount variables for access in checkout.js
+    window.cartSubtotal = 0.0;
+    window.tipAmount = 0.0;
+
+    // Cursor glow handler
+    document.addEventListener('DOMContentLoaded', function() {
+      var glow = document.getElementById('cursor-glow');
+      if (glow) {
+        document.addEventListener('mousemove', function(e) {
+          glow.style.left = e.clientX + 'px';
+          glow.style.top = e.clientY + 'px';
+        }, {passive: true});
+      }
+      
+      // Render Cart Items immediately in the summary panel
+      renderCheckoutSummary();
+
+      // Tipping option handler
+      const tipBtns = document.querySelectorAll('.tip-btn');
+      const customTipInput = document.getElementById('custom-tip-input');
+
+      tipBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          tipBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const tipVal = btn.dataset.tip;
+          if (tipVal === 'custom') {
+            customTipInput.style.display = 'block';
+            window.tipAmount = parseFloat(customTipInput.value) || 0.0;
+          } else {
+            customTipInput.style.display = 'none';
+            const percent = parseFloat(tipVal);
+            window.tipAmount = (window.cartSubtotal * percent) / 100.0;
+          }
+          updateTotalDisplay();
+        });
+      });
+
+      customTipInput?.addEventListener('input', function() {
+        window.tipAmount = parseFloat(customTipInput.value) || 0.0;
+        updateTotalDisplay();
+      });
+    });
+
+
+    function updateCartQty(id, change) {
+      let cart = {};
+      try { cart = JSON.parse(localStorage.getItem('hw_cart') || '{}'); } catch(e) { return; }
+      if (cart[id]) {
+        cart[id].qty += change;
+        if (cart[id].qty <= 0) {
+          delete cart[id];
+        }
+        localStorage.setItem('hw_cart', JSON.stringify(cart));
+        renderCheckoutSummary();
+      }
+    }
+
+    function renderCheckoutSummary() {
+        const list = document.getElementById('checkout-cart-list');
+        const totalEl = document.getElementById('checkout-cart-total');
+        if (!list || !totalEl) return;
+  
+        let cart = {};
+        try {
+          cart = JSON.parse(localStorage.getItem('hw_cart') || '{}');
+        } catch (e) {
+          cart = {};
+        }
+        
+        // Fetch products to validate cart against live rules (Out of Stock / Archived)
+        fetch('products.json?nocache=' + new Date().getTime())
+          .then(res => {
+            if (!res.ok) throw new Error('Could not fetch products');
+            return res.json();
+          })
+          .then(products => {
+            let updated = false;
+            let keys = Object.keys(cart);
+            for (let i = 0; i < keys.length; i++) {
+              let id = keys[i];
+              let p = products.find(x => x.id === id || x.square_variation_id === id);
+              if (p) {
+                // Rule 1: Manual out of stock
+                if (p.inStock === false) {
+                  delete cart[id];
+                  updated = true;
+                  continue;
+                }
+                // Rule 3 & 4: Hidden/Archived Items (except formulators collective)
+                var isCollective = p.id.indexOf('formulators-collective') !== -1 || (p.cat && p.cat.indexOf('collective') !== -1);
+                var isVisible = p.visibility === 'visible' && (!p.ecom_visibility || p.ecom_visibility.toUpperCase() === 'VISIBLE') && (p.is_archived !== true && p.is_archived !== 'true');
+                if (!isVisible && !isCollective) {
+                  delete cart[id];
+                  updated = true;
+                }
+              }
+            }
+            if (updated) {
+              localStorage.setItem('hw_cart', JSON.stringify(cart));
+              alert('One or more items in your cart are no longer available and have been removed.');
+            }
+            _drawCart(cart, list, totalEl);
+          })
+          .catch(err => {
+            console.warn('Cart validation skipped due to network error:', err);
+            _drawCart(cart, list, totalEl);
+          });
+      }
+
+      function _drawCart(cart, list, totalEl) {
+        const keys = Object.keys(cart);
+        if (keys.length === 0) {
+          list.innerHTML = '<div style="text-align:center;color:var(--color-purple);padding:var(--space-12) 0;">Your cart is empty. Please add items to checkout.</div>';
+          totalEl.textContent = '$0.00';
+          updateTotalDisplay();
+          return;
+        }
+  
+        let subtotal = 0.0;
+        list.innerHTML = keys.map(k => {
+          const item = cart[k];
+          const lineTotal = item.price * item.qty;
+          subtotal += lineTotal;
+          return `
+            <div class="cart-summary-item">
+              <div class="item-details">
+                <span class="item-name">${item.name}</span>
+                <span class="item-meta">Qty: ${item.qty} &middot; ${item.price.toFixed(2)}</span>
+              </div>
+              <span class="item-price">${lineTotal.toFixed(2)}</span>
+            </div>
+          `;
+        }).join('');
+  
+        window.cartSubtotal = subtotal;
+        updateTotalDisplay();
+      }
+
+    function updateTotalDisplay() {
+        const totalEl = document.getElementById('checkout-cart-total');
+        const breakdownEl = document.getElementById('checkout-summary-breakdown');
+        if (!totalEl) return;
+        
+        const list = document.getElementById('checkout-cart-list');
+        const cartObj = JSON.parse(localStorage.getItem('hw_cart') || '{}');
+        const keys = Object.keys(cartObj);
+        
+        if (keys.length > 0 && window.tipAmount > 0) {
+          let tipRow = document.getElementById('checkout-summary-tip-row');
+          if (!tipRow) {
+            tipRow = document.createElement('div');
+            tipRow.id = 'checkout-summary-tip-row';
+            tipRow.className = 'cart-summary-item';
+            tipRow.style.borderTop = '1px dashed rgba(255,255,255,0.1)';
+            tipRow.style.marginTop = 'var(--space-2)';
+            tipRow.style.paddingTop = 'var(--space-2)';
+            list.appendChild(tipRow);
+          }
+          tipRow.innerHTML = `
+            <div class="item-details">
+              <span class="item-name" style="color: var(--color-amber);">Formulator Tip Support</span>
+              <span class="item-meta">Thank you!</span>
+            </div>
+            <span class="item-price" style="color: var(--color-amber);">${window.tipAmount.toFixed(2)}</span>
+          `;
+        } else {
+          let tipRow = document.getElementById('checkout-summary-tip-row');
+          if (tipRow) tipRow.remove();
+        }
+
+        let discountAmount = 0.0;
+        const msgDiv = document.getElementById('discount-msg');
+        let discountValid = true;
+        
+        // Determine current fulfillment method for restriction check
+        let currentFulfillMethod = document.querySelector('input[name="fulfillment_method"]:checked');
+        let currentFulfillVal = currentFulfillMethod ? currentFulfillMethod.value : 'shipping';
+
+        if (window.appliedDiscount) {
+            let restriction = window.appliedDiscount.restriction || 'all';
+            if (restriction !== 'all' && restriction !== currentFulfillVal) {
+                discountValid = false;
+                if (msgDiv) {
+                    msgDiv.textContent = 'This code is only valid for ' + (restriction === 'pickup' ? 'local pickup' : 'shipping') + ' orders.';
+                    msgDiv.style.color = '#e27b7b';
+                }
+            } else {
+                if (msgDiv && msgDiv.textContent.indexOf('only valid') !== -1) {
+                    msgDiv.textContent = 'Discount applied successfully!';
+                    msgDiv.style.color = '#a2e0a2';
+                }
+            }
+
+            if (discountValid) {
+                if (window.appliedDiscount.type === 'percent') {
+                    discountAmount = window.cartSubtotal * (window.appliedDiscount.value / 100.0);
+                } else {
+                    discountAmount = window.appliedDiscount.value;
+                }
+            }
+        }
+        
+        let subAfterDiscount = Math.max(0, window.cartSubtotal - discountAmount);
+        
+        // Count total items
+        let totalItemCount = 0;
+        for (let k of keys) {
+            totalItemCount += cartObj[k].qty || 1;
+        }
+
+        // Determine Shipping Fee
+        let fulfillMethod = document.querySelector('input[name="fulfillment_method"]:checked');
+        window.shippingFee = 0.00;
+        
+        if (fulfillMethod && fulfillMethod.value === 'shipping') {
+            if (subAfterDiscount >= 45.00) {
+                window.shippingFee = 0.00;
+            } else {
+                if (totalItemCount <= 2) {
+                    window.shippingFee = 6.50;
+                } else if (totalItemCount <= 5) {
+                    window.shippingFee = 10.50;
+                } else {
+                    window.shippingFee = 14.50;
+                }
+            }
+        }
+        
+        // Calculate MD State Tax (6%) on Subtotal+Shipping
+        window.taxAmount = subAfterDiscount * 0.06;
+        
+        const finalTotal = subAfterDiscount + window.taxAmount + window.shippingFee + window.tipAmount;
+        
+        if (breakdownEl) {
+            let breakdownHtml = `
+                <div style="display:flex; justify-content:space-between;">
+                    <span>Subtotal</span>
+                    <span>${window.cartSubtotal.toFixed(2)}</span>
+                </div>
+            `;
+            if (discountAmount > 0) {
+                breakdownHtml += `
+                <div style="display:flex; justify-content:space-between; color: var(--color-sage);">
+                    <span>Discount</span>
+                    <span>-${discountAmount.toFixed(2)}</span>
+                </div>`;
+            }
+            if (fulfillMethod && fulfillMethod.value === 'shipping') {
+                if (window.shippingFee === 0) {
+                    breakdownHtml += `
+                    <div style="display:flex; justify-content:space-between; color: var(--color-amber);">
+                        <span>Shipping</span>
+                        <span>FREE</span>
+                    </div>`;
+                } else {
+                    breakdownHtml += `
+                    <div style="display:flex; justify-content:space-between;">
+                        <span>Shipping</span>
+                        <span>${window.shippingFee.toFixed(2)}</span>
+                    </div>`;
+                }
+            }
+            breakdownHtml += `
+            <div style="display:flex; justify-content:space-between;">
+                <span>Tax (MD 6%)</span>
+                <span>${window.taxAmount.toFixed(2)}</span>
+            </div>`;
+            
+            breakdownEl.innerHTML = breakdownHtml;
+        }
+
+        totalEl.textContent = `${finalTotal.toFixed(2)}`;
+      }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
