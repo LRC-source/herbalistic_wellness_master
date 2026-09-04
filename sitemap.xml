@@ -1,541 +1,547 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.herbalisticwellness.com/</loc>
+    <loc>https://herbalisticwellness.com/collective-welcome</loc>
+    <lastmod>2026-09-03T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://herbalisticwellness.com/</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/#shop</loc>
+    <loc>https://herbalisticwellness.com/shop</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/#blog</loc>
+    <loc>https://herbalisticwellness.com/blog</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/#podcast</loc>
+    <loc>https://herbalisticwellness.com/podcast</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/#education</loc>
+    <loc>https://herbalisticwellness.com/education</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/#about</loc>
+    <loc>https://herbalisticwellness.com/about</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/#contact</loc>
+    <loc>https://herbalisticwellness.com/contact</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/#account</loc>
+    <loc>https://herbalisticwellness.com/account</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/wishlist.html</loc>
+    <loc>https://herbalisticwellness.com/wishlist.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/privacy-policy.html</loc>
+    <loc>https://herbalisticwellness.com/privacy-policy.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/refund-policy.html</loc>
+    <loc>https://herbalisticwellness.com/refund-policy.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/shipping-policy-faq.html</loc>
+    <loc>https://herbalisticwellness.com/shipping-policy-faq.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/reviews.html</loc>
+    <loc>https://herbalisticwellness.com/reviews.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/wholesale-shopping.html</loc>
+    <loc>https://herbalisticwellness.com/wholesale-shopping.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/affiliate-marketplace.html</loc>
+    <loc>https://herbalisticwellness.com/affiliate-marketplace.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/alumni-discount.html</loc>
+    <loc>https://herbalisticwellness.com/alumni-discount.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=arnica-flower-dried-organic</loc>
+    <loc>https://herbalisticwellness.com/products/arnica-flower-dried-organic</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=arnica-oil</loc>
+    <loc>https://herbalisticwellness.com/products/arnica-oil</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=burdock-root</loc>
+    <loc>https://herbalisticwellness.com/products/burdock-root</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=butterfly-pea-flower</loc>
+    <loc>https://herbalisticwellness.com/products/butterfly-pea-flower</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=butterfly-pea-flower-tincture</loc>
+    <loc>https://herbalisticwellness.com/products/butterfly-pea-flower-tincture</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=butterfly-pea-sea-moss-face-mask</loc>
+    <loc>https://herbalisticwellness.com/products/butterfly-pea-sea-moss-face-mask</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=butterfly-pea-lavender-chamomile-focus-calming-energy-blend</loc>
+    <loc>https://herbalisticwellness.com/products/butterfly-pea-lavender-chamomile-focus-calming-energy-blend</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=butterfly-pea-lavender-chamomile-calming-signature-blend-herbalistic-wellness</loc>
+    <loc>https://herbalisticwellness.com/products/butterfly-pea-lavender-chamomile-calming-signature-blend-herbalistic-wellness</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=chamomile-dried-flowers</loc>
+    <loc>https://herbalisticwellness.com/products/chamomile-dried-flowers</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=chamomile-tincture</loc>
+    <loc>https://herbalisticwellness.com/products/chamomile-tincture</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=chickweed-calendula-lavender-ezcema-cream</loc>
+    <loc>https://herbalisticwellness.com/products/chickweed-calendula-lavender-ezcema-cream</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=chickweed-premium-organic-herb</loc>
+    <loc>https://herbalisticwellness.com/products/chickweed-premium-organic-herb</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=comfrey-oil</loc>
+    <loc>https://herbalisticwellness.com/products/comfrey-oil</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=comfrey-root</loc>
+    <loc>https://herbalisticwellness.com/products/comfrey-root</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=dandelion-root</loc>
+    <loc>https://herbalisticwellness.com/products/dandelion-root</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=echinacea-purpurea</loc>
+    <loc>https://herbalisticwellness.com/products/echinacea-purpurea</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=echinacea-tincture</loc>
+    <loc>https://herbalisticwellness.com/products/echinacea-tincture</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=echinacea-tincture-cold-flu-tincture</loc>
+    <loc>https://herbalisticwellness.com/products/echinacea-tincture-cold-flu-tincture</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=elderberry</loc>
+    <loc>https://herbalisticwellness.com/products/elderberry</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=eucalyptus-mint-bath-scrub</loc>
+    <loc>https://herbalisticwellness.com/products/eucalyptus-mint-bath-scrub</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=eucalyptus-mint-body-butter</loc>
+    <loc>https://herbalisticwellness.com/products/eucalyptus-mint-body-butter</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=frankincense-myrrh-body-butter</loc>
+    <loc>https://herbalisticwellness.com/products/frankincense-myrrh-body-butter</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=frankincense-myrrh-body-butter-holiday-bestseller-body-cream-lotion-herbal-infused-body-moisturizer</loc>
+    <loc>https://herbalisticwellness.com/products/frankincense-myrrh-body-butter-holiday-bestseller-body-cream-lotion-herbal-infused-body-moisturizer</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=frankincense-and-myrrh-bath-salt-scrub</loc>
+    <loc>https://herbalisticwellness.com/products/frankincense-and-myrrh-bath-salt-scrub</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=ginger-grapefruit-body-butter</loc>
+    <loc>https://herbalisticwellness.com/products/ginger-grapefruit-body-butter</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=ginger-grapefruit-peel-powder-bath-scrub</loc>
+    <loc>https://herbalisticwellness.com/products/ginger-grapefruit-peel-powder-bath-scrub</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=gotu-kola</loc>
+    <loc>https://herbalisticwellness.com/products/gotu-kola</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=harvest-spice-limited-edition-seasonal-harvest-butter</loc>
+    <loc>https://herbalisticwellness.com/products/harvest-spice-limited-edition-seasonal-harvest-butter</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=herbal-remedies-journal-black-edition</loc>
+    <loc>https://herbalisticwellness.com/products/herbal-remedies-journal-black-edition</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=herbal-remedies-journal-brown-edition</loc>
+    <loc>https://herbalisticwellness.com/products/herbal-remedies-journal-brown-edition</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=herbal-remedies-journal-purple-edition</loc>
+    <loc>https://herbalisticwellness.com/products/herbal-remedies-journal-purple-edition</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=herbie-ayurvedic-sleep-infusion</loc>
+    <loc>https://herbalisticwellness.com/products/herbie-ayurvedic-sleep-infusion</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=herbie-detox-blend</loc>
+    <loc>https://herbalisticwellness.com/products/herbie-detox-blend</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=hibiscus-leaf</loc>
+    <loc>https://herbalisticwellness.com/products/hibiscus-leaf</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=lavender-body-butter</loc>
+    <loc>https://herbalisticwellness.com/products/lavender-body-butter</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-ezcema-bath-scrub</loc>
+    <loc>https://herbalisticwellness.com/products/lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-ezcema-bath-scrub</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=lavender-flowers</loc>
+    <loc>https://herbalisticwellness.com/products/lavender-flowers</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=lavender-milk-honey-bath-soak-milk-bath-milk-bath-powder-herbal-infused-bath-ezcema-psoriasis-sensitive-skin-soak</loc>
+    <loc>https://herbalisticwellness.com/products/lavender-milk-honey-bath-soak-milk-bath-milk-bath-powder-herbal-infused-bath-ezcema-psoriasis-sensitive-skin-soak</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=lavender-oatmeal-artisan-soap</loc>
+    <loc>https://herbalisticwellness.com/products/lavender-oatmeal-artisan-soap</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=lemongrass-leaf</loc>
+    <loc>https://herbalisticwellness.com/products/lemongrass-leaf</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=maca-root-powdered</loc>
+    <loc>https://herbalisticwellness.com/products/maca-root-powdered</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=marshmallow-root</loc>
+    <loc>https://herbalisticwellness.com/products/marshmallow-root</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=mullein-leaf</loc>
+    <loc>https://herbalisticwellness.com/products/mullein-leaf</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=mullein-oil</loc>
+    <loc>https://herbalisticwellness.com/products/mullein-oil</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=neem-leaf</loc>
+    <loc>https://herbalisticwellness.com/products/neem-leaf</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=nerve-joint-muscle-pain-relief-salve-ease-arthritis-sciatica-fybromyalgia-neuropathy</loc>
+    <loc>https://herbalisticwellness.com/products/nerve-joint-muscle-pain-relief-salve-ease-arthritis-sciatica-fybromyalgia-neuropathy</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=oatmeal-honey-artisan-soap</loc>
+    <loc>https://herbalisticwellness.com/products/oatmeal-honey-artisan-soap</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=orange-calendula-artisan-soap-all-natural-soap-herbal-infused-soap</loc>
+    <loc>https://herbalisticwellness.com/products/orange-calendula-artisan-soap-all-natural-soap-herbal-infused-soap</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=oregon-grape-root-premium-organic-cut-and-sifted-dried-herb</loc>
+    <loc>https://herbalisticwellness.com/products/oregon-grape-root-premium-organic-cut-and-sifted-dried-herb</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=peach-mango-body-butter</loc>
+    <loc>https://herbalisticwellness.com/products/peach-mango-body-butter</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=peach-mango-artisan-soap-all-natural-vegan-handcrafted-moisturizing-bar-soap</loc>
+    <loc>https://herbalisticwellness.com/products/peach-mango-artisan-soap-all-natural-vegan-handcrafted-moisturizing-bar-soap</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=peach-mango-bath-salt-scrub-exfoliator-moisturizer</loc>
+    <loc>https://herbalisticwellness.com/products/peach-mango-bath-salt-scrub-exfoliator-moisturizer</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=peach-mango-body-butter-body-cream-body-lotion-moisturizer-scrub</loc>
+    <loc>https://herbalisticwellness.com/products/peach-mango-body-butter-body-cream-body-lotion-moisturizer-scrub</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=peppermint-hemp-seed-oil</loc>
+    <loc>https://herbalisticwellness.com/products/peppermint-hemp-seed-oil</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=peppermint-leaf-organic-premium-loose-herb</loc>
+    <loc>https://herbalisticwellness.com/products/peppermint-leaf-organic-premium-loose-herb</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=red-raspberry-leaf</loc>
+    <loc>https://herbalisticwellness.com/products/red-raspberry-leaf</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=rosemary-lemon-poppyseed-all-natural-soap</loc>
+    <loc>https://herbalisticwellness.com/products/rosemary-lemon-poppyseed-all-natural-soap</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=rosemary-peppermint-hair-growth-serum</loc>
+    <loc>https://herbalisticwellness.com/products/rosemary-peppermint-hair-growth-serum</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=sage-leaf</loc>
+    <loc>https://herbalisticwellness.com/products/sage-leaf</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=sea-moss-gel-diy-kit-wildcrafted</loc>
+    <loc>https://herbalisticwellness.com/products/sea-moss-gel-diy-kit-wildcrafted</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=south-african-rooibos</loc>
+    <loc>https://herbalisticwellness.com/products/south-african-rooibos</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=spearmint-leaf-loose-organic-premium-herb</loc>
+    <loc>https://herbalisticwellness.com/products/spearmint-leaf-loose-organic-premium-herb</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=st-john-s-body-oil-massage-oil-sunburn-oil-rubbing-oil</loc>
+    <loc>https://herbalisticwellness.com/products/st-john-s-body-oil-massage-oil-sunburn-oil-rubbing-oil</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=st-johns-wort-dried-mood-regulating-herb-herbal-healing-diy-herbal-infusions</loc>
+    <loc>https://herbalisticwellness.com/products/st-johns-wort-dried-mood-regulating-herb-herbal-healing-diy-herbal-infusions</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=tea-tree-peppermint-artisan-soap</loc>
+    <loc>https://herbalisticwellness.com/products/tea-tree-peppermint-artisan-soap</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=the-formulators-collective-founder-circle-pass</loc>
+    <loc>https://herbalisticwellness.com/products/the-formulators-collective-founder-circle-pass</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=the-formulators-collective-full-course-lifetime-pass</loc>
+    <loc>https://herbalisticwellness.com/products/the-formulators-collective-full-course-lifetime-pass</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=turmeric-frankincense-and-myrrh-artisan-soap-herbalistic-wellness</loc>
+    <loc>https://herbalisticwellness.com/products/turmeric-frankincense-and-myrrh-artisan-soap-herbalistic-wellness</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=turmeric-ginger-lemon-body-oil-ance-reducing-oil-massage-oil-skin-oil-herbal-infused-oil</loc>
+    <loc>https://herbalisticwellness.com/products/turmeric-ginger-lemon-body-oil-ance-reducing-oil-massage-oil-skin-oil-herbal-infused-oil</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=turmeric-lemon-body-butter</loc>
+    <loc>https://herbalisticwellness.com/products/turmeric-lemon-body-butter</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=turmeric-lemon-body-butter-turmeric-lemon-body-cream-turmeric-lemon-moisturizer</loc>
+    <loc>https://herbalisticwellness.com/products/turmeric-lemon-body-butter-turmeric-lemon-body-cream-turmeric-lemon-moisturizer</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=turmeric-root-repair-soap</loc>
+    <loc>https://herbalisticwellness.com/products/turmeric-root-repair-soap</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=valerian-root</loc>
+    <loc>https://herbalisticwellness.com/products/valerian-root</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.herbalisticwellness.com/product.html?product=whipped-shea-butter</loc>
+    <loc>https://herbalisticwellness.com/products/whipped-shea-butter</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>

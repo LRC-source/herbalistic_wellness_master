@@ -1,3 +1,13 @@
+# --- BLUEHOST FIREWALL BYPASS ---
+<IfModule mod_security.c>
+  SecFilterEngine Off
+  SecFilterScanPOST Off
+</IfModule>
+<IfModule mod_env.c>
+  SetEnv NO_CACHE 1
+</IfModule>
+# --------------------------------
+
 # 1. Force HTTPS
 RewriteEngine On
 RewriteCond %{HTTPS} off
@@ -291,11 +301,15 @@ RewriteRule ^(.*)$ $1.html [L]
     RewriteRule ^alumni-discount/?$ alumni-discount.html [NC,L]
     # 1.5 Specific Affiliate Link Redirects (R=301 for SEO permanence)
 
+    # Collective Welcome Onboarding Page
+    RewriteRule ^collective-welcome/?$ collective-welcome.html [L,NC]
+
     # SPA pushState fallback - serve index.html for any non-file, non-dir path
+    # Excludes /products/, /product/, /s/shop/ which are handled by product page rules below
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} !\.(php|json|xml|txt|css|js|png|jpg|jpeg|gif|webp|svg|ico|woff|woff2|ttf|otf|eot|pdf|zip)$ [NC]
-    RewriteRule ^(?!blog/)(.*)$ index.html [L,NC]
+    RewriteRule ^(?!blog/|products/|product/|s/shop/)(.*)$ index.html [L,NC]
 
     RewriteCond %{REQUEST_URI} !affiliate-marketplace [NC]
     RewriteCond %{QUERY_STRING} (shareasale|amazon-adsystem) [NC,OR]

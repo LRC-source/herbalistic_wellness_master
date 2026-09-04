@@ -1,0 +1,7 @@
+﻿User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /save_products.php
+Disallow: /assets/private/
+
+Sitemap: https://herbalisticwellness.com/sitemap.xml
