@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in - Google Accounts</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f0f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #1f1f1f;
+    }
+    .oauth-container {
+      background: #ffffff;
+      width: 100%;
+      max-width: 450px;
+      padding: 40px;
+      border-radius: 28px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .google-logo {
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 400;
+      margin: 0 0 8px 0;
+      color: #1f1f1f;
+    }
+    .subtitle {
+      font-size: 16px;
+      color: #444746;
+      margin: 0 0 28px 0;
+    }
+    .custom-input-box {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: left;
+      margin-top: 16px;
+    }
+    .input-field {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 16px;
+      border: 1px solid #747775;
+      border-radius: 4px;
+      font-size: 16px;
+      color: #1f1f1f;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .input-field:focus {
+      border-color: #0b57d0;
+      border-width: 2px;
+      padding: 15px;
+    }
+    .btn-submit {
+      background-color: #0b57d0;
+      color: #ffffff;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 14px;
+      cursor: pointer;
+      align-self: flex-end;
+      transition: background-color 0.2s;
+    }
+    .btn-submit:hover {
+      background-color: #0842a0;
+    }
+    .footer-note {
+      font-size: 12px;
+      color: #444746;
+      line-height: 1.6;
+      margin-top: 32px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="oauth-container">
+    <div class="google-logo">
+      <svg viewBox="0 0 24 24" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+      </svg>
+    </div>
+    <h1>Sign in with Google</h1>
+    <div class="subtitle">to continue to Herbalistic Wellness</div>
+    
+    <!-- Custom Gmail input form -->
+    <div class="custom-input-box" id="custom-email-box">
+      <label for="custom-email" style="font-size: 14px; font-weight: 500; color: #444746;">Email or phone</label>
+      <input type="email" id="custom-email" class="input-field" placeholder="yourname@gmail.com" required autofocus>
+      <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 8px;">
+        <button type="button" class="btn-submit" onclick="submitCustomEmail()">Next</button>
+      </div>
+    </div>
+    
+    <div class="footer-note">
+      To continue, Google will share your name, email address, language preference, and profile picture with Herbalistic Wellness. See their privacy policy and terms of service.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('custom-email').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        submitCustomEmail();
+      }
+    });
+
+    function selectAccount(name, email) {
+      if (window.opener) {
+        window.opener.postMessage({
+          type: 'google-oauth-success',
+          name: name,
+          email: email
+        }, '*');
+      }
+      window.close();
+    }
+
+    function submitCustomEmail() {
+      var emailInput = document.getElementById('custom-email').value;
+      if (!emailInput) return;
+      var email = emailInput.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert("Please enter a valid Google email address.");
+        return;
+      }
+      var name = email.split('@')[0];
+      name = name.charAt(0).toUpperCase() + name.slice(1);
+      selectAccount(name, email);
+    }
+  </script>
+</body>
+</html>

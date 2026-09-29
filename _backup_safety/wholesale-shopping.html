@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics GA4 - G-GN6722VYZ5 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GN6722VYZ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GN6722VYZ5');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Herbalistic Wellness Wholesale Portal — Premium botanical remedies, bulk ordering, and professional partnerships."/>
+<meta name="theme-color" content="#1A3021"/>
+<title>Wholesale Portal — Herbalistic Wellness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+  body {
+    background-color: var(--color-spruce);
+    color: var(--color-cream);
+    font-family: var(--font-ui);
+    font-weight: 300;
+  }
+  .standalone-hero {
+    padding: var(--space-24) var(--space-8) var(--space-16);
+    background: radial-gradient(ellipse at 50% 30%, rgba(72, 44, 106, 0.40) 0%, var(--color-spruce) 80%);
+    text-align: center;
+    position: relative;
+    z-index: 5;
+  }
+  .standalone-title {
+    font-family: var(--font-editorial);
+    font-size: var(--text-2xl);
+    color: var(--color-cream);
+    margin-bottom: var(--space-2);
+  }
+  .standalone-subtitle {
+    font-family: var(--font-editorial);
+    font-size: var(--text-lg);
+    font-style: italic;
+    color: var(--color-amber);
+    margin-bottom: var(--space-8);
+  }
+  .portal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    max-width: 900px;
+    margin: 0 auto var(--space-16);
+    padding: 0 var(--space-4);
+  }
+  @media (max-width: 768px) {
+    .portal-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .portal-card {
+    background: rgba(14, 22, 16, 0.75);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(16px);
+    transition: transform 0.4s var(--ease-botanical), border-color 0.4s var(--ease-botanical);
+  }
+  .portal-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-amber);
+  }
+  .portal-card-icon {
+    font-size: 2.5rem;
+    color: var(--color-amber);
+    margin-bottom: var(--space-4);
+  }
+  .portal-card-title {
+    font-family: var(--font-editorial);
+    font-size: var(--text-xl);
+    color: var(--color-cream);
+    margin-bottom: var(--space-3);
+  }
+  .portal-card-desc {
+    font-size: var(--text-sm);
+    color: var(--color-cream-80);
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+    flex-grow: 1;
+  }
+
+  /* High-Performance Responsive Mobile Optimization */
+  @media (max-width: 580px) {
+    .policy-container, .discount-container, .signup-card, .review-form-card, .empty-wishlist-card, .portal-card {
+      padding: var(--space-6) var(--space-4) !important;
+      border-radius: var(--radius-md) !important;
+    }
+    .standalone-hero, .policy-wrapper, .discount-wrapper, .affiliate-wrapper, .reviews-wrapper, .wishlist-wrapper {
+      padding: var(--space-16) var(--space-3) var(--space-8) !important;
+    }
+    .standalone-title, .policy-title, .discount-title, .affiliate-title, .reviews-title, .wishlist-title, .faq-title {
+      font-size: var(--text-xl) !important;
+    }
+    .standalone-subtitle, .policy-subtitle, .discount-subtitle, .affiliate-subtitle, .reviews-subtitle, .wishlist-subtitle, .faq-subtitle {
+      font-size: var(--text-sm) !important;
+      margin-bottom: var(--space-6) !important;
+    }
+    .portal-grid {
+      margin-bottom: var(--space-8) !important;
+      gap: var(--space-4) !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="logo" id="nav-logo" aria-label="Herbalistic Wellness home">
+      <img src="assets/images/logo.png" alt="Herbalistic Wellness" class="logo-img" style="max-height: 52px; width: auto; object-fit: contain;">
+    </a>
+    <nav class="primary-nav" role="navigation" aria-label="Primary navigation">
+      <a href="/shop" class="nav-link">Apothecary</a>
+      <a href="/blog" class="nav-link">What's The Tea?</a>
+      <a href="/podcast" class="nav-link">Herb &amp; Soul</a>
+      <a href="/education" class="nav-link">The Collective</a>
+      <a href="/contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/account" class="cart-btn" aria-label="My Account" style="margin-right: var(--space-2); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--color-cream);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
+      <a href="index.html#cart" class="cart-btn" aria-label="Open cart" style="display: flex; align-items: center; justify-content: center; color: var(--color-cream);">
+        <span class="cart-label">Cart</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="standalone-hero">
+  <div style="max-width: 800px; margin: 0 auto; margin-bottom: var(--space-10);">
+    <span style="color: var(--color-amber); letter-spacing: 0.2em; text-transform: uppercase; font-size: var(--text-xs); display: block; margin-bottom: var(--space-2);">Professional Partnerships</span>
+    <h1 class="standalone-title">Wholesale &amp; Educational Portal</h1>
+    <p class="standalone-subtitle">Ancient Wisdom. Professional Execution.</p>
+    <p style="color: var(--color-cream-80); font-size: var(--text-base); line-height: 1.8; max-width: 600px; margin-inline: auto;">
+      Welcome to the Herbalistic Wellness Wholesale gate. We offer handcrafted, circannian-aligned botanical remedies for partner retailers, wellness practitioners, and dedicated students looking to deepen their ancestral formulation expertise.
+    </p>
+  </div>
+
+  <div class="portal-grid">
+    <!-- Card 1: Retail Shop Catalog -->
+    <div class="portal-card">
+      <div class="portal-card-icon">✦</div>
+      <h2 class="portal-card-title">Apothecary Shop Catalog</h2>
+      <p class="portal-card-desc">
+        Browse our full catalog of organically crafted tinctures, salves, soaps, and dried blends. Secure direct wholesale ordering options, circular discounts, and bulk practitioner sizing available.
+      </p>
+      <a href="/shop" class="btn-primary" style="padding: var(--space-3) var(--space-6);">
+        <span>Shop Catalog</span>
+        <span class="btn-icon">⟶</span>
+      </a>
+    </div>
+
+    <!-- Card 2: Educational Collective Course -->
+    <div class="portal-card">
+      <div class="portal-card-icon">🍃</div>
+      <h2 class="portal-card-title">The Formulators Collective</h2>
+      <p class="portal-card-desc">
+        Access the definitive professional curriculum on circadian-based plant medicine, rhythmic formulation techniques, and professional apothecary setup. Enroll for lifetime access or subscribe for a 1-week free trial.
+      </p>
+      <a href="/education" class="btn-primary btn-amber" style="padding: var(--space-3) var(--space-6);">
+        <span>The Collective Course</span>
+        <span class="btn-icon">⟶</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Wholesale Partnership Application Node -->
+  <div style="max-width: var(--max-content-width); margin: 0 auto var(--space-24); padding: 0 var(--space-8);">
+    <div style="background: rgba(72, 44, 106, 0.2); border: 1px solid var(--color-amber); border-radius: 12px; padding: var(--space-8); text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+      <h2 class="portal-card-title" style="margin-bottom: var(--space-2);">Wholesale Partnership Application</h2>
+      <p style="color: var(--color-cream-80); max-width: 600px; margin: 0 auto var(--space-6); line-height: 1.6;">
+        Apply to become an official wholesale partner. Receive access to exclusive pricing, bulk ordering, and specialized practitioner support for your wellness business.
+      </p>
+      <a href="https://herbalisticwellness.com/wholesale/login" class="btn-primary" style="padding: var(--space-3) var(--space-6); display: inline-flex; background-color: var(--color-amber); border-color: var(--color-amber);">
+        <span>Apply / Partner Login</span>
+        <span class="btn-icon">→</span>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer" role="contentinfo" style="background: rgba(14, 22, 16, 0.98); border-top: 1px solid var(--border-subtle); padding: var(--space-16) var(--space-8) var(--space-8); position: relative; z-index: 10;">
+  <div class="footer-inner" style="max-width: var(--max-content-width); margin: 0 auto; display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: var(--space-8); text-align: left; flex-wrap: wrap;">
+    
+    <div class="footer-brand" style="display: flex; flex-direction: column; gap: var(--space-3); max-width: 260px;">
+      <span class="logo-text" style="font-family: var(--font-editorial); font-size: var(--text-lg); font-style: italic; color: #FAF9F6;"><span class="logo-mark" aria-hidden="true" style="color: var(--color-amber);">✦</span> Herbalistic Wellness</span>
+      <p class="footer-tagline" style="font-size: var(--text-xs); color: var(--color-sage); line-height: 1.6;">Ancient wisdom. Modern formulation. Handcrafted in harmony with circadian and botanical cycles.</p>
+    </div>
+
+    <!-- Tree 1: Welcome Tree -->
+    <div class="footer-tree-col">
+      <h4 style="font-family: var(--font-editorial); font-size: var(--text-md); font-style: italic; color: #FAF9F6; margin-bottom: var(--space-4); border-bottom: 1px solid rgba(216, 140, 67, 0.2); padding-bottom: var(--space-2);">Welcome</h4>
+      <ul style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-sage);">
+        <li><a href="/" class="footer-link">Welcome</a></li>
+        <li><a href="/shop" class="footer-link">Categories</a></li>
+        <li><a href="wholesale-shopping" class="footer-link">Wholesale Shopping</a></li>
+        <li><a href="/contact" class="footer-link">Contact Us</a></li>
+        <li><a href="privacy-policy" class="footer-link">Privacy Policy</a></li>
+        <li><a href="refund-policy" class="footer-link">Refund Policy</a></li>
+        <li><a href="shipping-policy-faq" class="footer-link">Shipping &amp; FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- Tree 2: About Us Tree -->
+    <div class="footer-tree-col">
+      <h4 style="font-family: var(--font-editorial); font-size: var(--text-md); font-style: italic; color: #FAF9F6; margin-bottom: var(--space-4); border-bottom: 1px solid rgba(216, 140, 67, 0.2); padding-bottom: var(--space-2);">About Us</h4>
+      <ul style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-sage);">
+        <li><a href="/" class="footer-link">About Us</a></li>
+        <li><a href="/podcast" class="footer-link">Herb &amp; Soul Podcast</a></li>
+        <li><a href="affiliate-marketplace" class="footer-link">Affiliate Marketplace</a></li>
+        <li><a href="alumni-discount" class="footer-link">CCBC Alumni Discount</a></li>
+      </ul>
+    </div>
+
+    <!-- Tree 3: Blog Tree -->
+    <div class="footer-tree-col">
+      <h4 style="font-family: var(--font-editorial); font-size: var(--text-md); font-style: italic; color: #FAF9F6; margin-bottom: var(--space-4); border-bottom: 1px solid rgba(216, 140, 67, 0.2); padding-bottom: var(--space-2);">Chronicles</h4>
+      <ul style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-sage);">
+        <li><a href="/blog" class="footer-link">Blog</a></li>
+        <li><a href="/blog" class="footer-link">What’s The Tea? Blog</a></li>
+        <li><a href="/blog" class="footer-link">Home Remedies</a></li>
+      </ul>
+    </div>
+
+    <!-- Tree 4: Global Actions -->
+    <div class="footer-tree-col">
+      <h4 style="font-family: var(--font-editorial); font-size: var(--text-md); font-style: italic; color: #FAF9F6; margin-bottom: var(--space-4); border-bottom: 1px solid rgba(216, 140, 67, 0.2); padding-bottom: var(--space-2);">Shop Actions</h4>
+      <ul style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-sage);">
+        <li><a href="/shop" class="footer-link">Browse Shop</a></li>
+        <li><a href="/" class="footer-link">My Account</a></li>
+        <li><a href="wishlist" class="footer-link">Wishlist</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div style="border-top: 1px solid rgba(255,255,255,0.05); margin-top: var(--space-12); padding-top: var(--space-6); text-align: center; font-size: 0.7rem; color: var(--color-sage); max-width: var(--max-content-width); margin-inline: auto;">
+    <p>© 2026 Herbalistic Wellness. All formulations are crafted with reverence under organic standards.</p>
+  </div>
+</footer>
+
+</body>
+</html>

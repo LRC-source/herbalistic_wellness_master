@@ -1,49 +1,62 @@
-﻿# Herbalistic Wellness – E-Commerce & Apothecary Platform
+# Herbalistic Wellness 🌿
 
-![Status: Production](https://img.shields.io/badge/Status-Production-success?style=for-the-badge)
-![Tech Stack: Vanilla JS / PHP](https://img.shields.io/badge/Tech_Stack-Vanilla_JS_%7C_PHP-blue?style=for-the-badge)
-![Payments: Square SDK](https://img.shields.io/badge/Payments-Square_SDK-lightgrey?style=for-the-badge)
-![Database: Google Sheets API](https://img.shields.io/badge/Database-Google_Sheets_API-green?style=for-the-badge)
+![Status: Production](https://img.shields.io/badge/Status-Production-success)
+![Tech Stack: HTML/CSS/JS/PHP](https://img.shields.io/badge/Tech_Stack-HTML%20%7C%20CSS%20%7C%20JS%20%7C%20PHP-blue)
+![Hosting: Bluehost](https://img.shields.io/badge/Hosting-Bluehost-blueviolet)
 
 ## Executive Summary / Overview
-
-The Herbalistic Wellness Platform is a fully custom, high-performance retail and wholesale e-commerce web application. Designed to eliminate the overhead of traditional CMS platforms like WordPress or Shopify, this system leverages a lightweight Single Page Application (SPA) architecture combined with secure PHP backend endpoints. It solves the critical business need for a highly customizable, zero-latency shopping experience that integrates directly with Square for payments and Google Sheets for inventory management.
+Herbalistic Wellness is a comprehensive e-commerce and informational platform dedicated to providing holistic health solutions, herbal catalogs, and a streamlined purchasing journey. The platform solves the operational challenge of managing a large inventory of wellness products and seamlessly integrating digital storefront operations with secure checkout mechanisms and backend inventory updates. It serves as a unified digital ecosystem for users seeking wellness products, complete with a modern frontend experience.
 
 ## Architecture & Tech Stack Breakdown
+The repository follows a traditional monolithic architecture utilizing standard web technologies alongside custom PHP backend scripts for handling API integrations and business logic:
 
-*   **Frontend UI/UX:** HTML5, CSS3, Vanilla JavaScript (ES6+), custom responsive grid systems.
-*   **Routing:** Custom vanilla JS SPA router enabling instantaneous page transitions with clean URLs and strict .htaccess fallback logic.
-*   **Backend / Middleware:** Secure PHP API endpoints for handling cart validation, inventory syncing, and review management.
-*   **Database / CRM:** Real-time data hydration using products.json background syncing and Google Apps Script endpoints for automated lead generation.
-*   **Payment Gateway:** Square Web Payments SDK for secure, PCI-compliant checkout flows.
+### Frontend
+- **HTML5 / CSS3**: Responsive page templates (`index.html`, `checkout.html`, `products.html`, etc.) styled with `styles.css`.
+- **JavaScript (Vanilla)**: Core application logic (`app.js`), customized checkout behavior (`checkout.js`), experimental WebGL components (`webgl-pipeline.js`), and audio interaction logic (`audio-engine.js`).
+
+### Backend
+- **PHP 8.x**: Core backend logic handling checkout processes (`checkout.php`), catalog synchronization (`products.php`), Square API integrations (`push_to_square.php`), and image uploads (`upload_image.php`).
+- **Data Storage**: File-based JSON data stores (`products.json`, `products_cache.json`) for quick catalog access.
+- **Server Configuration**: Apache configuration via `.htaccess` for URL routing and security.
+
+### Integrations & Services
+- **Square API**: E-commerce payment processing and inventory synchronization.
+- **Google OAuth / Apps Script**: Secure authentication popups and sheet receivers for form and analytics integration.
+- **Hosting**: Bluehost (cPanel / FTP deployment).
 
 ## Key Features & Capabilities
-
-*   **Non-Destructive Live Sync:** Background API polling silently updates prices and product reviews on mobile and desktop clients without interrupting the user layout.
-*   **Wholesale & Retail Segmentation:** Distinct portals and pricing logic separating standard retail consumers from B2B wholesale partners.
-*   **Zero-Flicker SPA Routing:** Advanced pre-rendering and routing logic prevents UI flashes during page transitions, mimicking a static site experience.
-*   **Integrated Admin Dashboard:** Localized, browser-based administrative controls for managing product visibility, discount codes, and customer reviews.
-*   **Automated Cart Validation:** Server-side and client-side cart verification preventing out-of-stock purchases or tampered pricing.
+- **E-Commerce Checkout Pipeline**: End-to-end shopping cart functionality integrated with Square.
+- **Dynamic Catalog Management**: Automated JSON-based product fetching and caching for high-performance load times.
+- **Advanced Media Pipelines**: Incorporation of WebGL rendering and custom audio engines for an immersive user experience.
+- **SEO & Tracking**: Pre-configured `sitemap.xml`, `robots.txt`, and comprehensive tracking endpoints (`track.php`).
+- **Role-Based Workflows**: Custom landing pages for affiliates (`affiliate-marketplace.html`), wholesale shoppers (`wholesale-shopping.html`), and alumni (`alumni-discount.html`).
 
 ## Setup & Installation Guide
 
-1.  **Clone the Repository:**
-    `ash
-    git clone https://github.com/LRC-source/herbalistic_wellness_master.git
-    cd herbalistic_wellness_master
-    `
-2.  **Configure Environment Variables:**
-    *   Duplicate .env.example to .env.
-    *   Insert your Square Application ID and Location ID.
-3.  **Local Server Deployment:**
-    *   Due to PHP backend requirements, host the directory using a local LAMP/MAMP stack or PHP's built-in server:
-    `ash
-    php -S localhost:8000
-    `
-4.  **Security Notice:**
-    *   Ensure all *.php and .json cache files remain excluded from public version control as defined in the .gitignore.
+### Prerequisites
+- PHP 8.x or higher installed locally (for testing).
+- Apache or Nginx server (if running locally, XAMPP/MAMP are recommended).
+- Valid `.env` configuration (see below).
+
+### Installation Steps
+1. **Clone the Repository**:
+   ```bash
+   git clone <repository-url>
+   cd herbalistic_wellness_master_git
+   ```
+2. **Environment Configuration**:
+   Create a `.env` file in the root directory based on `.env.example`. Make sure to populate the required Square API keys and Google OAuth credentials.
+3. **Local Development Server**:
+   Start a local PHP development server:
+   ```bash
+   php -S localhost:8000
+   ```
+4. **Access the Site**:
+   Navigate to `http://localhost:8000` in your web browser.
+
+### Deployment
+Refer to `SERVER_SETUP_INSTRUCTIONS.txt` and `BLUEHOST_TOKEN_SETUP.txt` for deploying to Bluehost and configuring sync tokens.
 
 ## Architect / Author Attribution
-
-**Designed and engineered by LRC-source.**
-Focusing on full-stack web application development, automated digital operations, and bespoke e-commerce architectures.
+**Full-stack web application development and automated digital operations by LRC.** 
+Built with a focus on high-performance digital commerce, secure data handling, and scalable front-end architecture.

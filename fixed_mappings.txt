@@ -1,0 +1,143 @@
+﻿# =========================================================================
+# EXACT 404 MATCHES (MANUAL MAP FROM GOOGLE SEARCH CONSOLE)
+# =========================================================================
+
+# --- SHOP & PRODUCT TAG MAPPINGS ---
+RewriteRule ^product-tag/ginger-tincture/?$ /product/ginger-tincture [R=301,L]
+RewriteRule ^product-tag/natural-hair-serum-for-growth/?$ /product/rosemary-peppermint-hair-growth-serum [R=301,L]
+RewriteRule ^product-tag/detoxification/?$ /#shop [NE,R=301,L]
+RewriteRule ^product-tag/herbal-detox/?$ /#shop [NE,R=301,L]
+RewriteRule ^s/tag/aromatictea/?$ /#shop [NE,R=301,L]
+
+RewriteRule ^s/shop/comfrey-root-2/?$ /product/comfrey-root [R=301,L]
+RewriteRule ^s/shop/dandelion-root/?$ /product/dandelion-root [R=301,L]
+RewriteRule ^s/shop/chickweed-premium-organic-herb-2/?$ /product/chickweed [R=301,L]
+RewriteRule ^s/shop/ashwagandha/?$ /product/ashwagandha [R=301,L]
+RewriteRule ^s/shop/hibiscus-leaf/?$ /product/hibiscus-leaf [R=301,L]
+RewriteRule ^s/shop/turmeric-/?$ /product/turmeric-root [R=301,L]
+RewriteRule ^s/shop/peach-mango-artisan-soap/?$ /product/peach-mango-artisan-soap [R=301,L]
+RewriteRule ^s/shop/burdock-root/?$ /product/burdock-root [R=301,L]
+RewriteRule ^s/shop/herbal-treasure-storage-guide/?$ /product/herbal-treasure-storage-guide [R=301,L]
+RewriteRule ^s/shop/st-johns-body-oil-massage-oil-sunburn-oil-rubbing-oil/?$ /product/st-john-s-body-oil-massage-oil-sunburn-oil-rubbing-oil [R=301,L]
+RewriteRule ^s/shop/all-items/?$ /#shop [NE,R=301,L]
+RewriteRule ^s/shop/butterfly-pea-flower-organic-herb-loose-leaf-whole-flowers-smart-plant-nootropic-memory-booster-collagen-building-eye-health/?$ /product/butterfly-pea-flower [R=301,L]
+RewriteRule ^s/shop/natural-soaps-2/?$ /#shop [NE,R=301,L]
+RewriteRule ^s/shop/turmeric-frankincense-and-myrrh-artisan-soap-herbalistic-wellness-2/?$ /product/turmeric-frankincense-and-myrrh-artisan-soap-herbalistic-wellness [R=301,L]
+RewriteRule ^s/shop/oregon-grape-root/?$ /product/oregon-grape-root [R=301,L]
+RewriteRule ^s/shop/activated-charcoal-black-soap/?$ /product/activated-charcoal-black-soap [R=301,L]
+RewriteRule ^s/shop/bath-scrub-2/?$ /#shop [NE,R=301,L]
+RewriteRule ^s/shop/maca-root-powdered-2/?$ /product/maca-root-powdered [R=301,L]
+RewriteRule ^s/shop/butterfly-pea-lavender-chamomile-calming-signature-blend-herbalistic-wellness/?$ /product/butterfly-pea-lavender-chamomile-calming-signature-blend-herbalistic-wellness [R=301,L]
+RewriteRule ^s/shop/butterfly-pea-lavender-chamomile-calming-nootropic-tea-blend-anxiety-relaxation-smart-plant-infusion129/?$ /product/butterfly-pea-lavender-chamomile-calming-signature-blend-herbalistic-wellness [R=301,L]
+RewriteRule ^s/shop/ginkgo-biloba/?$ /product/ginkgo-biloba [R=301,L]
+RewriteRule ^s/shop/turmeric-frankincense-and-myrrh-artisan-soap-herbalistic-wellness/?$ /product/turmeric-frankincense-and-myrrh-artisan-soap-herbalistic-wellness [R=301,L]
+RewriteRule ^s/shop/frankincense-and-myrrh-body-butter-wholesale/?$ /wholesale-shopping.html [R=301,L]
+RewriteRule ^s/shop/lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-ezcema-bath-scrub/?$ /product/lavender-body-scrub [R=301,L]
+RewriteRule ^s/home/shop/face-body-mask/?$ /product/face-body-mask [R=301,L]
+RewriteRule ^s/shop/dried-herbs/?$ /#shop [NE,R=301,L]
+
+# --- BLOG & EDUCATION MAPPINGS ---
+RewriteRule ^whats-the-tea-blog/?$ /#blog [NE,R=301,L]
+RewriteRule ^s/home-remedies/drop-by-drop-unlocking-the-potent-power-of-herbal-tinctures-and-extracts/?$ /blog/drop-by-drop-unlocking-the-potent-power-of-herbal-tinctures-and-extracts.html [R=301,L]
+RewriteRule ^s/home-remedies/is-gardyn-worth-it-the-gardyn-home/?$ /blog/is-gardyn-worth-it-the-gardyn-home.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/mullien-leaf-by-herbalisticwellness-2/?$ /blog/mullein-leaf-by-herbalistic-wellness.html [R=301,L]
+RewriteRule ^s/home-remedies/herbal-remedies-archive/burdock-root-for-gout/?$ /blog/burdock-root-for-gout.html [R=301,L]
+RewriteRule ^s/home-remedies/gardyn-vs-traditional-gardening/?$ /blog/gardyn-vs-traditional-gardening.html [R=301,L]
+RewriteRule ^s/home-remedies/the-strength-of-comfrey-root-a-powerful-natural-remedy/?$ /blog/the-strength-of-comfrey-root-a-powerful-natural-remedy.html [R=301,L]
+RewriteRule ^s/home-remedies/ancient-roots-global-wisdom-an-overview-of-diverse-herbal-traditions/?$ /blog/ancient-roots-global-wisdom-an-overview-of-diverse-herbal-traditions.html [R=301,L]
+RewriteRule ^s/home-remedies/butterfly-pea-flower-organic-herb-tea-bags-included-loose-whole-flowers-by-herbalisticwellness.*$ /blog/whats-the-tea-on-butterfly-pea-flower-lavender-lemonade.html [R=301,L]
+RewriteRule ^s/home-remedies/whats-the-tea-on-butterfly-pea-flower-lavender-lemonade.*$ /blog/whats-the-tea-on-butterfly-pea-flower-lavender-lemonade.html [R=301,L]
+RewriteRule ^s/home-remedies/gardyn-home-4-0-review/?$ /blog/gardyn-home-4-0-review.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/eco-friendly-herbal-living-sustainable-practices-for-health-and-wellness/?$ /blog/eco-friendly-herbal-living-sustainable-practices-for-health-and-wellness.html [R=301,L]
+RewriteRule ^s/home-remedies/ancestral-headache-remedies/?$ /blog/ancestral-headache-remedies.html [R=301,L]
+RewriteRule ^s/home-remedies/how-to-use-nettle-tea-allergies-and-inflammation/?$ /blog/how-to-use-nettle-tea-allergies-and-inflammation.html [R=301,L]
+RewriteRule ^s/home-remedies/12-natural-sore-throat-remedies-for-fast-relief/?$ /blog/12-natural-sore-throat-remedies-for-fast-relief.html [R=301,L]
+RewriteRule ^s/home-remedies/anti-inflammatory-benefits-and-uses-of-turmeric-root/?$ /blog/anti-inflammatory-benefits-and-uses-of-turmeric-root.html [R=301,L]
+RewriteRule ^s/home-remedies/6-home-remedies-for-a-sore-throat/?$ /blog/6-home-remedies-for-a-sore-throat.html [R=301,L]
+RewriteRule ^s/home-remedies/how-to-use-ginger-root-to-alleviate-nausea-and-stomach-upset/?$ /blog/how-to-use-ginger-root-to-alleviate-nausea-and-stomach-upset.html [R=301,L]
+RewriteRule ^s/home-remedies/whats-the-tea-on-the-power-of-tonic-herbs/?$ /blog/whats-the-tea-on-the-power-of-tonic-herbs.html [R=301,L]
+RewriteRule ^s/home-remedies/your-homegrown-apothecary-tips-for-growing-potent-medicinal-herbs-at-home/?$ /blog/your-homegrown-apothecary-tips-for-growing-potent-medicinal-herbs-at-home.html [R=301,L]
+RewriteRule ^s/home-remedies/herbal-remedies-archive/happy-earth-day-herbies/?$ /blog/happy-earth-day-herbies.html [R=301,L]
+RewriteRule ^s/home-remedies/herbal-remedies-archive/the-benefits-of-meditation-why-you-should-start-meditating-today/?$ /blog/the-benefits-of-meditation-why-you-should-start-meditating-today.html [R=301,L]
+RewriteRule ^s/home-remedies/herbal-remedies-archive/unlocking-the-digestive-benefits-of-oregon-grape-root-a-comprehensive-guide/?$ /blog/unlocking-the-digestive-benefits-of-oregon-grape-root-a-comprehensive-guide.html [R=301,L]
+RewriteRule ^s/home-remedies/diy-winter-wellness-kit/?$ /blog/diy-winter-wellness-kit.html [R=301,L]
+RewriteRule ^s/home-remedies/herbal-remedies-archive/best-herb-for-depression-in-2023-st-johns-wor/?$ /blog/best-herb-for-depression-in-2023-st-johns-wor.html [R=301,L]
+RewriteRule ^s/home-remedies/adaptogens-stress-busters/?$ /blog/adaptogens-stress-busters.html [R=301,L]
+RewriteRule ^s/home-remedies/the-power-of-ashwagandha-natures-stress-energy-balancer/?$ /blog/the-power-of-ashwagandha-natures-stress-energy-balancer.html [R=301,L]
+RewriteRule ^s/home-remedies/herbal-shop-finding-the-best-a-guide-to-quality-and-authenticity/?$ /blog/herbal-shop-finding-the-best-a-guide-to-quality-and-authenticity.html [R=301,L]
+RewriteRule ^s/home-remedies/herbal-remedies-archive/exploring-the-amazing-benefits-of-herbalistic-wellness-online-apothecary/?$ /blog/exploring-the-amazing-benefits-of-herbalistic-wellness-online-apothecary.html [R=301,L]
+RewriteRule ^s/home-remedies/unveiling-the-power-of-adaptogenic-herbs/?$ /blog/unveiling-the-power-of-adaptogenic-herbs.html [R=301,L]
+RewriteRule ^s/home-remedies/the-business-of-black-herbalism-reclaiming-ownership-in-a-commercialized-world/?$ /blog/the-business-of-black-herbalism-reclaiming-ownership-in-a-commercialized-world.html [R=301,L]
+RewriteRule ^s/home-remedies/the-deeper-power-of-b12-for-brain-health-fueling-your-brain-nerves-and-energy/?$ /blog/the-deeper-power-of-b12-for-brain-health-fueling-your-brain-nerves-and-energy.html [R=301,L]
+RewriteRule ^s/home-remedies/natures-stress-shield-understanding-adaptogens-and-finding-your-balance/?$ /blog/natures-stress-shield-understanding-adaptogens-and-finding-your-balance.html [R=301,L]
+RewriteRule ^s/home-remedies/whats-the-tea-on-butterfly-blend-tea/?$ /blog/whats-the-tea-on-butterfly-blend-tea.html [R=301,L]
+RewriteRule ^s/home-remedies/whats-the-tea-on-butterfly-pea-tincture/?$ /blog/whats-the-tea-on-butterfly-pea-tincture.html [R=301,L]
+RewriteRule ^s/home-remedies/whats-the-tea-mullein-leaf-benefits-and-uses/?$ /blog/whats-the-tea-mullein-leaf-benefits-and-uses.html [R=301,L]
+
+# Redirect old blog products to exact new product pages
+RewriteRule ^s/home-remedies/peach-mango-body-butter-body-cream-body-lotionmoisturizer-by-herbalisticwellness/?$ /product/peach-mango-body-butter [R=301,L]
+RewriteRule ^s/home-remedies/lavender-flowers-lavandula-by-herbalisticwellness/?$ /product/lavender-flowers [R=301,L]
+RewriteRule ^s/home-remedies/gingko-biloba/?$ /product/ginkgo-biloba [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/frankincense-myrrh-body-butter-bestseller-herbal-infused-body-moisturizer-by-herbalisticwellness/?$ /product/frankincense-myrrh-body-butter [R=301,L]
+RewriteRule ^s/home-remedies/st-johns-body-oil-massage-oil-sunburn-oil-rubbing-oil-by-herbalisticwellness-2/?$ /product/st-john-s-body-oil-massage-oil-sunburn-oil-rubbing-oil [R=301,L]
+RewriteRule ^s/home-remedies/arnica-oil-muscle-inflammation-pain-carpal-tunnel-oil-skin-hair-oil-handcrafted-100-all-natural-herbal-infused-oil-by-herbalisticwellness-2/?$ /product/arnica-oil [R=301,L]
+RewriteRule ^s/home-remedies/rosemary-peppermint-hair-serum-by-herbalisticwellness/?$ /product/rosemary-peppermint-hair-growth-serum [R=301,L]
+RewriteRule ^s/home-remedies/butterfly-pea-flowers-by-herbalisticwellness/?$ /product/butterfly-pea-flower [R=301,L]
+RewriteRule ^s/home-remedies/peppermint-leaf-by-herbalisticwellness-3/?$ /product/peppermint-leaf-organic-premium-loose-herb [R=301,L]
+RewriteRule ^s/home-remedies/12-bars-wholesale-turmeric-root-soap-priced-25-off-by-herbalisticwellness/?$ /wholesale-shopping.html [R=301,L]
+
+# Redirect specific affiliates to the affiliate marketplace
+RewriteRule ^s/home-remedies/megaflora.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/womens-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/mens-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/baby-me-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/vitamin-d3-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/b12-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/zinc-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/turmeric-curcumin-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/complex-c-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/ultra-c-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/iron-energy-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/kids-multi-gummies-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/melatonin-sleep-gummies-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/stress-protect-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/daily-immunity-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/c-defense-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/blood-buildera-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/elderberry-immunity-.*$ /affiliate-marketplace.html [R=301,L]
+ # NO EXACT MATCH FOUND
+RewriteRule ^s/home-remedies/turmeric-inflammation-.*$ /affiliate-marketplace.html [R=301,L]
+
+# Miscellaneous exact matches
+RewriteRule ^reviews/affiliate-marketplace/?$ /affiliate-marketplace.html [R=301,L]
+RewriteRule ^reviews/alumni-discount/?$ /alumni-discount.html [R=301,L]
+RewriteRule ^wholesale-shopping-with-us/?$ /wholesale-shopping.html [R=301,L]
+RewriteRule ^ccbc-alumni-discount/?$ /alumni-discount.html [R=301,L]
+RewriteRule ^home/contact-us/?$ /#contact [NE,R=301,L]
+RewriteRule ^s/episode/herb-soul-podcast/?$ /#podcast [NE,R=301,L]
+RewriteRule ^herb-soul-podcast-a-personal-invitation-from-latoya-renee/?$ /#podcast [NE,R=301,L]
+RewriteRule ^mission/?$ /#about [NE,R=301,L]
+RewriteRule ^stories/?$ /#about [NE,R=301,L]
+RewriteRule ^home/privacy-policy/?$ /privacy-policy.html [R=301,L]
+RewriteRule ^home/categories/?$ /#shop [NE,R=301,L]
+

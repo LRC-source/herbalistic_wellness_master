@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herbalistic Wellness | Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: true }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Jost', sans-serif; background-color: #faf9f6; color: #41494c; }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+    .prose p { margin-bottom: 1.25em; line-height: 1.8; }
+    .prose h2 { font-size: 2rem; color: #482c6a; margin-top: 2em; margin-bottom: 0.75em; }
+    .prose h3 { font-size: 1.5rem; color: #482c6a; margin-top: 1.5em; margin-bottom: 0.5em; }
+    .prose ul { list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.25em; }
+    .prose li { margin-bottom: 0.5em; }
+    .loader { border: 4px solid #f3f3f3; border-top: 4px solid #748e63; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 50px auto; }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+  <header class="w-full max-w-7xl mx-auto flex items-center justify-between py-6 px-4 border-b border-[#41494c]/10">
+      <a href="/" class="flex items-center justify-start focus:outline-none" aria-label="Herbalistic Wellness Home">
+          <img src="assets/images/logo.png" alt="Herbalistic Wellness" class="h-10 sm:h-12 w-auto object-contain" width="240" height="135" onerror="this.src='assets/brand/logo.png'">
+      </a>
+      <nav class="flex items-center space-x-6 text-sm">
+          <a href="/index.html#shop" class="text-[#482c6a] hover:text-[#748e63] transition-colors font-medium">Apothecary</a>
+          <a href="/index.html#education" class="text-[#482c6a] hover:text-[#748e63] transition-colors font-medium">The Collective</a>
+          <a href="/" class="text-[#482c6a] hover:text-[#748e63] transition-colors font-medium">Home</a>
+      </nav>
+  </header>
+
+  <main class="w-full max-w-3xl mx-auto px-4 py-12 flex-grow" id="blog-content-area">
+      <div class="loader" id="loader"></div>
+      <div id="blog-error" style="display:none; text-align:center; padding: 40px 0;">
+        <h2 class="text-2xl text-[#482c6a]">Article Not Found</h2>
+        <p class="mt-4 text-[#41494c]/70">We couldn't find the article you're looking for. It may have been removed or the link is incorrect.</p>
+        <a href="/" class="mt-8 inline-block px-6 py-2 bg-[#748e63] text-white rounded-full">Return Home</a>
+      </div>
+      
+      <article id="blog-article" style="display:none;">
+          <header class="mb-8">
+              <span id="blog-cat" class="text-xs uppercase tracking-widest text-[#748e63] font-semibold"></span>
+              <h1 id="blog-title" class="text-4xl sm:text-5xl font-bold text-[#482c6a] mt-2 mb-4 leading-tight"></h1>
+              <div class="flex items-center space-x-3 text-xs text-[#41494c]/70 font-mono">
+                  <span id="blog-author">By La'Toya Renee The Herbalist</span>
+                  <span>&bull;</span>
+                  <span id="blog-date"></span>
+              </div>
+          </header>
+          <figure class="mb-10 w-full overflow-hidden rounded-md bg-[#faf9f6] border border-[#41494c]/10">
+              <img id="blog-img" src="" alt="Featured Image" class="w-full h-auto max-h-[500px] object-cover" style="display:none;">
+          </figure>
+          <div id="blog-body" class="prose max-w-none text-lg text-[#41494c]/90">
+              <!-- Content injected here -->
+          </div>
+      </article>
+  </main>
+
+  <footer class="w-full border-t border-[#41494c]/10 py-8 mt-12">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-xs text-[#41494c]/60">
+          <p>&copy; 2026 Herbalistic Wellness. All rights reserved.</p>
+      </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var searchParams = new URLSearchParams(window.location.search);
+      var slug = searchParams.get('slug');
+      if (!slug) {
+        var pathParts = window.location.pathname.split('/').filter(Boolean);
+        slug = pathParts[pathParts.length - 1];
+        if (slug && slug.includes('.html')) slug = slug.replace('.html', '');
+      }
+      
+      var loader = document.getElementById('loader');
+      var errorDiv = document.getElementById('blog-error');
+      var articleDiv = document.getElementById('blog-article');
+      
+      function renderPost(post) {
+        document.title = post.title + " | Herbalistic Wellness";
+        document.getElementById('blog-cat').innerText = post.category || post.cat || 'Herbal Remedies';
+        document.getElementById('blog-title').innerText = post.title || '';
+        document.getElementById('blog-author').innerText = 'By ' + (post.author || "La'Toya Renee The Herbalist");
+        document.getElementById('blog-date').innerText = post.date || post.publishDate || '';
+        
+        var imgUrl = post.featuredImage || post.image || '';
+        if (imgUrl) {
+          var imgEl = document.getElementById('blog-img');
+          imgEl.src = imgUrl;
+          imgEl.style.display = 'block';
+        }
+        
+        var content = post.content || post.notes || post.excerpt || '';
+        // Basic Markdown to HTML conversion if needed
+        content = content.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>');
+        if(content && !content.startsWith('<p>')) content = '<p>' + content + '</p>';
+        content = content.replace(/## (.*?)(<br>|<\/p>)/g, '<h2>\</h2>');
+        content = content.replace(/### (.*?)(<br>|<\/p>)/g, '<h3>\</h3>');
+        
+        document.getElementById('blog-body').innerHTML = content;
+        
+        loader.style.display = 'none';
+        articleDiv.style.display = 'block';
+      }
+
+      // Try local DB first (which includes hardcoded ones from data.js)
+      var localPost = null;
+      if (typeof DB !== 'undefined' && DB.blog) {
+        localPost = DB.blog.find(function(b) { 
+          if (b.slug === slug || b.slug === '/blog/'+slug || b.id === slug) return true;
+          var generatedSlug = b.title ? b.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '';
+          return generatedSlug === slug;
+        });
+      }
+      // Or try localStorage backup from Admin panel
+      if (!localPost) {
+        try {
+          var localHwBlog = JSON.parse(localStorage.getItem('hw_blog') || '[]');
+          localPost = localHwBlog.find(function(b) { 
+            if (b.slug === slug || b.slug === '/blog/'+slug || b.id === slug) return true;
+            var generatedSlug = b.title ? b.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '';
+            return generatedSlug === slug;
+          });
+        } catch(e){}
+      }
+      
+      if (localPost && localPost.content) {
+        renderPost(localPost);
+      } else {
+        // Fetch from Google Sheets endpoint
+        var HW_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwuX5nx6VRd-4p2nhzEHQyFjURXz4eD_IOwnAYNZSqj5JomUQtSlhEmhbhhrljKHQ5O/exec';
+        fetch(HW_ENDPOINT + '?action=get_blogs')
+          .then(res => res.json())
+          .then(data => {
+            if (data.status === 'success' && data.blogs) {
+              var post = data.blogs.find(function(b) { 
+                var bSlug = b.slug ? b.slug.replace('/blog/', '') : '';
+                if (bSlug === slug || b.id === slug || b.slug === slug) return true;
+                var generatedSlug = b.title ? b.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '';
+                return generatedSlug === slug;
+              });
+              if (post && post.status !== 'Deleted') {
+                renderPost(post);
+              } else {
+                loader.style.display = 'none';
+                errorDiv.style.display = 'block';
+              }
+            } else {
+              loader.style.display = 'none';
+              errorDiv.style.display = 'block';
+            }
+          })
+          .catch(err => {
+            loader.style.display = 'none';
+            errorDiv.style.display = 'block';
+          });
+      }
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+name: Deploy to Bluehost
+
+on:
+  push:
+    branches:
+      - main  # This fires the automation every time you save changes here
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploying Changed Files
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: 🚀 FTP Deploy to Bluehost
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: ./  # Your active Bluehost website directory
+        exclude: |
+          **/.git*
+          **/node_modules/**
+          products.json  # CRITICAL: Protects your database from being overwritten!
+          assets/original_backups/** # Keeps your server backups isolated

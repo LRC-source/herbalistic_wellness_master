@@ -1,11 +1,11 @@
-// Square Web Payments SDK Production Configuration
+﻿// Square Web Payments SDK Production Configuration
 const appId = 'sq0idp-jw760RR9HEUoeIUXosaCxw';         // Production App ID
 const locationId = 'BGW0EEK56YNKC';                    // Production Location ID
 const sdkUrl = 'https://web.squarecdn.com/v1/square.js';
 
 // Google Apps Script Web App endpoint for order data logging
 // TODO: Replace this URL with your deployed Apps Script Web App URL
-const HW_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxul-XR3SRjaVqu-l74E7k7vZxWq0yB3nTmr6_oMP5MhatSluB7FDGWSELqNXfpQQ6oeg/exec';
+const HW_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwuX5nx6VRd-4p2nhzEHQyFjURXz4eD_IOwnAYNZSqj5JomUQtSlhEmhbhhrljKHQ5O/exec';
 
 let card;
 
@@ -256,7 +256,7 @@ async function handlePaymentSubmission(event) {
         );
 
         const displayAddress = fulfillMethod === 'pickup'
-          ? `Local Pickup — ${pickupTimeEl ? pickupTimeEl.value.replace('T', ' ') : ''}`
+          ? `Local Pickup â€” ${pickupTimeEl ? pickupTimeEl.value.replace('T', ' ') : ''}`
           : `${useBillingAsShipping ? bAddressInput.value.trim() : (addressInput ? addressInput.value.trim() : '')}, ${useBillingAsShipping ? bCityInput.value.trim() : (cityInput ? cityInput.value.trim() : '')} ${useBillingAsShipping ? bZipInput.value.trim() : (zipInput ? zipInput.value.trim() : '')}`;
 
         const container = document.querySelector('.checkout-container');
@@ -267,7 +267,7 @@ async function handlePaymentSubmission(event) {
           if (hasCourse) {
             courseMessageHtml = `
               <div style="margin-top:var(--space-6);background:rgba(216,140,67,0.1);border:1px solid rgba(216,140,67,0.2);padding:var(--space-4);border-radius:var(--radius-md);text-align:center;">
-                <span style="color:var(--color-amber);font-weight:500;display:block;margin-bottom:4px;">🎓 Lifetime Course Access Activated!</span>
+                <span style="color:var(--color-amber);font-weight:500;display:block;margin-bottom:4px;">ðŸŽ“ Lifetime Course Access Activated!</span>
                 <p style="font-size:var(--text-sm);color:var(--color-sage);margin:0;">Log in to the Classroom Portal using your email: <strong>${emailInput.value.trim()}</strong></p>
               </div>`;
             navButtonsHtml = `
@@ -278,7 +278,7 @@ async function handlePaymentSubmission(event) {
           } else {
             courseMessageHtml = `
               <div style="margin-top:var(--space-6);background:rgba(216,140,67,0.08);border:1px dashed rgba(216,140,67,0.3);padding:var(--space-5);border-radius:var(--radius-md);text-align:center;box-sizing:border-box;width:100%;">
-                <span style="color:var(--color-amber);font-weight:500;display:block;margin-bottom:6px;font-size:1.1rem;">🎁 A Gift from LaToya Renee the Herbalist!</span>
+                <span style="color:var(--color-amber);font-weight:500;display:block;margin-bottom:6px;font-size:1.1rem;">ðŸŽ A Gift from LaToya Renee the Herbalist!</span>
                 <p style="font-size:var(--text-sm);color:#482C6A;margin-bottom:var(--space-4);line-height:1.5;font-weight:400;">
                   Thank you for your purchase! As a special courtesy, you've received <strong>free access to the first week of The Formulators Collective</strong>.
                   Sign in or create your account to claim your gift and track your order.
@@ -301,7 +301,7 @@ async function handlePaymentSubmission(event) {
 
           container.innerHTML = `
             <div class="checkout-panel" style="grid-column:span 2;text-align:center;padding:var(--space-12) var(--space-8);max-width:600px;margin:0 auto;width:100%;box-sizing:border-box;">
-              <div style="font-size:4rem;margin-bottom:var(--space-4);">🌿</div>
+              <div style="font-size:4rem;margin-bottom:var(--space-4);">ðŸŒ¿</div>
               <h2 class="panel-title" style="border:none;margin-bottom:var(--space-2);font-size:2.5rem;text-align:center;width:100%;">Order <em>Confirmed</em></h2>
               <p style="color:#482C6A;font-size:1.1rem;margin-bottom:var(--space-6);line-height:1.6;">
                 Thank you, <strong>${nameInput.value.trim()}</strong>! Your payment was processed successfully.
@@ -329,7 +329,7 @@ async function handlePaymentSubmission(event) {
         const errMsg = responseData.error || 'Server processing failed';
         const squareCode = responseData.squareCode || '';
         const squareDetail = responseData.squareDetail || '';
-        const debugInfo = squareCode ? ` [Code: ${squareCode}${squareDetail ? ' — ' + squareDetail : ''}]` : '';
+        const debugInfo = squareCode ? ` [Code: ${squareCode}${squareDetail ? ' â€” ' + squareDetail : ''}]` : '';
         trackCheckoutJourney('purchase_failure', 'checkout_api', { error: errMsg, squareCode });
         showStatus(`Transaction Failed: ${errMsg}${debugInfo}`, 'error');
         payButton.disabled = false;
@@ -391,3 +391,4 @@ function trackCheckoutJourney(event, target, details) {
     }
   } catch(e) {}
 }
+

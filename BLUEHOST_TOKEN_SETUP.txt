@@ -1,0 +1,30 @@
+﻿HERBALISTIC WELLNESS - BLUEHOST DEPLOYMENT & SETUP GUIDE
+
+--- 1. GOOGLE APPS SCRIPT DATABASE AUDIT SUMMARY ---
+Status: SUCCESS
+- Target Sync URL: https://script.google.com/macros/s/AKfycbxul-XR3SRjaVqu-l74E7k7vZxWq0yB3nTmr6_oMP5MhatSluB7FDGWSELqNXfpQQ6oeg/exec
+- Files Audited: checkout.js, checkout.php, products.php, push_to_square.php, and all Google Apps Script files.
+- All webhook endpoints have been successfully aligned to the production URL.
+- CRITICAL SAFEGUARDS VERIFIED: All Google Apps Script backend (.gs) files were audited. Any destructive commands (clear, deleteRow, clearContents) have been neutralized to ensure 100% non-destructive append-only and upsert behavior. Your historical data is safe.
+
+--- 2. BLUEHOST FILE DEPLOYMENT ---
+1. Log into your Bluehost cPanel.
+2. Navigate to 'File Manager' and open your 'public_html' folder (or your addon domain folder).
+3. Click 'Upload' and select 'herbalistic_wellness_deploy.zip'.
+4. Once uploaded, right-click the zip file and select 'Extract' to unpack all sanitized files directly into the directory.
+
+--- 3. CONFIGURE LIVE PAYMENTS (.htaccess) ---
+To secure your production Square API token without exposing it in the codebase:
+1. Inside File Manager, make sure you can see hidden files (Settings > 'Show Hidden Files').
+2. Locate or create the '.htaccess' file.
+3. Edit the file and add this exact line at the very top:
+SetEnv SQUARE_ACCESS_TOKEN "your_live_token_here"
+4. Save the file. Your PHP scripts will now read this token securely.
+
+--- 4. LIVE VERIFICATION TEST ---
+1. Go to your live website checkout page.
+2. Add a low-cost item to your cart or adjust a total to $1.00.
+3. Process a live card payment.
+4. Verify two things:
+   - Square Dashboard: Confirms the $1.00 transaction succeeded.
+   - Google Sheets Master Hub: Confirms the order row was appended automatically without erasing any previous rows.

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics GA4 - G-GN6722VYZ5 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GN6722VYZ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GN6722VYZ5');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="My Wishlist — Handcrafted botanical remedies and formulations bookmarked in your collection."/>
+<meta name="theme-color" content="#1A3021"/>
+<title>My Wishlist — Herbalistic Wellness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+  body {
+    background-color: var(--color-spruce);
+    color: var(--color-cream);
+    font-family: var(--font-ui);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+  
+  /* Cursor Glow */
+  #cursor-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(216, 140, 67, 0.05) 0%, rgba(72, 44, 106, 0.03) 40%, transparent 70%);
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: screen;
+  }
+
+  .wishlist-wrapper {
+    padding: var(--space-24) var(--space-8) var(--space-16);
+    background: radial-gradient(ellipse at 50% 30%, rgba(72, 44, 106, 0.25) 0%, var(--color-spruce) 80%);
+    position: relative;
+    z-index: 5;
+    min-height: 80vh;
+  }
+  
+  .wishlist-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .wishlist-title {
+    font-family: var(--font-editorial);
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--color-cream);
+    text-align: center;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.02em;
+  }
+  
+  .wishlist-title em {
+    font-style: italic;
+    color: var(--color-amber);
+  }
+  
+  .wishlist-subtitle {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-sage);
+    text-align: center;
+    margin-bottom: var(--space-16);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  .empty-wishlist-card {
+    background: var(--surface-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-16) var(--space-8);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    border-color: rgba(216, 140, 67, 0.2);
+  }
+  
+  /* Glassmorphism Wishlist Grid Wrapper */
+  .wishlist-grid-wrapper {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(20px);
+  }
+
+  .wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-8);
+  }
+  
+  .wishlist-item-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+  }
+  
+  .wishlist-item-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-amber);
+    box-shadow: 0 20px 45px rgba(216, 140, 67, 0.15);
+    background: rgba(255, 255, 255, 0.04);
+  }
+  
+  .wishlist-media-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: rgba(14, 22, 16, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .wishlist-item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .wishlist-item-card:hover .wishlist-item-img {
+    transform: scale(1.08);
+  }
+  
+  .remove-btn-overlay {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(14, 22, 16, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--color-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 20;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .remove-btn-overlay:hover {
+    background: #e05a5a;
+    color: #ffffff;
+    border-color: #e05a5a;
+    transform: scale(1.1) rotate(90deg);
+  }
+  
+  .wishlist-item-content {
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: var(--space-3);
+  }
+  
+  .wishlist-item-title {
+    font-family: var(--font-editorial);
+    font-size: 1.35rem;
+    color: var(--color-cream);
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.25;
+  }
+  
+  .wishlist-item-price {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-amber);
+    letter-spacing: 0.05em;
+  }
+  
+  .wishlist-actions {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: auto;
+    padding-top: var(--space-4);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* High-Performance Responsive Mobile Optimization */
+  @media (max-width: 580px) {
+    .wishlist-title {
+      font-size: 2.2rem !important;
+    }
+    .wishlist-grid-wrapper {
+      padding: var(--space-4) !important;
+    }
+    .wishlist-grid {
+      grid-template-columns: 1fr !important;
+    }
+    .wishlist-media-container {
+      height: 200px !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="cursor-glow" aria-hidden="true"></div>
+
+<header id="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo" id="nav-logo" aria-label="Herbalistic Wellness home">
+      <img src="assets/images/logo.png" alt="Herbalistic Wellness" class="logo-img" style="max-height: 52px; width: auto; object-fit: contain;">
+    </a>
+    <nav class="primary-nav" role="navigation" aria-label="Primary navigation">
+      <a href="index.html#shop" class="nav-link">Apothecary</a>
+      <a href="index.html#blog" class="nav-link">What's The Tea?</a>
+      <a href="index.html#podcast" class="nav-link">Herb &amp; Soul</a>
+      <a href="index.html#education" class="nav-link">The Collective</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="index.html#account" class="cart-btn" aria-label="My Account" style="margin-right: var(--space-2); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--color-cream);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
+      <a href="index.html#cart" class="cart-btn" aria-label="Open cart" style="display: flex; align-items: center; justify-content: center; color: var(--color-cream);">
+        <span class="cart-label">Cart</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="wishlist-wrapper">
+  <div class="wishlist-container">
+    <span style="color: var(--color-amber); letter-spacing: 0.25em; text-transform: uppercase; font-size: var(--text-xs); display: block; text-align: center; margin-bottom: var(--space-2); font-weight: 500;">My Collection</span>
+    <h1 class="wishlist-title">My Saved <em>Wishlist</em></h1>
+    <p class="wishlist-subtitle" style="margin-bottom: 40px;">Your personal collection of handcrafted plant medicine.</p>
+
+    <!-- Empty Wishlist Card -->
+    <div class="empty-wishlist-card" id="empty-wishlist-card" style="display: none;">
+      <span style="font-size: 2.5rem; display: block; margin-bottom: var(--space-4);">🍃</span>
+      <h3 style="font-family: var(--font-editorial); font-size: var(--text-xl); color: var(--color-cream); margin-bottom: var(--space-3); font-style: italic;">Your wishlist is currently empty</h3>
+      <p style="font-size: var(--text-sm); color: var(--color-sage); line-height: 1.6; max-width: 500px; margin: 0 auto var(--space-6);">
+        Explore our circular organic formulations in the showroom and bookmark your favorites to curate your botanical toolkit.
+      </p>
+      <a href="index.html#shop" class="btn-primary" style="display: inline-flex; margin-inline: auto; height: 46px; align-items: center; justify-content: center;">
+        <span>Browse Apothecary</span>
+        <span class="btn-icon">⟶</span>
+      </a>
+    </div>
+
+    <!-- Wishlist Grid Wrapper -->
+    <div class="wishlist-grid-wrapper" id="wishlist-grid-wrapper">
+      <div class="wishlist-grid" id="wishlist-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer" role="contentinfo" style="background: rgba(14, 22, 16, 0.98); border-top: 1px solid var(--border-subtle); padding: var(--space-16) var(--space-8) var(--space-8); position: relative; z-index: 10;">
+  <div class="footer-inner" style="max-width: var(--max-content-width); margin: 0 auto; display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: var(--space-8); text-align: left; flex-wrap: wrap;">
+    
+    <div class="footer-brand" style="display: flex; flex-direction: column; gap: var(--space-3); max-width: 260px;">
+      <span class="logo-text" style="font-family: var(--font-editorial); font-size: var(--text-lg); font-style: italic; color: #FAF9F6;"><span class="logo-mark" aria-hidden="true" style="color: var(--color-amber);">✦</span> Herbalistic Wellness</span>
+      <p class="footer-tagline" style="font-size: var(--text-xs); color: var(--color-sage); line-height: 1.6;">Ancient wisdom. Modern formulation. Handcrafted in harmony with circadian and botanical cycles.</p>
+    </div>
+
+    <!-- Tree 1: Welcome Tree -->
+    <div class="footer-tree-col">
+      <h4 style="font-family: var(--font-editorial); font-size: var(--text-md); font-style: italic; color: #FAF9F6; margin-bottom: var(--space-4); border-bottom: 1px solid rgba(216, 140, 67, 0.2); padding-bottom: var(--space-2);">Welcome</h4>
+      <ul style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-sage); list-style: none; padding: 0; margin: 0;">
+        <li><a href="index.html#home" class="footer-link">Welcome</a></li>
+        <li><a href="index.html#shop" class="footer-link">Categories</a></li>
+        <li><a href="wholesale-shopping" class="footer-link">Wholesale Shopping</a></li>
+        <li><a href="index.html#contact" class="footer-link">Contact Us</a></li>
+        <li><a href="privacy-policy" class="footer-link">Privacy Policy</a></li>
+        <li><a href="refund-policy" class="footer-link">Refund Policy</a></li>
+        <li><a href="shipping-policy-faq" class="footer-link">Shipping &amp; FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- Tree 2: About Us Tree -->
+    <div class="footer-tree-col">
+      <h4 style="font-family: var(--font-editorial); font-size: var(--text-md); font-style: italic; color: #FAF9F6; margin-bottom: var(--space-4); border-bottom: 1px solid rgba(216, 140, 67, 0.2); padding-bottom: var(--space-2);">About Us</h4>
+      <ul style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-sage); list-style: none; padding: 0; margin: 0;">
+        <li><a href="index.html#home" class="footer-link">About Us</a></li>
+        <li><a href="index.html#podcast" class="footer-link">Herb &amp; Soul Podcast</a></li>
+        <li><a href="affiliate-marketplace" class="footer-link">Affiliate Marketplace</a></li>
+        <li><a href="alumni-discount" class="footer-link">CCBC Alumni Discount</a></li>
+      </ul>
+    </div>
+
+    <!-- Tree 3: Blog Tree -->
+    <div class="footer-tree-col">
+      <h4 style="font-family: var(--font-editorial); font-size: var(--text-md); font-style: italic; color: #FAF9F6; margin-bottom: var(--space-4); border-bottom: 1px solid rgba(216, 140, 67, 0.2); padding-bottom: var(--space-2);">Chronicles</h4>
+      <ul style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-sage); list-style: none; padding: 0; margin: 0;">
+        <li><a href="index.html#blog" class="footer-link">Blog</a></li>
+        <li><a href="index.html#blog" class="footer-link">What’s The Tea? Blog</a></li>
+        <li><a href="index.html?legacy_route=blog/home-remedies/home-remedies" class="footer-link">Home Remedies</a></li>
+      </ul>
+    </div>
+
+    <!-- Tree 4: Global Actions -->
+    <div class="footer-tree-col">
+      <h4 style="font-family: var(--font-editorial); font-size: var(--text-md); font-style: italic; color: #FAF9F6; margin-bottom: var(--space-4); border-bottom: 1px solid rgba(216, 140, 67, 0.2); padding-bottom: var(--space-2);">Shop Actions</h4>
+      <ul style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-sage); list-style: none; padding: 0; margin: 0;">
+        <li><a href="index.html#shop" class="footer-link">Browse Shop</a></li>
+        <li><a href="index.html#home" class="footer-link">My Account</a></li>
+        <li><a href="wishlist" class="footer-link">Wishlist</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div style="border-top: 1px solid rgba(255,255,255,0.05); margin-top: var(--space-12); padding-top: var(--space-6); text-align: center; font-size: 0.7rem; color: var(--color-sage); max-width: var(--max-content-width); margin-inline: auto;">
+    <p>© 2026 Herbalistic Wellness. All formulations are crafted with reverence under organic standards.</p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // Cursor glow logic
+    var glow = document.getElementById('cursor-glow');
+    if (glow) {
+      document.addEventListener('mousemove', function(e) {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+      }, {passive: true});
+    }
+    
+    renderWishlist();
+  });
+
+  function renderWishlist() {
+    const grid = document.getElementById('wishlist-grid');
+    const emptyCard = document.getElementById('empty-wishlist-card');
+    const gridWrapper = document.getElementById('wishlist-grid-wrapper');
+    if (!grid || !emptyCard || !gridWrapper) return;
+
+    // Load wishlist bookmarks from localStorage
+    let wishlist = [];
+    try {
+      wishlist = JSON.parse(localStorage.getItem('hw_wishlist') || '[]');
+    } catch(e) {
+      wishlist = [];
+    }
+
+    // Load cached products catalog database
+    let products = [];
+    try {
+      products = JSON.parse(localStorage.getItem('hw_products') || '[]');
+    } catch(e) {
+      products = [];
+    }
+
+    // If local hw_products is empty, let's load standard catalog items as fallback
+    if (products.length === 0) {
+      products = [
+        { id: "101", name: "Anxiety Release Elixir", price: 34.00, imageSlug: "anxiety_release_elixir", cat: "tinctures", svg: "tincture", desc: "A clinical nervine tonic utilizing freshly harvested skullcap and lemon balm." },
+        { id: "102", name: "Circadian Tonic Blend", price: 38.00, imageSlug: "circadian_tonic_blend", cat: "tinctures", svg: "tincture", desc: "Supports circadian rhythms and endocrine loop sovereignty." },
+        { id: "103", name: "Heart Sovereignty Oil", price: 42.00, imageSlug: "heart_sovereignty_oil", cat: "oils", svg: "oil-bottle", desc: "Deeply nourishing rose-infused clinical massage and facial oil." },
+        { id: "104", name: "The Alchemist Soap", price: 18.00, imageSlug: "the_alchemist_soap", cat: "soaps", svg: "soap-bar", desc: "Saponified wild pine and nettle with mineral clay." },
+        { id: "105", name: "Digestive Sovereignty Blend", price: 28.00, imageSlug: "digestive_sovereignty_blend", cat: "herbs", svg: "jar", desc: "Circadian bitters and organic carminative flowers." }
+      ];
+    }
+
+    // Filter products that exist in wishlist
+    const bookmarkedProducts = products.filter(p => wishlist.includes(p.id.toString()));
+
+    if (bookmarkedProducts.length === 0) {
+      gridWrapper.style.display = 'none';
+      emptyCard.style.display = 'block';
+    } else {
+      emptyCard.style.display = 'none';
+      gridWrapper.style.display = 'block';
+      grid.style.display = 'grid';
+      grid.innerHTML = '';
+
+      bookmarkedProducts.forEach(prod => {
+        const card = document.createElement('div');
+        card.className = 'wishlist-item-card';
+
+        const imgSlug = prod.imageSlug || 'anxiety_release_elixir';
+        const imgPath = 'assets/images/products/' + imgSlug + '.jpg';
+        const priceText = typeof prod.price === 'number' ? `$${prod.price.toFixed(2)}` : prod.price;
+
+        card.innerHTML = `
+          <div class="wishlist-media-container">
+            <img src="${imgPath}" alt="${prod.name}" class="wishlist-item-img" onerror="this.onerror=null; this.src='assets/images/products/anxiety_release_elixir.jpg'"/>
+            <button class="remove-btn-overlay" onclick="removeFromWishlist('${prod.id}')" aria-label="Remove from wishlist">✕</button>
+          </div>
+          <div class="wishlist-item-content">
+            <h3 class="wishlist-item-title">${prod.name}</h3>
+            <div class="wishlist-item-price">${priceText}</div>
+            <div class="wishlist-actions">
+              <a href="index.html#shop" class="btn-primary btn-full" style="padding: var(--space-3); font-size: var(--text-xs); justify-content: center; height: 40px; text-decoration: none; display: flex; align-items: center;">
+                <span>View Product Details</span>
+                <span class="btn-icon">⟶</span>
+              </a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+  }
+
+  window.removeFromWishlist = function(id) {
+    let wishlist = [];
+    try {
+      wishlist = JSON.parse(localStorage.getItem('hw_wishlist') || '[]');
+    } catch(e) {
+      wishlist = [];
+    }
+    wishlist = wishlist.filter(item => item !== id.toString());
+    localStorage.setItem('hw_wishlist', JSON.stringify(wishlist));
+    renderWishlist();
+  };
+</script>
+
+</body>
+</html>

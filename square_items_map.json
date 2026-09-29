@@ -1,0 +1,968 @@
+{
+  "1949930": {
+    "name": "Peach Mango Body Butter",
+    "sku": "1949930",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/182e825ec862d929ab63ed03654bf00b8c357050/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f8409688a4d6fb15b0184ea1f52795a2b19beb4b/original.jpeg"
+  },
+  "2016824": {
+    "name": "Butterfly Pea, Lavender, & Chamomile Calming Signature Blend",
+    "sku": "2016824",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/5e592dc0461cf15f2ce41ed30b28c6b4f588f40a/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/7979270c8916620f4e6a1853a7fce55a85abe1e4/original.jpeg"
+  },
+  "2399773": {
+    "name": "Garlic Tincture",
+    "sku": "2399773",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/7972218322fdae1942c126f10bf485a99a270b75/original.jpeg",
+    "img2": null
+  },
+  "3081425": {
+    "name": "Ashwagandha",
+    "sku": "3081425",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3fb405ea8f9d1413bf16602c80ef635af230fc83/original.jpeg",
+    "img2": null
+  },
+  "3731742": {
+    "name": "Chamomile Dried Flowers",
+    "sku": "3731742",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c8a5b190afb5e014eb18b149288b9d07a6b9ab7f/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/b57a74a259aee10fb2b3010f1453b46c3693cd9f/original.png"
+  },
+  "4584455": {
+    "name": "Elderberry",
+    "sku": "4584455",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/23fab8c11916b38bb615e87c4fbd7b61968d92a6/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4935c2da1bd8e91ae5164897a89ac04a1d4b44a2/original.jpeg"
+  },
+  "5698977": {
+    "name": "Mullein Leaf",
+    "sku": "5698977",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/acdc6f6a8e9b5cdf1c0b1aaf259625ecbcfc6131/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/e9de58cf09fb4a56e3a72190f054ed1e94529890/original.jpeg"
+  },
+  "6526039": {
+    "name": "Sage Leaf",
+    "sku": "6526039",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/888ba4f6945e4fe8198203006f1e4f072e359c81/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/5b4bfdad10c768d3bedd1445f8d872747e96d08d/original.jpeg"
+  },
+  "6619767": {
+    "name": "Peppermint Hemp Seed Oil",
+    "sku": "6619767",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/da00cb4ab2b6c51ae5cbc501384d4753def82e8e/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/7e06a4e6699a8b8f0b03d5d41069c7865620f868/original.jpeg"
+  },
+  "6843738": {
+    "name": "Herbal Remedies Journal - Purple Edition",
+    "sku": "6843738",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/1e377e0a8a2dc53da8932aaf7a6419ccb3fe413a/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/434c40d257fce08c88794876aad2849cf1bc5d0d/original.jpeg"
+  },
+  "7766821": {
+    "name": "Butterfly Pea Flower Tincture",
+    "sku": "7766821",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4d44321bbeee7790a03a10edeb7c85b882faa8ce/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/9c7a767040e5838baec588922bddd7285c6eba92/original.jpeg"
+  },
+  "8061730": {
+    "name": "Peach Mango Bath Salt Scrub",
+    "sku": "8061730",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d5e834b81399b0221de0ae4e3cd046713d226de1/original.jpeg",
+    "img2": null
+  },
+  "8483379": {
+    "name": "Ginger Tincture",
+    "sku": "8483379",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3bc668e53847b815681d6952fd1293e2f8481480/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/cfd467f12200ca27a241964cbc423f22fcac1851/original.jpeg"
+  },
+  "9119369": {
+    "name": "Frankincense & Myrrh Body Butter",
+    "sku": "9119369",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/77faf489360a0bd694039b4dc32d7fc7409c2ae3/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/ac4588b6f38a20f42fd744eaf9e4f5801a7ea91d/original.jpeg"
+  },
+  "9868816": {
+    "name": "Comfrey Oil",
+    "sku": "9868816",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3620a51090a12a8f59861db22ca35e1838d28d02/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a6f16c3e8794cd145b88cd30fde4a78d0b89d89b/original.png"
+  },
+  "oatmeal & honey artisan soap": {
+    "name": "Oatmeal & Honey Artisan Soap",
+    "sku": "HW109",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/7035efe49e9decf45067f6c97dc06b034221d54f/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/2d88ab388aa2c740d0bbf95e505963b5232be873/original.jpeg"
+  },
+  "hw109": {
+    "name": "Oatmeal & Honey Artisan Soap",
+    "sku": "HW109",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/7035efe49e9decf45067f6c97dc06b034221d54f/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/2d88ab388aa2c740d0bbf95e505963b5232be873/original.jpeg"
+  },
+  "lavender body butter": {
+    "name": "Lavender Body Butter",
+    "sku": "V191121",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d9d5700edaaa49b60d4e99e26efec7b215dfbb77/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a0ad239a481156c6359646626c58de072a9b33a4/original.jpeg"
+  },
+  "v191121": {
+    "name": "Lavender Body Butter",
+    "sku": "V191121",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d9d5700edaaa49b60d4e99e26efec7b215dfbb77/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a0ad239a481156c6359646626c58de072a9b33a4/original.jpeg"
+  },
+  "arnica oil": {
+    "name": "Arnica Oil",
+    "sku": "F985374",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/8a1d395c02c3d90de218e6b1559adcc1b9c9d16e/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c48c633361a57e2b44af9e74e5afbead95ebdd73/original.png"
+  },
+  "f985374": {
+    "name": "Arnica Oil",
+    "sku": "F985374",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/8a1d395c02c3d90de218e6b1559adcc1b9c9d16e/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c48c633361a57e2b44af9e74e5afbead95ebdd73/original.png"
+  },
+  "eucalyptus mint bath scrub": {
+    "name": "Eucalyptus Mint Bath Scrub",
+    "sku": "310629W",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d4ed16cb002b7f911df6cf954e6e3c320c531ed1/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d5e349b8f32823a41bb2237488e6e3a769a65392/original.jpeg"
+  },
+  "310629w": {
+    "name": "Eucalyptus Mint Bath Scrub",
+    "sku": "310629W",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d4ed16cb002b7f911df6cf954e6e3c320c531ed1/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d5e349b8f32823a41bb2237488e6e3a769a65392/original.jpeg"
+  },
+  "turmeric lemon body butter": {
+    "name": "Turmeric Lemon Body Butter",
+    "sku": "V006618",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/225f307ea0c5a6aaca701f1539d9e815f0c4a08e/original.jpeg",
+    "img2": null
+  },
+  "v006618": {
+    "name": "Turmeric Lemon Body Butter",
+    "sku": "V006618",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/225f307ea0c5a6aaca701f1539d9e815f0c4a08e/original.jpeg",
+    "img2": null
+  },
+  "st. john's body oil": {
+    "name": "St. John's Body Oil",
+    "sku": "N103257",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f629a9d470a4f79a46e049c8fe8757ceeb2b6603/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/567408e10519687c91ff27e54d9d49afc0b4e90c/original.png"
+  },
+  "n103257": {
+    "name": "St. John's Body Oil",
+    "sku": "N103257",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f629a9d470a4f79a46e049c8fe8757ceeb2b6603/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/567408e10519687c91ff27e54d9d49afc0b4e90c/original.png"
+  },
+  "butterfly pea sea moss face mask": {
+    "name": "Butterfly Pea Sea Moss Face Mask",
+    "sku": "P283269",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/20f3d814f65e359d188550eed13d1ffe7280933f/original.jpeg",
+    "img2": null
+  },
+  "p283269": {
+    "name": "Butterfly Pea Sea Moss Face Mask",
+    "sku": "P283269",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/20f3d814f65e359d188550eed13d1ffe7280933f/original.jpeg",
+    "img2": null
+  },
+  "ginger & grapefruit peel powder bath scrub": {
+    "name": "Ginger & Grapefruit Peel Powder Bath Scrub",
+    "sku": "350496D",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f3ae306ce5142fd577e8306d37164962675efc84/original.jpeg",
+    "img2": null
+  },
+  "350496d": {
+    "name": "Ginger & Grapefruit Peel Powder Bath Scrub",
+    "sku": "350496D",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f3ae306ce5142fd577e8306d37164962675efc84/original.jpeg",
+    "img2": null
+  },
+  "eucalyptus mint body butter": {
+    "name": "Eucalyptus Mint Body Butter",
+    "sku": "C595089",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3a469d67af3b0c919b933906c60319f5edbd772d/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f656e6a7b5ceccd027c64087b0a08f5c687ae72d/original.jpeg"
+  },
+  "c595089": {
+    "name": "Eucalyptus Mint Body Butter",
+    "sku": "C595089",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3a469d67af3b0c919b933906c60319f5edbd772d/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f656e6a7b5ceccd027c64087b0a08f5c687ae72d/original.jpeg"
+  },
+  "echinacea tincture": {
+    "name": "Echinacea Tincture",
+    "sku": "508097L",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/efdd39c49aa99ddce78bef1bf869856876f18bc9/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d07fdd4b6230b9a61ea7407306cb81eacda64666/original.png"
+  },
+  "508097l": {
+    "name": "Echinacea Tincture",
+    "sku": "508097L",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/efdd39c49aa99ddce78bef1bf869856876f18bc9/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d07fdd4b6230b9a61ea7407306cb81eacda64666/original.png"
+  },
+  "orange & calendula artisan soap": {
+    "name": "Orange & Calendula Artisan Soap",
+    "sku": "511449R",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a1e59e00fd50d2a3693eeb4885af7918d122ac91/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/fae067c2568426a86586072ea7fe81e356b533ae/original.jpeg"
+  },
+  "511449r": {
+    "name": "Orange & Calendula Artisan Soap",
+    "sku": "511449R",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a1e59e00fd50d2a3693eeb4885af7918d122ac91/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/fae067c2568426a86586072ea7fe81e356b533ae/original.jpeg"
+  },
+  "rosemary peppermint hair growth serum": {
+    "name": "Rosemary Peppermint Hair Growth Serum",
+    "sku": "114226A",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/bdf27e51edf0291fb47cb08701a9b418f438e309/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4dfd92ead4138d967354bcb7328e642a7e376cde/original.png"
+  },
+  "114226a": {
+    "name": "Rosemary Peppermint Hair Growth Serum",
+    "sku": "114226A",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/bdf27e51edf0291fb47cb08701a9b418f438e309/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4dfd92ead4138d967354bcb7328e642a7e376cde/original.png"
+  },
+  "st. johns wort powder": {
+    "name": "St. Johns Wort Powder",
+    "sku": "C995059",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/dc0d83d1f3bf721f3f8e1d427c1bd061b72d88e4/original.jpeg",
+    "img2": null
+  },
+  "c995059": {
+    "name": "St. Johns Wort Powder",
+    "sku": "C995059",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/dc0d83d1f3bf721f3f8e1d427c1bd061b72d88e4/original.jpeg",
+    "img2": null
+  },
+  "elderberry": {
+    "name": "Elderberry",
+    "sku": "4584455",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/23fab8c11916b38bb615e87c4fbd7b61968d92a6/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4935c2da1bd8e91ae5164897a89ac04a1d4b44a2/original.jpeg"
+  },
+  "peach mango bath salt scrub": {
+    "name": "Peach Mango Bath Salt Scrub",
+    "sku": "8061730",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d5e834b81399b0221de0ae4e3cd046713d226de1/original.jpeg",
+    "img2": null
+  },
+  "lavender oatmeal artisan soap": {
+    "name": "Lavender Oatmeal Artisan Soap",
+    "sku": "362023F",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3eb9b53fa248026a9a4466025fa9da7c6cffb425/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/09c58296dc871e6ce9d733eb50d4f965cbcfb6be/original.jpeg"
+  },
+  "362023f": {
+    "name": "Lavender Oatmeal Artisan Soap",
+    "sku": "362023F",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3eb9b53fa248026a9a4466025fa9da7c6cffb425/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/09c58296dc871e6ce9d733eb50d4f965cbcfb6be/original.jpeg"
+  },
+  "frankincense & myrrh body butter": {
+    "name": "Frankincense & Myrrh Body Butter",
+    "sku": "9119369",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/77faf489360a0bd694039b4dc32d7fc7409c2ae3/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/ac4588b6f38a20f42fd744eaf9e4f5801a7ea91d/original.jpeg"
+  },
+  "grapefruit ginger whipped body butter": {
+    "name": "Grapefruit Ginger Whipped Body Butter",
+    "sku": "M944302",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/cd016250e77f58ce1acfc1e78544477fca058c76/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/784626d62d06b102b0aaefbcd37962c7448ca3e0/original.jpeg"
+  },
+  "m944302": {
+    "name": "Grapefruit Ginger Whipped Body Butter",
+    "sku": "M944302",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/cd016250e77f58ce1acfc1e78544477fca058c76/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/784626d62d06b102b0aaefbcd37962c7448ca3e0/original.jpeg"
+  },
+  "nerve joint & muscle pain relief salve": {
+    "name": "Nerve Joint & Muscle Pain Relief Salve",
+    "sku": "Z612600",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/465e79ff3186c3b8392e6996a08a2e5edeb6c42c/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/dd575bcfd3498135c401b05d6c41fa0fb0e144e8/original.png"
+  },
+  "z612600": {
+    "name": "Nerve Joint & Muscle Pain Relief Salve",
+    "sku": "Z612600",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/465e79ff3186c3b8392e6996a08a2e5edeb6c42c/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/dd575bcfd3498135c401b05d6c41fa0fb0e144e8/original.png"
+  },
+  "lavender milk & honey bath soak": {
+    "name": "Lavender Milk & Honey Bath Soak",
+    "sku": "R134968",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/43840ab6940d39850bd7b19e0242bcb4fde39eb0/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/34f64c3a8e156f5b2dea2082f6c231a95cdaf5e8/original.jpeg"
+  },
+  "r134968": {
+    "name": "Lavender Milk & Honey Bath Soak",
+    "sku": "R134968",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/43840ab6940d39850bd7b19e0242bcb4fde39eb0/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/34f64c3a8e156f5b2dea2082f6c231a95cdaf5e8/original.jpeg"
+  },
+  "wholesale herbal infused handmade soaps": {
+    "name": "Wholesale Herbal Infused Handmade Soaps",
+    "sku": "437388B",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4268034b6eafc14a3a73328167e55800f601a11a/original.jpeg",
+    "img2": null
+  },
+  "437388b": {
+    "name": "Wholesale Herbal Infused Handmade Soaps",
+    "sku": "437388B",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4268034b6eafc14a3a73328167e55800f601a11a/original.jpeg",
+    "img2": null
+  },
+  "tea tree & peppermint artisan soap": {
+    "name": "Tea Tree & Peppermint Artisan Soap",
+    "sku": "799671V",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/ad535b2bbf46c11e791f17e0d540731503bd785b/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f1c1e6b49b968c08d1dedcb355b96bee3c3104b1/original.jpeg"
+  },
+  "799671v": {
+    "name": "Tea Tree & Peppermint Artisan Soap",
+    "sku": "799671V",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/ad535b2bbf46c11e791f17e0d540731503bd785b/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f1c1e6b49b968c08d1dedcb355b96bee3c3104b1/original.jpeg"
+  },
+  "turmeric ginger lemon body oil": {
+    "name": "Turmeric Ginger Lemon Body Oil",
+    "sku": "N820367",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/975a97b7f9a488048a746ce460c9ae0502238187/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/18828d8ddbce3b5eec413c1189c477af0704d214/original.png"
+  },
+  "n820367": {
+    "name": "Turmeric Ginger Lemon Body Oil",
+    "sku": "N820367",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/975a97b7f9a488048a746ce460c9ae0502238187/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/18828d8ddbce3b5eec413c1189c477af0704d214/original.png"
+  },
+  "arnica flower": {
+    "name": "Arnica Flower",
+    "sku": "271132B",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/10cc85356f8076b0c95b44b058fc8555e3e01b5f/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/8ba4e271897473bcd63071b7203469bdec2fd1f8/original.png"
+  },
+  "271132b": {
+    "name": "Arnica Flower",
+    "sku": "271132B",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/10cc85356f8076b0c95b44b058fc8555e3e01b5f/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/8ba4e271897473bcd63071b7203469bdec2fd1f8/original.png"
+  },
+  "lemongrass leaf": {
+    "name": "Lemongrass Leaf",
+    "sku": "M121259",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d5652e3326f6310fc1338d1ade9ab397a8bd6a38/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/13843a69e662acf5cbad4907a35a7a25f1387fc3/original.jpeg"
+  },
+  "m121259": {
+    "name": "Lemongrass Leaf",
+    "sku": "M121259",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d5652e3326f6310fc1338d1ade9ab397a8bd6a38/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/13843a69e662acf5cbad4907a35a7a25f1387fc3/original.jpeg"
+  },
+  "chamomile dried flowers": {
+    "name": "Chamomile Dried Flowers",
+    "sku": "3731742",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c8a5b190afb5e014eb18b149288b9d07a6b9ab7f/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/b57a74a259aee10fb2b3010f1453b46c3693cd9f/original.png"
+  },
+  "mullein leaf": {
+    "name": "Mullein Leaf",
+    "sku": "5698977",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/acdc6f6a8e9b5cdf1c0b1aaf259625ecbcfc6131/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/e9de58cf09fb4a56e3a72190f054ed1e94529890/original.jpeg"
+  },
+  "chamomile tincture": {
+    "name": "Chamomile Tincture",
+    "sku": "S918512",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d2f216776de926cd0e9081b89305c8af136c8b60/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4fb93ddf3e7457c53209c097bfaead3fac6ad4f3/original.png"
+  },
+  "s918512": {
+    "name": "Chamomile Tincture",
+    "sku": "S918512",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d2f216776de926cd0e9081b89305c8af136c8b60/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4fb93ddf3e7457c53209c097bfaead3fac6ad4f3/original.png"
+  },
+  "spearmint leaf": {
+    "name": "Spearmint Leaf",
+    "sku": "948306J",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/5266d90e4d3147c945554aed6394355b41b56a57/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/e36cc0e870904353977513701e0f9af348e3ce05/original.jpeg"
+  },
+  "948306j": {
+    "name": "Spearmint Leaf",
+    "sku": "948306J",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/5266d90e4d3147c945554aed6394355b41b56a57/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/e36cc0e870904353977513701e0f9af348e3ce05/original.jpeg"
+  },
+  "peach mango artisan soap": {
+    "name": "Peach Mango Artisan Soap",
+    "sku": "C659838",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a518c2c8bbf0f53d61afccc6095f89f698033c99/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/801c5b427916bb6adc4fcd414a659570899cd54b/original.jpeg"
+  },
+  "c659838": {
+    "name": "Peach Mango Artisan Soap",
+    "sku": "C659838",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a518c2c8bbf0f53d61afccc6095f89f698033c99/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/801c5b427916bb6adc4fcd414a659570899cd54b/original.jpeg"
+  },
+  "harvest spice | limited edition seasonal harvest butter": {
+    "name": "Harvest Spice | Limited Edition Seasonal Harvest Butter",
+    "sku": "589030B",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/056134f5cf3f376144a59ae5b835ca22b03566e2/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/12dc3c6067a5f41da64ce5c2ca17d00c953f9dc9/original.jpeg"
+  },
+  "589030b": {
+    "name": "Harvest Spice | Limited Edition Seasonal Harvest Butter",
+    "sku": "589030B",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/056134f5cf3f376144a59ae5b835ca22b03566e2/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/12dc3c6067a5f41da64ce5c2ca17d00c953f9dc9/original.jpeg"
+  },
+  "valerian root": {
+    "name": "Valerian Root",
+    "sku": "K630936",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/faa71761d9c0068f3ccafb8453a08aa1bc66a6b8/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/0042ae6fb98bc7a9300eedddd5a2f6d4997304ad/original.jpeg"
+  },
+  "k630936": {
+    "name": "Valerian Root",
+    "sku": "K630936",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/faa71761d9c0068f3ccafb8453a08aa1bc66a6b8/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/0042ae6fb98bc7a9300eedddd5a2f6d4997304ad/original.jpeg"
+  },
+  "dandelion root": {
+    "name": "Dandelion Root",
+    "sku": "L544321",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/8fa6acb8df9b19575f64665a7477332b37daee61/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/847392670bf8e0cc6dd0cadcff9135bd4eb083c3/original.png"
+  },
+  "l544321": {
+    "name": "Dandelion Root",
+    "sku": "L544321",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/8fa6acb8df9b19575f64665a7477332b37daee61/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/847392670bf8e0cc6dd0cadcff9135bd4eb083c3/original.png"
+  },
+  "lavender flowers": {
+    "name": "Lavender Flowers",
+    "sku": "D113574",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/bbfbddc40b252f0892a5e8b1470b063009a9d71c/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/90b6e8c2d33bba4fdb1ae95b936577364e41b70f/original.jpeg"
+  },
+  "d113574": {
+    "name": "Lavender Flowers",
+    "sku": "D113574",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/bbfbddc40b252f0892a5e8b1470b063009a9d71c/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/90b6e8c2d33bba4fdb1ae95b936577364e41b70f/original.jpeg"
+  },
+  "peppermint leaf": {
+    "name": "Peppermint Leaf",
+    "sku": "E312661",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/533afc9cfb6d8c3ab6f6041f60fc05895142df42/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/fba89319b60092e4800cb7e4e9a70839423baf9e/original.jpeg"
+  },
+  "e312661": {
+    "name": "Peppermint Leaf",
+    "sku": "E312661",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/533afc9cfb6d8c3ab6f6041f60fc05895142df42/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/fba89319b60092e4800cb7e4e9a70839423baf9e/original.jpeg"
+  },
+  "lavender body scrub": {
+    "name": "Lavender Body Scrub",
+    "sku": "811663R",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/68f0d98587a56909de3244f87ddb286ddd1f0caa/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/7924a033b93be4b0872c425e4878516363648b01/original.jpeg"
+  },
+  "811663r": {
+    "name": "Lavender Body Scrub",
+    "sku": "811663R",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/68f0d98587a56909de3244f87ddb286ddd1f0caa/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/7924a033b93be4b0872c425e4878516363648b01/original.jpeg"
+  },
+  "south african rooibos": {
+    "name": "South African Rooibos",
+    "sku": "N683643",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/30a4827626a9a18cfac977930c2603f88f9d8cd9/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c6ffc9a1c770e09a145434c60c1452932361a0d2/original.jpeg"
+  },
+  "n683643": {
+    "name": "South African Rooibos",
+    "sku": "N683643",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/30a4827626a9a18cfac977930c2603f88f9d8cd9/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c6ffc9a1c770e09a145434c60c1452932361a0d2/original.jpeg"
+  },
+  "oregon grape root": {
+    "name": "Oregon Grape Root",
+    "sku": "848124C",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a28a0a2a87f207fbd790366c1a461d575208cd34/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a35c58d22e68405ea0064725b2d445db3c7ef87a/original.jpeg"
+  },
+  "848124c": {
+    "name": "Oregon Grape Root",
+    "sku": "848124C",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a28a0a2a87f207fbd790366c1a461d575208cd34/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a35c58d22e68405ea0064725b2d445db3c7ef87a/original.jpeg"
+  },
+  "turmeric frankincense and myrrh artisan soap": {
+    "name": "Turmeric Frankincense and Myrrh Artisan Soap",
+    "sku": "V883948",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/8b1dbf302eea2d84c48b3fd041163ff5c164805f/original.jpeg",
+    "img2": null
+  },
+  "v883948": {
+    "name": "Turmeric Frankincense and Myrrh Artisan Soap",
+    "sku": "V883948",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/8b1dbf302eea2d84c48b3fd041163ff5c164805f/original.jpeg",
+    "img2": null
+  },
+  "butterfly pea flower organic herb": {
+    "name": "Butterfly Pea Flower Organic Herb",
+    "sku": "329443W",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/fc2201dc393d19b2c85e3e3e8328e42e03da82e3/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a1f92014715590a5b5558a002046542e4dd49c39/original.jpeg"
+  },
+  "329443w": {
+    "name": "Butterfly Pea Flower Organic Herb",
+    "sku": "329443W",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/fc2201dc393d19b2c85e3e3e8328e42e03da82e3/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a1f92014715590a5b5558a002046542e4dd49c39/original.jpeg"
+  },
+  "chickweed": {
+    "name": "Chickweed",
+    "sku": "N009085",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3f9eaed2f2e71dcd047e3c0dd004ed027dd0cde1/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/9830b246113c9bf305d5bd54044a02139688218a/original.png"
+  },
+  "n009085": {
+    "name": "Chickweed",
+    "sku": "N009085",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3f9eaed2f2e71dcd047e3c0dd004ed027dd0cde1/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/9830b246113c9bf305d5bd54044a02139688218a/original.png"
+  },
+  "peach mango body butter": {
+    "name": "Peach Mango Body Butter",
+    "sku": "1949930",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/182e825ec862d929ab63ed03654bf00b8c357050/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f8409688a4d6fb15b0184ea1f52795a2b19beb4b/original.jpeg"
+  },
+  "butterfly pea flower": {
+    "name": "Butterfly Pea Flower",
+    "sku": "G748170",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/835455aee9ada8be47b65bb65c2431aa73cf4010/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/361fa252a1359c9dcdc5664d513bb51c44c42b47/original.jpeg"
+  },
+  "g748170": {
+    "name": "Butterfly Pea Flower",
+    "sku": "G748170",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/835455aee9ada8be47b65bb65c2431aa73cf4010/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/361fa252a1359c9dcdc5664d513bb51c44c42b47/original.jpeg"
+  },
+  "turmeric root repair soap": {
+    "name": "Turmeric Root Repair Soap",
+    "sku": "Z788425",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4eba9dbbaa0a5b8318a78f775a535641b8854747/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/1962bd306e57f33260b6a307ef8bbcd1ae082cf6/original.jpeg"
+  },
+  "z788425": {
+    "name": "Turmeric Root Repair Soap",
+    "sku": "Z788425",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4eba9dbbaa0a5b8318a78f775a535641b8854747/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/1962bd306e57f33260b6a307ef8bbcd1ae082cf6/original.jpeg"
+  },
+  "sea moss gel diy kits - wildcrafted": {
+    "name": "Sea Moss Gel DIY Kits - Wildcrafted",
+    "sku": "T791703",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d58d10253f421c1dc9b57a778c5e4af3d6528751/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/903a3d5ac9afe81f99cf30b0529026fedc5fabbb/original.jpeg"
+  },
+  "t791703": {
+    "name": "Sea Moss Gel DIY Kits - Wildcrafted",
+    "sku": "T791703",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d58d10253f421c1dc9b57a778c5e4af3d6528751/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/903a3d5ac9afe81f99cf30b0529026fedc5fabbb/original.jpeg"
+  },
+  "butterfly pea flower tincture": {
+    "name": "Butterfly Pea Flower Tincture",
+    "sku": "7766821",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4d44321bbeee7790a03a10edeb7c85b882faa8ce/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/9c7a767040e5838baec588922bddd7285c6eba92/original.jpeg"
+  },
+  "burdock root": {
+    "name": "Burdock Root",
+    "sku": "576764A",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c36189d6770b7e303819b0a4cf80a963f112bc2e/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3d914597e20d7bca1c271b9470bc89db7bd40d67/original.png"
+  },
+  "576764a": {
+    "name": "Burdock Root",
+    "sku": "576764A",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c36189d6770b7e303819b0a4cf80a963f112bc2e/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3d914597e20d7bca1c271b9470bc89db7bd40d67/original.png"
+  },
+  "peppermint hemp seed oil": {
+    "name": "Peppermint Hemp Seed Oil",
+    "sku": "6619767",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/da00cb4ab2b6c51ae5cbc501384d4753def82e8e/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/7e06a4e6699a8b8f0b03d5d41069c7865620f868/original.jpeg"
+  },
+  "mullein oil": {
+    "name": "Mullein Oil",
+    "sku": "P547634",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/47bf530207388c17b694d97a966bd7886f17ca7c/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/ed2e54de2c38b49a9ff2d49b7afb01e8d2e4eff8/original.jpeg"
+  },
+  "p547634": {
+    "name": "Mullein Oil",
+    "sku": "P547634",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/47bf530207388c17b694d97a966bd7886f17ca7c/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/ed2e54de2c38b49a9ff2d49b7afb01e8d2e4eff8/original.jpeg"
+  },
+  "comfrey oil": {
+    "name": "Comfrey Oil",
+    "sku": "9868816",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3620a51090a12a8f59861db22ca35e1838d28d02/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a6f16c3e8794cd145b88cd30fde4a78d0b89d89b/original.png"
+  },
+  "frankincense and myrrh bath salt scrub": {
+    "name": "Frankincense and Myrrh Bath Salt Scrub",
+    "sku": "605817J",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/1daf754c4656c042e40bea86e35c2abb8b8e1931/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d0a6a6f487c518ed702f8268ab433432c84fca15/original.jpeg"
+  },
+  "605817j": {
+    "name": "Frankincense and Myrrh Bath Salt Scrub",
+    "sku": "605817J",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/1daf754c4656c042e40bea86e35c2abb8b8e1931/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d0a6a6f487c518ed702f8268ab433432c84fca15/original.jpeg"
+  },
+  "echinacea purpurea": {
+    "name": "Echinacea Purpurea",
+    "sku": "E947305",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/416d091c538d3a8dfbe0caef8c07366c7715f604/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/778a0406b20dee12e726a7ab6c14548de8ac4a36/original.png"
+  },
+  "e947305": {
+    "name": "Echinacea Purpurea",
+    "sku": "E947305",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/416d091c538d3a8dfbe0caef8c07366c7715f604/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/778a0406b20dee12e726a7ab6c14548de8ac4a36/original.png"
+  },
+  "butterfly pea, lavender, & chamomile": {
+    "name": "Butterfly Pea, Lavender, & Chamomile",
+    "sku": "V681357",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c85a3c72cb0c21d498a023411512916af498fffc/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/67a31ebb66fdea283a669acb3883b2171fcba7a6/original.png"
+  },
+  "v681357": {
+    "name": "Butterfly Pea, Lavender, & Chamomile",
+    "sku": "V681357",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c85a3c72cb0c21d498a023411512916af498fffc/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/67a31ebb66fdea283a669acb3883b2171fcba7a6/original.png"
+  },
+  "chickweed calendula & lavender ezcema cream": {
+    "name": "Chickweed Calendula & Lavender Ezcema Cream",
+    "sku": "132939Q",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/0336b0ab18a5f48211bc793d9c018a0eb7f114ff/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/cf05759880f71333945dbcffc645eedccbcb9f36/original.png"
+  },
+  "132939q": {
+    "name": "Chickweed Calendula & Lavender Ezcema Cream",
+    "sku": "132939Q",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/0336b0ab18a5f48211bc793d9c018a0eb7f114ff/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/cf05759880f71333945dbcffc645eedccbcb9f36/original.png"
+  },
+  "red raspberry leaf": {
+    "name": "Red Raspberry Leaf",
+    "sku": "755018A",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/331a8a832b9677b11655ee48416f84c794c1b14a/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/284af5ad51c0014aa7134515d1ef9dfa6805c9dd/original.jpeg"
+  },
+  "755018a": {
+    "name": "Red Raspberry Leaf",
+    "sku": "755018A",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/331a8a832b9677b11655ee48416f84c794c1b14a/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/284af5ad51c0014aa7134515d1ef9dfa6805c9dd/original.jpeg"
+  },
+  "butterfly pea, lavender, & chamomile calming signature blend": {
+    "name": "Butterfly Pea, Lavender, & Chamomile Calming Signature Blend",
+    "sku": "2016824",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/5e592dc0461cf15f2ce41ed30b28c6b4f588f40a/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/7979270c8916620f4e6a1853a7fce55a85abe1e4/original.jpeg"
+  },
+  "hibiscus leaf": {
+    "name": "Hibiscus Leaf",
+    "sku": "H652717",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d7c0a689002a961d223e0adf527f51e15f4abef2/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/284d76747e76a3468370f990d8cf345ff1242b3f/original.png"
+  },
+  "h652717": {
+    "name": "Hibiscus Leaf",
+    "sku": "H652717",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d7c0a689002a961d223e0adf527f51e15f4abef2/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/284d76747e76a3468370f990d8cf345ff1242b3f/original.png"
+  },
+  "whipped shea butter": {
+    "name": "Whipped Shea Butter",
+    "sku": "994814Y",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/1d4ae23501f6fa93e50a68554fb60ab6641b2a01/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/e768d544aed47e0f5a567180c2d0f146a3cd759e/original.jpeg"
+  },
+  "994814y": {
+    "name": "Whipped Shea Butter",
+    "sku": "994814Y",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/1d4ae23501f6fa93e50a68554fb60ab6641b2a01/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/e768d544aed47e0f5a567180c2d0f146a3cd759e/original.jpeg"
+  },
+  "herbal wellness lifestyle assessment": {
+    "name": "Herbal Wellness Lifestyle Assessment",
+    "sku": "",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/db757d7ad541d0fce4b1e41d611a3564d06dd8d8/original.png",
+    "img2": null
+  },
+  "wholesale customer q & a": {
+    "name": "Wholesale Customer Q & A",
+    "sku": "",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/676bb21bc67f8640c9d835ea5964a17dd7b1dc06/original.jpeg",
+    "img2": null
+  },
+  "schedule a customer service call": {
+    "name": "Schedule A Customer Service Call",
+    "sku": "",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/57fbe4388cbe6cb79244284f4d6f67a0fe655e1d/original.jpeg",
+    "img2": null
+  },
+  "maca root | powdered": {
+    "name": "Maca Root | Powdered",
+    "sku": "700766E",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/e9726514fbb1bf4a4caf05ec35bfec06521c2749/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c42614d9371dc85cbae4cb8ba7b18c4caad12c92/original.jpeg"
+  },
+  "700766e": {
+    "name": "Maca Root | Powdered",
+    "sku": "700766E",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/e9726514fbb1bf4a4caf05ec35bfec06521c2749/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c42614d9371dc85cbae4cb8ba7b18c4caad12c92/original.jpeg"
+  },
+  "gotu kola": {
+    "name": "Gotu Kola",
+    "sku": "359223A",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/230b2001a3df2bdc48f81f31b296b50112bdb007/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/0ece6d6cfc1d45c24d9f3499a16d03258d40e3e1/original.jpeg"
+  },
+  "359223a": {
+    "name": "Gotu Kola",
+    "sku": "359223A",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/230b2001a3df2bdc48f81f31b296b50112bdb007/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/0ece6d6cfc1d45c24d9f3499a16d03258d40e3e1/original.jpeg"
+  },
+  "herbal remedies journal - brown edition": {
+    "name": "Herbal Remedies Journal - Brown Edition",
+    "sku": "D892283",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/44f4987c83e2a1001bb76574351876e629319892/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/2549412c9c54dc0e878fc3e9e3147fe5349d3f6e/original.jpeg"
+  },
+  "d892283": {
+    "name": "Herbal Remedies Journal - Brown Edition",
+    "sku": "D892283",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/44f4987c83e2a1001bb76574351876e629319892/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/2549412c9c54dc0e878fc3e9e3147fe5349d3f6e/original.jpeg"
+  },
+  "herbie ayurvedic sleep infusion": {
+    "name": "Herbie Ayurvedic Sleep Infusion",
+    "sku": "J420570",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/e70208283b39fc3891c33edfeb0b9465f3dc15b1/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3aaedcc0734e9d6ab8f79207d40511776ffb650f/original.png"
+  },
+  "j420570": {
+    "name": "Herbie Ayurvedic Sleep Infusion",
+    "sku": "J420570",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/e70208283b39fc3891c33edfeb0b9465f3dc15b1/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3aaedcc0734e9d6ab8f79207d40511776ffb650f/original.png"
+  },
+  "herbal remedies journal - black edition": {
+    "name": "Herbal Remedies Journal - Black Edition",
+    "sku": "845513T",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/8155ee70a20800948493dd9fa9ace82ab8f59c7c/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/2549412c9c54dc0e878fc3e9e3147fe5349d3f6e/original.jpeg"
+  },
+  "845513t": {
+    "name": "Herbal Remedies Journal - Black Edition",
+    "sku": "845513T",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/8155ee70a20800948493dd9fa9ace82ab8f59c7c/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/2549412c9c54dc0e878fc3e9e3147fe5349d3f6e/original.jpeg"
+  },
+  "herbal remedies journal - purple edition": {
+    "name": "Herbal Remedies Journal - Purple Edition",
+    "sku": "6843738",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/1e377e0a8a2dc53da8932aaf7a6419ccb3fe413a/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/434c40d257fce08c88794876aad2849cf1bc5d0d/original.jpeg"
+  },
+  "sage leaf": {
+    "name": "Sage Leaf",
+    "sku": "6526039",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/888ba4f6945e4fe8198203006f1e4f072e359c81/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/5b4bfdad10c768d3bedd1445f8d872747e96d08d/original.jpeg"
+  },
+  "comfrey root": {
+    "name": "Comfrey Root",
+    "sku": "H070823",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/da3871f0c78f5a406b577d90c3f5b6efdca8c55d/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/eac91b6267c27c53d96e6ac15dc7f8bd9d093d7c/original.png"
+  },
+  "h070823": {
+    "name": "Comfrey Root",
+    "sku": "H070823",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/da3871f0c78f5a406b577d90c3f5b6efdca8c55d/original.png",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/eac91b6267c27c53d96e6ac15dc7f8bd9d093d7c/original.png"
+  },
+  "marshmallow root": {
+    "name": "Marshmallow Root",
+    "sku": "T143817",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/5894bc95392025440b14d61d63249d65d1fa7d4b/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/fdc26c4ee808bc6dc7962f1c9bfd079b283985c2/original.jpeg"
+  },
+  "t143817": {
+    "name": "Marshmallow Root",
+    "sku": "T143817",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/5894bc95392025440b14d61d63249d65d1fa7d4b/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/fdc26c4ee808bc6dc7962f1c9bfd079b283985c2/original.jpeg"
+  },
+  "neem leaf": {
+    "name": "Neem Leaf",
+    "sku": "H846657",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c24a51265c0828378b01c3b656c62a5300db3cf6/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/563adb34b7c01be9a77fff2e4d972169fb3dbcb4/original.jpeg"
+  },
+  "h846657": {
+    "name": "Neem Leaf",
+    "sku": "H846657",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c24a51265c0828378b01c3b656c62a5300db3cf6/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/563adb34b7c01be9a77fff2e4d972169fb3dbcb4/original.jpeg"
+  },
+  "herbie detox blend": {
+    "name": "Herbie Detox Blend",
+    "sku": "S815220",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/38a92453aaf8909612b1c5f6f0fd62fe8e9ac047/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/bc0fd0a94eabe1de63ea724aacdf41451de2d785/original.jpeg"
+  },
+  "s815220": {
+    "name": "Herbie Detox Blend",
+    "sku": "S815220",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/38a92453aaf8909612b1c5f6f0fd62fe8e9ac047/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/bc0fd0a94eabe1de63ea724aacdf41451de2d785/original.jpeg"
+  },
+  "stinging nettle": {
+    "name": "Stinging Nettle",
+    "sku": "741626C",
+    "img1": null,
+    "img2": null
+  },
+  "741626c": {
+    "name": "Stinging Nettle",
+    "sku": "741626C",
+    "img1": null,
+    "img2": null
+  },
+  "wholesale request call": {
+    "name": "Wholesale Request Call",
+    "sku": "",
+    "img1": null,
+    "img2": null
+  },
+  "event request": {
+    "name": "Event Request",
+    "sku": "",
+    "img1": null,
+    "img2": null
+  },
+  "speaker request": {
+    "name": "Speaker Request",
+    "sku": "",
+    "img1": null,
+    "img2": null
+  },
+  "holistic wellness assessment & recommendation": {
+    "name": "Holistic Wellness Assessment & Recommendation",
+    "sku": "",
+    "img1": null,
+    "img2": null
+  },
+  "the formulators collective: full course lifetime pass": {
+    "name": "The Formulators Collective: Full Course Lifetime Pass",
+    "sku": "Course-1",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/07e798df18f8e74cdf935f0ed7856d8b1c440a20/original.png",
+    "img2": null
+  },
+  "course-1": {
+    "name": "The Formulators Collective: Full Course Lifetime Pass",
+    "sku": "Course-1",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/07e798df18f8e74cdf935f0ed7856d8b1c440a20/original.png",
+    "img2": null
+  },
+  "the formulators collective: founder circle pass": {
+    "name": "The Formulators Collective: Founder Circle Pass",
+    "sku": "Course-1.2",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/17f70d6921e2fda975bdc1e554e908a3b281a7fe/original.png",
+    "img2": null
+  },
+  "course-1.2": {
+    "name": "The Formulators Collective: Founder Circle Pass",
+    "sku": "Course-1.2",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/17f70d6921e2fda975bdc1e554e908a3b281a7fe/original.png",
+    "img2": null
+  },
+  "elderberry tincture": {
+    "name": "Elderberry Tincture",
+    "sku": "V900910",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/8312cfb98f7841ab4d887e041bf437cc2f7f5568/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/732704f9aaedfe15a0e231f62e78eac619ff365b/original.jpeg"
+  },
+  "v900910": {
+    "name": "Elderberry Tincture",
+    "sku": "V900910",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/8312cfb98f7841ab4d887e041bf437cc2f7f5568/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/732704f9aaedfe15a0e231f62e78eac619ff365b/original.jpeg"
+  },
+  "ginger tincture": {
+    "name": "Ginger Tincture",
+    "sku": "8483379",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3bc668e53847b815681d6952fd1293e2f8481480/original.jpeg",
+    "img2": "https://items-images-production.s3.us-west-2.amazonaws.com/files/cfd467f12200ca27a241964cbc423f22fcac1851/original.jpeg"
+  },
+  "ashwagandha": {
+    "name": "Ashwagandha",
+    "sku": "3081425",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3fb405ea8f9d1413bf16602c80ef635af230fc83/original.jpeg",
+    "img2": null
+  },
+  "garlic tincture": {
+    "name": "Garlic Tincture",
+    "sku": "2399773",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/7972218322fdae1942c126f10bf485a99a270b75/original.jpeg",
+    "img2": null
+  },
+  "testing": {
+    "name": "Testing",
+    "sku": "M101288",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3d8d6fa2495478aa97bf266f73a9f57980c35e4e/original.png",
+    "img2": null
+  },
+  "m101288": {
+    "name": "Testing",
+    "sku": "M101288",
+    "img1": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3d8d6fa2495478aa97bf266f73a9f57980c35e4e/original.png",
+    "img2": null
+  }
+}

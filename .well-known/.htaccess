@@ -1,0 +1,9 @@
+﻿# Allow access to Apple Pay verification file
+<IfModule mod_rewrite.c>
+    RewriteEngine Off
+</IfModule>
+<IfModule mod_headers.c>
+    Header set Content-Type "text/plain"
+</IfModule>
+Satisfy Any
+Allow from all

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout (Sandbox Test) - Herbalistic Wellness</title>
+    <!-- Include Square Web Payments SDK -->
+    <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+    <style>
+        /* Dark, rustic aesthetic integration */
+        body {
+            background-color: #0E140E;
+            color: #F9F6F0;
+            font-family: 'Cinzel', serif, sans-serif;
+            padding: 20px;
+        }
+        .checkout-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #151D15;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #233023;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #7C8D7C;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            background: #0E140E;
+            border: 1px solid #233023;
+            color: #F9F6F0;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        /* Custom Container for the Square Iframe */
+        #card-container {
+            background: #0E140E;
+            border: 1px solid #233023;
+            padding: 15px;
+            border-radius: 4px;
+            min-height: 80px;
+        }
+        .pay-button {
+            width: 100%;
+            padding: 15px;
+            background: #2E442E;
+            color: #F9F6F0;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            letter-spacing: 2px;
+            transition: background 0.3s ease;
+        }
+        .pay-button:hover {
+            background: #3B573B;
+        }
+        .pay-button:disabled {
+            background: #1F2E1F;
+            color: #556655;
+            cursor: not-allowed;
+        }
+        #payment-status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+            text-align: center;
+        }
+        .error { background: #421C1C; color: #FF9E9E; border: 1px solid #6E2F2F; }
+        .success { background: #1C3C1C; color: #9EFF9E; border: 1px solid #2E5C2E; }
+    </style>
+</head>
+<body>
+
+<div class="checkout-container">
+    <h2>Secure Sandbox Checkout</h2>
+    
+    <!-- Customer Demographics -->
+    <div class="form-group">
+        <label for="customer-name">Full Name</label>
+        <input type="text" id="customer-name" placeholder="LaToya..." required>
+    </div>
+    <div class="form-group">
+        <label for="customer-email">Email Address</label>
+        <input type="email" id="customer-email" placeholder="latoya@example.com" required>
+    </div>
+
+    <!-- Secure Square Card Element Container -->
+    <div class="form-group">
+        <label>Credit or Debit Card</label>
+        <div id="card-container"></div>
+    </div>
+
+    <button id="pay-btn" class="pay-button" type="button">AUTHORIZE SANDBOX PAYMENT</button>
+    <div id="payment-status"></div>
+</div>
+
+<!-- Load parallel sandbox controller -->
+<script src="checkout-test.js" defer></script>
+</body>
+</html>

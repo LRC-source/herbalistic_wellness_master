@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics GA4 - G-GN6722VYZ5 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GN6722VYZ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GN6722VYZ5');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Customer Reviews — Verified testimonials and reviews for Herbalistic Wellness formulations."/>
+<meta name="theme-color" content="#1A3021"/>
+<title>Reviews — Herbalistic Wellness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+  body {
+    background-color: var(--color-spruce);
+    color: var(--color-cream);
+    font-family: var(--font-ui);
+    font-weight: 300;
+  }
+  .reviews-wrapper {
+    padding: var(--space-24) var(--space-8) var(--space-16);
+    background: radial-gradient(ellipse at 50% 30%, rgba(72, 44, 106, 0.40) 0%, var(--color-spruce) 80%);
+    position: relative;
+    z-index: 5;
+  }
+  .reviews-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .reviews-title {
+    font-family: var(--font-editorial);
+    font-size: var(--text-2xl);
+    color: var(--color-cream);
+    text-align: center;
+    margin-bottom: var(--space-2);
+  }
+  .reviews-subtitle {
+    font-family: var(--font-editorial);
+    font-size: var(--text-base);
+    font-style: italic;
+    color: var(--color-amber);
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+  .score-header {
+    background: rgba(14, 22, 16, 0.75);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    text-align: center;
+    margin-bottom: var(--space-10);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-16);
+  }
+  .review-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    transition: transform 0.4s var(--ease-botanical), border-color 0.4s var(--ease-botanical);
+  }
+  .review-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-amber);
+  }
+  .review-stars {
+    color: var(--color-amber);
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+  }
+  .review-title {
+    font-family: var(--font-editorial);
+    font-size: var(--text-md);
+    color: var(--color-cream);
+    font-weight: 600;
+  }
+  .review-text {
+    font-size: var(--text-xs);
+    color: var(--color-cream-80);
+    line-height: 1.7;
+    font-style: italic;
+  }
+  .review-meta {
+    font-size: 0.7rem;
+    color: var(--color-sage);
+    margin-top: auto;
+    border-top: 1px solid rgba(250, 249, 246, 0.08);
+    padding-top: var(--space-2);
+  }
+  .review-form-card {
+    background: rgba(14, 22, 16, 0.75);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(16px);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .form-input {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-cream);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-ui);
+    transition: border-color var(--duration-fast) var(--ease-botanical);
+    width: 100%;
+  }
+  .form-input:focus {
+    border-color: var(--color-amber);
+    outline: none;
+  }
+  .form-label {
+    color: var(--color-cream-80);
+    font-family: var(--font-ui);
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+    display: block;
+  }
+
+  /* High-Performance Responsive Mobile Optimization */
+  @media (max-width: 580px) {
+    .policy-container, .discount-container, .signup-card, .review-form-card, .empty-wishlist-card, .portal-card {
+      padding: var(--space-6) var(--space-4) !important;
+      border-radius: var(--radius-md) !important;
+    }
+    .standalone-hero, .policy-wrapper, .discount-wrapper, .affiliate-wrapper, .reviews-wrapper, .wishlist-wrapper {
+      padding: var(--space-16) var(--space-3) var(--space-8) !important;
+    }
+    .standalone-title, .policy-title, .discount-title, .affiliate-title, .reviews-title, .wishlist-title, .faq-title {
+      font-size: var(--text-xl) !important;
+    }
+    .standalone-subtitle, .policy-subtitle, .discount-subtitle, .affiliate-subtitle, .reviews-subtitle, .wishlist-subtitle, .faq-subtitle {
+      font-size: var(--text-sm) !important;
+      margin-bottom: var(--space-6) !important;
+    }
+    .portal-grid {
+      margin-bottom: var(--space-8) !important;
+      gap: var(--space-4) !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo" id="nav-logo" aria-label="Herbalistic Wellness home">
+      <img src="assets/images/logo.png" alt="Herbalistic Wellness" class="logo-img" style="max-height: 52px; width: auto; object-fit: contain;">
+    </a>
+    <nav class="primary-nav" role="navigation" aria-label="Primary navigation">
+      <a href="index.html#shop" class="nav-link">Apothecary</a>
+      <a href="index.html#blog" class="nav-link">What's The Tea?</a>
+      <a href="index.html#podcast" class="nav-link">Herb &amp; Soul</a>
+      <a href="index.html#education" class="nav-link">The Collective</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="index.html#account" class="cart-btn" aria-label="My Account" style="margin-right: var(--space-2); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--color-cream);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
+      <a href="index.html#cart" class="cart-btn" aria-label="Open cart" style="display: flex; align-items: center; justify-content: center; color: var(--color-cream);">
+        <span class="cart-label">Cart</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="reviews-wrapper">
+  <div class="reviews-container">
+    <span style="color: var(--color-amber); letter-spacing: 0.25em; text-transform: uppercase; font-size: var(--text-xs); display: block; text-align: center; margin-bottom: var(--space-2);">Showroom feedback</span>
+    <h1 class="reviews-title">Verified Customer Reviews</h1>
+    <p class="reviews-subtitle">What the community says about our ancestral formulations.</p>
+
+    <!-- Score Header -->
+    <div class="score-header">
+      <div style="font-family: var(--font-editorial); font-size: var(--text-xl); color: var(--color-cream); margin-bottom: var(--space-1); font-weight: 600;">4.9 out of 5 Stars</div>
+      <div class="review-stars" style="font-size: 1.4rem; margin-bottom: var(--space-2);">★★★★★</div>
+      <p style="font-size: var(--text-xs); color: var(--color-sage); max-width: 500px; margin: 0 auto;">Based on 320+ verified verified reviews from home herbalists, practitioners, and CCBC alumni.</p>
+    </div>
+
+    <!-- Masonry Grid -->
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-title">Circadian Rest Salve is Magic!</div>
+        <p class="review-text">
+          "I have struggled with deep sleep cycle alignment for years. Using this salve on my wrists and temples 30 minutes before bed has completely transformed my wind-down routine. It smells like actual botanical heaven."
+        </p>
+        <div class="review-meta">Sarah L. — Verified Buyer of rest salve</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-title">High Quality Ancestral Wisdom</div>
+        <p class="review-text">
+          "As an alumnus of the CCBC wellness program, I appreciate the absolute structural purity of these remedies. The Root &amp; Spirit Tincture has become a foundational part of my daily immune hygiene. Absolute reverence."
+        </p>
+        <div class="review-meta">James P. — Verified Buyer of immune tincture</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-title">Best Soaps Ever Handcrafted!</div>
+        <p class="review-text">
+          "The natural soap bars are incredibly rich, lathers beautifully, and leaves zero oily film. You can literally feel the organic reverence that went into formulating these. Highly recommend the rosemary cedarwood!"
+        </p>
+        <div class="review-meta">Meredith K. — Verified Buyer of cedar soap</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <div class="review-title">Deeply Soothing Tinctures</div>
+        <p class="review-text">
+          "Very potent botanical properties! The elderberry formulation has been my go-to this season. Shipping was fast and the glassmorphic bottle looks beautiful on my bathroom vanity."
+        </p>
+        <div class="review-meta">Daniel H. — Verified Buyer of elderberry</div>
+      </div>
+    </div>
+
+    <!-- Review Submit Form -->
+    <div class="review-form-card" id="form-card">
+      <h3 style="font-family: var(--font-editorial); font-size: var(--text-lg); color: var(--color-cream); margin-bottom: var(--space-4); text-align: center;">✦ Share Your Apothecary Experience</h3>
+      
+      <form id="customer-review-form" class="contact-form" style="display: flex; flex-direction: column; gap: var(--space-4);" novalidate>
+        <div class="form-group" style="margin-bottom:0;">
+          <label for="rev-name" class="form-label">Display Name</label>
+          <input type="text" id="rev-name" name="name" class="form-input" placeholder="e.g. Sarah M." required/>
+          <span class="form-validation" style="color:#e05a5a; font-size:0.75rem; display:block; margin-top:4px;"></span>
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label for="rev-item" class="form-label">Product Formulated</label>
+          <input type="text" id="rev-item" name="item" class="form-input" placeholder="e.g. rest salve" required/>
+          <span class="form-validation" style="color:#e05a5a; font-size:0.75rem; display:block; margin-top:4px;"></span>
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label for="rev-rating" class="form-label">Constitutional Rating</label>
+          <select id="rev-rating" name="rating" class="form-input" style="background: rgba(14, 22, 16, 0.9); color: var(--color-cream);">
+            <option value="5">★★★★★ — Absolute Reverence</option>
+            <option value="4">★★★★☆ — Deeply Soothing</option>
+            <option value="3">★★★☆☆ — Pleasant Balance</option>
+            <option value="2">★★☆☆☆ — Minor Constitutional Harmony</option>
+            <option value="1">★☆☆☆☆ — Needs Realignment</option>
+          </select>
+          <span class="form-validation" style="color:#e05a5a; font-size:0.75rem; display:block; margin-top:4px;"></span>
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label for="rev-text" class="form-label">Review Details</label>
+          <textarea id="rev-text" name="review" class="form-input" placeholder="Tell us how this formulation supported your circadian wellness..." rows="4" required style="resize: none;"></textarea>
+          <span class="form-validation" style="color:#e05a5a; font-size:0.75rem; display:block; margin-top:4px;"></span>
+        </div>
+        
+        <button type="submit" class="btn-primary" id="rev-submit-btn" style="width: 100%; justify-content: center; height: 48px; margin-top: var(--space-2);">
+          <span>Submit Verified Review</span>
+          <span class="btn-icon">⟶</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Review Success Banner -->
+    <div class="review-form-card" id="success-banner" style="display: none; text-align: center; padding: var(--space-6);">
+      <span style="font-size: 2.5rem; display: block; margin-bottom: var(--space-2);">✦</span>
+      <h3 style="font-family: var(--font-editorial); font-size: var(--text-xl); color: var(--color-cream); margin-bottom: var(--space-2);">Review Submitted!</h3>
+      <p style="font-size: var(--text-sm); color: var(--color-cream-80); line-height: 1.6; max-width: 500px; margin: 0 auto var(--space-6);">
+        Thank you for sharing your experience! Your review has been logged and queued for publication on our showroom verified reviews feed. Ancient formulation thrives through community alignment.
+      </p>
+      <a href="index.html" class="btn-primary" style="display: inline-flex; margin-inline: auto;">
+        <span>Return Home</span>
+        <span class="btn-icon">⟶</span>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer" role="contentinfo" style="background: rgba(14, 22, 16, 0.98); border-top: 1px solid var(--border-subtle); padding: var(--space-16) var(--space-8) var(--space-8); position: relative; z-index: 10;">
+  <div class="footer-inner" style="max-width: var(--max-content-width); margin: 0 auto; display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: var(--space-8); text-align: left; flex-wrap: wrap;">
+    
+    <div class="footer-brand" style="display: flex; flex-direction: column; gap: var(--space-3); max-width: 260px;">
+      <span class="logo-text" style="font-family: var(--font-editorial); font-size: var(--text-lg); font-style: italic; color: #FAF9F6;"><span class="logo-mark" aria-hidden="true" style="color: var(--color-amber);">✦</span> Herbalistic Wellness</span>
+      <p class="footer-tagline" style="font-size: var(--text-xs); color: var(--color-sage); line-height: 1.6;">Ancient wisdom. Modern formulation. Handcrafted in harmony with circadian and botanical cycles.</p>
+    </div>
+
+    <!-- Tree 1: Welcome Tree -->
+    <div class="footer-tree-col">
+      <h4 style="font-family: var(--font-editorial); font-size: var(--text-md); font-style: italic; color: #FAF9F6; margin-bottom: var(--space-4); border-bottom: 1px solid rgba(216, 140, 67, 0.2); padding-bottom: var(--space-2);">Welcome</h4>
+      <ul style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-sage);">
+        <li><a href="index.html#home" class="footer-link">Welcome</a></li>
+        <li><a href="index.html#shop" class="footer-link">Categories</a></li>
+        <li><a href="wholesale-shopping" class="footer-link">Wholesale Shopping</a></li>
+        <li><a href="index.html#contact" class="footer-link">Contact Us</a></li>
+        <li><a href="privacy-policy" class="footer-link">Privacy Policy</a></li>
+        <li><a href="refund-policy" class="footer-link">Refund Policy</a></li>
+        <li><a href="shipping-policy-faq" class="footer-link">Shipping &amp; FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- Tree 2: About Us Tree -->
+    <div class="footer-tree-col">
+      <h4 style="font-family: var(--font-editorial); font-size: var(--text-md); font-style: italic; color: #FAF9F6; margin-bottom: var(--space-4); border-bottom: 1px solid rgba(216, 140, 67, 0.2); padding-bottom: var(--space-2);">About Us</h4>
+      <ul style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-sage);">
+        <li><a href="index.html#home" class="footer-link">About Us</a></li>
+        <li><a href="index.html#podcast" class="footer-link">Herb &amp; Soul Podcast</a></li>
+        <li><a href="affiliate-marketplace" class="footer-link">Affiliate Marketplace</a></li>
+        <li><a href="alumni-discount" class="footer-link">CCBC Alumni Discount</a></li>
+      </ul>
+    </div>
+
+    <!-- Tree 3: Blog Tree -->
+    <div class="footer-tree-col">
+      <h4 style="font-family: var(--font-editorial); font-size: var(--text-md); font-style: italic; color: #FAF9F6; margin-bottom: var(--space-4); border-bottom: 1px solid rgba(216, 140, 67, 0.2); padding-bottom: var(--space-2);">Chronicles</h4>
+      <ul style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-sage);">
+        <li><a href="index.html#blog" class="footer-link">Blog</a></li>
+        <li><a href="index.html#blog" class="footer-link">What’s The Tea? Blog</a></li>
+        <li><a href="index.html?legacy_route=blog/home-remedies/home-remedies" class="footer-link">Home Remedies</a></li>
+      </ul>
+    </div>
+
+    <!-- Tree 4: Global Actions -->
+    <div class="footer-tree-col">
+      <h4 style="font-family: var(--font-editorial); font-size: var(--text-md); font-style: italic; color: #FAF9F6; margin-bottom: var(--space-4); border-bottom: 1px solid rgba(216, 140, 67, 0.2); padding-bottom: var(--space-2);">Shop Actions</h4>
+      <ul style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-sage);">
+        <li><a href="index.html#shop" class="footer-link">Browse Shop</a></li>
+        <li><a href="index.html#home" class="footer-link">My Account</a></li>
+        <li><a href="wishlist" class="footer-link">Wishlist</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div style="border-top: 1px solid rgba(255,255,255,0.05); margin-top: var(--space-12); padding-top: var(--space-6); text-align: center; font-size: 0.7rem; color: var(--color-sage); max-width: var(--max-content-width); margin-inline: auto;">
+    <p>© 2026 Herbalistic Wellness. All formulations are crafted with reverence under organic standards.</p>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('customer-review-form');
+  if (form) {
+    form.onsubmit = function(e) {
+      e.preventDefault();
+      const name = document.getElementById('rev-name').value.trim();
+      const item = document.getElementById('rev-item').value.trim();
+      const text = document.getElementById('rev-text').value.trim();
+      let ok = true;
+
+      const nameField = document.getElementById('rev-name');
+      const itemField = document.getElementById('rev-item');
+      const textField = document.getElementById('rev-text');
+
+      if (!name) { setErr(nameField, 'Please enter a display name.'); ok = false; } else { clrErr(nameField); }
+      if (!item) { setErr(itemField, 'Please specify the product you formulated.'); ok = false; } else { clrErr(itemField); }
+      if (!text) { setErr(textField, 'Please write your review details.'); ok = false; } else { clrErr(textField); }
+
+      if (!ok) return;
+
+      const submitBtn = document.getElementById('rev-submit-btn');
+      submitBtn.innerHTML = '<span>Logging Review...</span>';
+
+      setTimeout(() => {
+        document.getElementById('form-card').style.display = 'none';
+        document.getElementById('success-banner').style.display = 'block';
+      }, 1000);
+    };
+  }
+
+  function setErr(el, msg) {
+    el.classList.add('error-state');
+    const parent = el.closest('.form-group');
+    if (parent) {
+      const errSpan = parent.querySelector('.form-validation');
+      if (errSpan) errSpan.textContent = msg;
+    }
+  }
+
+  function clrErr(el) {
+    el.classList.remove('error-state');
+    const parent = el.closest('.form-group');
+    if (parent) {
+      const errSpan = parent.querySelector('.form-validation');
+      if (errSpan) errSpan.textContent = '';
+    }
+  }
+</script>
+
+</body>
+</html>

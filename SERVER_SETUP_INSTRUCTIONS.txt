@@ -1,0 +1,17 @@
+﻿HERBALISTIC WELLNESS - SERVER SETUP GUIDE
+
+To securely process payments in your live production environment without exposing secrets in the code, you need to set up environment variables on your host (e.g., cPanel, Bluehost, etc.).
+
+Option 1: Using a .env file
+1. In your server's file manager, navigate to the root directory where checkout.php is hosted.
+2. Create a new file named exactly .env.
+3. Add the following line:
+   SQUARE_ACCESS_TOKEN=your_actual_live_token_here
+
+Option 2: Setting Environment Variables in .htaccess (Apache / cPanel)
+1. Open the .htaccess file in your public_html directory.
+2. Add the following line:
+   SetEnv SQUARE_ACCESS_TOKEN "your_actual_live_token_here"
+3. Save the file.
+
+Once one of these methods is applied, checkout.php will securely read the token and process live payments.
