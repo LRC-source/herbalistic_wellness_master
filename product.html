@@ -1630,7 +1630,8 @@ try {
 
     function addToCart(id, name, price, qty) {
       qty = qty || 1;
-      if (CART[id]) {
+            if(typeof gtag === 'function') { gtag('event', 'add_to_cart', { currency: 'USD', value: price * qty, items: [{ item_id: id, item_name: name, price: price, quantity: qty }] }); }
+if (CART[id]) {
         CART[id].qty += qty;
       } else {
         CART[id] = { id: id, name: name, price: Number(price || 0), qty: qty };

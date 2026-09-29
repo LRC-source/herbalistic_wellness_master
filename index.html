@@ -8333,6 +8333,8 @@ try {
 
 function addToCart(id,name,price){
   if(CART[id])CART[id].qty++;else CART[id]={id:id,name:name,price:price,qty:1};
+  if(typeof gtag === 'function') { gtag('event', 'add_to_cart', { currency: 'USD', value: price, items: [{ item_id: id, item_name: name, price: price, quantity: 1 }] }); }
+
   _renderCartCount();_renderCartList();
   try {
     localStorage.setItem('hw_cart', JSON.stringify(CART));

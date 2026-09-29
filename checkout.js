@@ -214,6 +214,20 @@ async function handlePaymentSubmission(event) {
       const responseData = await response.json();
 
       if (response.ok && responseData.success) {
+        // GA4 Purchase Tracking
+        if (typeof gtag === 'function') {
+          gtag('event', 'purchase', {
+            transaction_id: responseData.transactionId || 'T_' + Date.now(),
+            value: parseFloat(totalVal.replace(/[^0-9.]/g, '')),
+            currency: 'USD',
+            items: cartItemsArray.map(it => ({
+              item_id: it.id,
+              item_name: it.name,
+              price: it.price,
+              quantity: it.qty
+            }))
+          });
+        }
         trackCheckoutJourney('purchase_success', 'checkout_api', {
           transactionId: responseData.transactionId || '',
           totalAmount: totalVal
