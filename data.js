@@ -1,4 +1,4 @@
-/**
+﻿/**
 
  * 
 
@@ -16,7 +16,7 @@
 
 
 
-export const APOTHECARY_DATABASE = {
+var APOTHECARY_DATABASE = {
 
 
 
@@ -521,7 +521,7 @@ export const APOTHECARY_DATABASE = {
     "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/d2f216776de926cd0e9081b89305c8af136c8b60/original.png",
     "visibility": "visible",
     "is_archived": false,
-    "inStock": true,
+    "inStock": false,
     "variations": [
       {
         "id": "X4XPXYJ4QUUUID6YA3T3JIKG",
@@ -1262,7 +1262,7 @@ export const APOTHECARY_DATABASE = {
     "square_variation_id": "MPAPXYJLDWNOUWMBEJWR4CJB",
     "sku": "845513T",
     "name": "Herbal Remedies Journal - Black Edition",
-    "cat": "dried-herbs",
+    "cat": "specialty-blends",
     "price": 20,
     "compareAtPrice": 0,
     "desc": "This book was created by Herbalist La'Toya Renee, owner of Herbalistic Wellness. Designed for the entry level home Herbalist in you.\n\nCreated to provide a safe space to document your handmade natural medicines, cures, and remedies. Healing yourself is the greatest comeback and having your very own herbal remedies journal to pass down to family and friends gives you the opportunity to share and to make others aware of the healing benefits of plants and herbs while building your own arsenal of herbal recipes.\n\nSo go ahead let mother nature inspire you. This book will serve as your personal herbal bible / journal to document ancient wisdom in modern times with your own personal flare. The ancestors passed there knowledge down simply by word of mouth in ancient times.\nNow Herbalistic Wellness Herbal Remedies Journal is here!! Three Editions Available, the same in very way - 295 pages - with 3 Cover Variations to choose from!",
@@ -1299,7 +1299,7 @@ export const APOTHECARY_DATABASE = {
     "square_variation_id": "EMAIRIKPEGA33TNA7F7YWKFN",
     "sku": "D892283",
     "name": "Herbal Remedies Journal - Brown Edition",
-    "cat": "dried-herbs",
+    "cat": "specialty-blends",
     "price": 20,
     "compareAtPrice": 0,
     "desc": "This book was created by Herbalist La'Toya Renee, owner of Herbalistic Wellness. Designed for the entry level home Herbalist in you.\n\nCreated to provide a safe space to document your handmade natural medicines, cures, and remedies. Healing yourself is the greatest comeback and having your very own herbal remedies journal to pass down to family and friends gives you the opportunity to share and to make others aware of the healing benefits of plants and herbs while building your own arsenal of herbal recipes.\n\nSo go ahead let mother nature inspire you. This book will serve as your personal herbal bible / journal to document ancient wisdom in modern times with your own personal flare. The ancestors passed there knowledge down simply by word of mouth in ancient times.\nNow Herbalistic Wellness Herbal Remedies Journal is here!! Three Editions Available, the same in very way - 295 pages - with 3 Cover Variations to choose from!",
@@ -1336,7 +1336,7 @@ export const APOTHECARY_DATABASE = {
     "square_variation_id": "E6PKRX4PJXA6XS7AOS73KVY6",
     "sku": "6843738",
     "name": "Herbal Remedies Journal - Purple Edition",
-    "cat": "dried-herbs",
+    "cat": "specialty-blends",
     "price": 20,
     "compareAtPrice": 0,
     "desc": "This book was created by Herbalist La'Toya Renee, owner of Herbalistic Wellness. Designed for the entry level home Herbalist in you.\n\nCreated to provide a safe space to document your handmade natural medicines, cures, and remedies. Healing yourself is the greatest comeback and having your very own herbal remedies journal to pass down to family and friends gives you the opportunity to share and to make others aware of the healing benefits of plants and herbs while building your own arsenal of herbal recipes.\n\nSo go ahead let mother nature inspire you. This book will serve as your personal herbal bible / journal to document ancient wisdom in modern times with your own personal flare. The ancestors passed there knowledge down simply by word of mouth in ancient times.\nNow Herbalistic Wellness Herbal Remedies Journal is here!! Three Editions Available, the same in very way - 295 pages - with 3 Cover Variations to choose from!",
@@ -1567,7 +1567,7 @@ export const APOTHECARY_DATABASE = {
     "square_variation_id": "XDBHOG3IJKHTQEDVUNNYY4LZ",
     "sku": "811663R",
     "name": "Lavender Body Scrub",
-    "cat": "dried-herbs",
+    "cat": "natural-soaps",
     "price": 25,
     "compareAtPrice": 0,
     "desc": "Lavender Body Scrub is the great end to a long stressful day, with a warm bath it not only boosts potent anti-inflammatory properties, but is also ultra soothing for your skin with a therapeutically calming scent that relaxes the mind and soothes the spirit not only the skin.\n\nJust like our Lavender Body Butter and the rest of our products it is well known to moisturize skin, but is also antibacterial and can kill bacteria that penetrates pores.\n\nLayering with our Lavender Body Butter will give you a long lasting aroma that will have your partner cozying up to you all nite long just to get lost in your anxiety calming fragrance\n\nAvocado oil contains a high percentage of?Vitamin E, as well as?potassium, lecithin, and many other nutrients which can nourish and?moisturize?your skin. The oleic acid also promotes?collagen?production, which helps grow new skin. This accelerates the healing process, helping with issues like sunburn.\n\nSunflower oil is rich in Vitamin A and Vit",
@@ -2662,7 +2662,7 @@ export const APOTHECARY_DATABASE = {
     "square_variation_id": "UZHAEILLGW36FVHRKCZHGMBD",
     "sku": "N103257",
     "name": "St. John's Body Oil",
-    "cat": "dried-herbs",
+    "cat": "infused-oils",
     "price": 25,
     "compareAtPrice": 0,
     "desc": "This full-strength St. John?s Wort Oil is a wonderful oil for massage, especially where there is soreness, stiffness, and muscle or nerve pain, such as sciatica. St. John?s Wort Oil promotes and speeds the natural healing of burns, wounds, shingles, herpes, and cold sores.\n\nOur St. John?s Wort Infused Oil promotes overall optimal skin health and may also be beneficial in protecting the skin from the effects of sun exposure and/or spreading up your natural healing time.\n\n\n\n\nThese statements have not been evaluated by the Food and Drug Administration. This product is not?intended to diagnose, treat, cure, or prevent any disease.\n\n\nHerbalistic Wellness is a proud supporter of the National Multiple Sclerosis Society Visit them today to donate @ www.nationalmssociety.org",
@@ -2939,7 +2939,7 @@ export const APOTHECARY_DATABASE = {
     "square_variation_id": "LEDR7GYZ2RQAP4KS573PM4GB",
     "sku": "H022743",
     "name": "Turmeric Ginger Lemon Body Oil",
-    "cat": "dried-herbs",
+    "cat": "infused-oils",
     "price": 19,
     "compareAtPrice": 10.39,
     "desc": "Golden oil, golden ritual. Pure organic turmeric root and warming ginger are cold-macerated in golde...",
@@ -3464,7 +3464,7 @@ export const APOTHECARY_DATABASE = {
     "square_variation_id": "LEDR7GYZ2RQAP4KS573PM4GB",
     "sku": "N820367",
     "name": "Turmeric Ginger Lemon Body Oil",
-    "cat": "dried-herbs",
+    "cat": "infused-oils",
     "price": 19,
     "compareAtPrice": 0,
     "desc": "Turmeric Ginger & Lemon?Oil is formulated with our special blend of carrier oils?& is designed to be used on acne. Being an anti-fungal and antiseptic, it will dry out the pimples and also prevent further breakouts. Turmeric?is often used as in anti-marks and anti-spots herbal preparation. When used persistently, turmeric ginger & lemon oil can fade acne gradually & reduce marks giving you a blemish-free glow on your skin with this anti-inflammatory oil.\n\nPlease be advised: Turmeric can naturally stain clothing so do not used an excess but easily washes away during cleaning.\n\n\n\nThese statements have not been evaluated by the Food and Drug Administration. This product is not?intended to diagnose, treat, cure, or prevent any disease.\n\n\nHerbalistic Wellness is a proud supporter of the National Multiple Sclerosis Society Visit them today to donate @ www.nationalmssociety.org",
@@ -3476,7 +3476,7 @@ export const APOTHECARY_DATABASE = {
     "size": "Volume: 2 Fluid ounces",
     "imageSlug": "product-default",
     "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/975a97b7f9a488048a746ce460c9ae0502238187/original.png",
-    "visibility": "visible",
+    "visibility": "hidden",
     "is_archived": false,
     "inStock": true,
     "variations": [
@@ -4036,7 +4036,8 @@ export const APOTHECARY_DATABASE = {
 
 
 
-APOTHECARY_DATABASE.runProductSlugHydration();
+// APOTHECARY_DATABASE.runProductSlugHydration();
+window.DB = APOTHECARY_DATABASE;
 
 
 
