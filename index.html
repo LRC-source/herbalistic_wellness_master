@@ -8675,7 +8675,8 @@ function renderShop(force){
         : '<div class="product-hover-overlay"><button class="btn-quick-add" data-pid="' + p.id + '" data-name="' + p.name + '" data-pr="' + p.price + '" type="button">Quick Add</button></div>';
 
       var pPrice = Number(p.price || 0);
-      var ariaLabel = (p.name || '') + ' - ' + catName + ' - 
+      var ariaLabel = (p.name || '') + ' - ' + catName + ' - $' + pPrice.toFixed(2);
+      return '<a href="/products/' + (p.slug || p.id) + '" class="' + cardClass + '" aria-label="' + ariaLabel.replace(/"/g, '&quot;') + '">' +
         '<script type="application/ld+json">' +
         JSON.stringify({
           "@context": "https://schema.org/",
