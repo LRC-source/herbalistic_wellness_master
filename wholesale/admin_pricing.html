@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Pricing Tier Management | Herbalistic Wellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <header class="bg-[#482C6A] text-[#FAF9F6] sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4"><div class="flex justify-between items-center h-16"><span class="font-heading text-2xl">Wholesale Admin Interface</span><a href="/wholesale/admin" class="text-[#D88C43]">Admin Home</a></div></div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-8 w-full">
+        <div class="bg-white p-6 rounded shadow-sm border-t-4 border-[#D88C43]">
+            <h2 class="font-heading text-2xl text-[#482C6A] mb-4">Pricing Tier Management</h2>
+            <p class="text-sm text-gray-600 mb-6">Manage global percentage calculations relative to Retail MSRP.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="border p-4 rounded bg-gray-50">
+                    <h3 class="font-bold text-lg mb-2">Tier 1 (Standard Wholesale)</h3>
+                    <div class="flex items-center gap-2">
+                        <input type="number" value="55" class="w-20 border rounded p-2">
+                        <span>% of MSRP</span>
+                    </div>
+                </div>
+                <div class="border p-4 rounded bg-gray-50">
+                    <h3 class="font-bold text-lg mb-2">Tier 2 (Volume Wholesale)</h3>
+                    <div class="flex items-center gap-2">
+                        <input type="number" value="50" class="w-20 border rounded p-2">
+                        <span>% of MSRP</span>
+                    </div>
+                </div>
+                <div class="border p-4 rounded bg-gray-50">
+                    <h3 class="font-bold text-lg mb-2">White Label IP Tier</h3>
+                    <div class="flex items-center gap-2">
+                        <input type="number" value="80" class="w-20 border rounded p-2">
+                        <span>% of MSRP</span>
+                    </div>
+                </div>
+            </div>
+            <button class="mt-6 bg-[#482C6A] text-white px-6 py-2 rounded shadow hover:bg-opacity-90" onclick="this.textContent='Global Margins Saved ✓'; this.classList.replace('bg-[#482C6A]', 'bg-green-600'); setTimeout(() => { this.textContent='Save Global Margins'; this.classList.replace('bg-green-600', 'bg-[#482C6A]'); }, 2000)">Save Global Margins</button>
+        </div>
+
+        <div class="bg-white p-6 rounded shadow-sm border-t-4 border-[#482C6A] mt-8">
+            <h2 class="font-heading text-2xl text-[#482C6A] mb-4">Category-Based Minimum Order Quantity (MOQ)</h2>
+            <p class="text-sm text-gray-600 mb-6">Set specific MOQ rules based on product categories.</p>
+            
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-gray-50 border-b">
+                        <th class="p-3 font-semibold text-sm">Product Category</th>
+                        <th class="p-3 font-semibold text-sm">Required MOQ</th>
+                        <th class="p-3 font-semibold text-sm">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b text-sm">
+                        <td class="p-3">Botanicals / Raw Botanicals</td>
+                        <td class="p-3"><input type="number" value="24" class="border p-1 w-20 rounded"></td>
+                        <td class="p-3"><button class="text-[#D88C43] hover:underline" onclick="this.textContent='Saved!'; setTimeout(()=>this.textContent='Update',1500)">Update</button></td>
+                    </tr>
+                    <tr class="border-b text-sm">
+                        <td class="p-3">Teas</td>
+                        <td class="p-3"><input type="number" value="24" class="border p-1 w-20 rounded"></td>
+                        <td class="p-3"><button class="text-[#D88C43] hover:underline" onclick="this.textContent='Saved!'; setTimeout(()=>this.textContent='Update',1500)">Update</button></td>
+                    </tr>
+                    <tr class="border-b text-sm">
+                        <td class="p-3">Soaps</td>
+                        <td class="p-3"><input type="number" value="24" class="border p-1 w-20 rounded"></td>
+                        <td class="p-3"><button class="text-[#D88C43] hover:underline" onclick="this.textContent='Saved!'; setTimeout(()=>this.textContent='Update',1500)">Update</button></td>
+                    </tr>
+                    <tr class="border-b text-sm">
+                        <td class="p-3">Tinctures & Oils</td>
+                        <td class="p-3"><input type="number" value="24" class="border p-1 w-20 rounded"></td>
+                        <td class="p-3"><button class="text-[#D88C43] hover:underline" onclick="this.textContent='Saved!'; setTimeout(()=>this.textContent='Update',1500)">Update</button></td>
+                    </tr>
+                    <tr class="border-b text-sm">
+                        <td class="p-3">Body Butters & Scrubs</td>
+                        <td class="p-3"><input type="number" value="24" class="border p-1 w-20 rounded"></td>
+                        <td class="p-3"><button class="text-[#D88C43] hover:underline" onclick="this.textContent='Saved!'; setTimeout(()=>this.textContent='Update',1500)">Update</button></td>
+                    </tr>
+                    <tr class="border-b text-sm">
+                        <td class="p-3">Salves</td>
+                        <td class="p-3"><input type="number" value="24" class="border p-1 w-20 rounded"></td>
+                        <td class="p-3"><button class="text-[#D88C43] hover:underline" onclick="this.textContent='Saved!'; setTimeout(()=>this.textContent='Update',1500)">Update</button></td>
+                    </tr>
+                    <tr class="border-b text-sm">
+                        <td class="p-3">Default (All Others)</td>
+                        <td class="p-3"><input type="number" value="24" class="border p-1 w-20 rounded"></td>
+                        <td class="p-3"><button class="text-[#D88C43] hover:underline" onclick="this.textContent='Saved!'; setTimeout(()=>this.textContent='Update',1500)">Update</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
+
+

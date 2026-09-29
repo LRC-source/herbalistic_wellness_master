@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Inventory Control | Herbalistic Wellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <header class="bg-[#482C6A] text-[#FAF9F6] sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4"><div class="flex justify-between items-center h-16"><span class="font-heading text-2xl">Wholesale Admin Interface</span><a href="/wholesale/admin" class="text-[#D88C43]">Admin Home</a></div></div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-8 w-full">
+        <div class="bg-white p-6 rounded shadow-sm border-t-4 border-[#D88C43]">
+            <h2 class="font-heading text-2xl text-[#482C6A] mb-4">Inventory Control Dashboard</h2>
+            <p class="text-sm text-gray-600 mb-6">Stock Override Logic: Quantity numbers are secondary. Any product marked as "Published / In Stock" is fully purchasable.</p>
+            
+            <div id="error-output" class="hidden mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded font-bold"></div>
+
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-gray-50 border-b">
+                        <th class="p-3 font-semibold text-sm">SKU</th>
+                        <th class="p-3 font-semibold text-sm">Product Name</th>
+                        <th class="p-3 font-semibold text-sm">Featured Image</th>
+                        <th class="p-3 font-semibold text-sm">Base Stock</th>
+                        <th class="p-3 font-semibold text-sm">Status Override</th>
+                        <th class="p-3 font-semibold text-sm">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="inventory-tbody">
+                    <tr><td colspan="6" class="p-4 text-center">Loading inventory...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+                    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('/wholesale/catalog.json?t=' + new Date().getTime());
+                const data = await response.json();
+                if (data.success && data.data) {
+                    const tbody = document.getElementById('inventory-tbody');
+                    tbody.innerHTML = '';
+                    
+                    const products = data.data;
+                    const unique = new Map();
+                    products.forEach(p => {
+                        const slug = p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+                        if (!unique.has(slug)) unique.set(slug, p);
+                    });
+                    
+                    Array.from(unique.values()).forEach((p, index) => {
+                        const sku = p.id || `HW-WH-${(index+1).toString().padStart(3, '0')}`;
+                        const baseStock = p.availability === 'in stock' ? '100+' : '0';
+                        const safeSku = sku.replace(/"/g, '&quot;');
+                        
+                        tbody.innerHTML += `
+                            <tr class="border-b text-sm hover:bg-gray-50" id="row-${safeSku}">
+                                <td class="p-3 font-mono text-xs">${safeSku}</td>
+                                <td class="p-3">
+                                    ${p.title}<br>
+                                    <a href="${p.image_link}" target="_blank" class="text-xs text-[#D88C43] hover:underline" id="img-link-${safeSku}">View Current Image</a>
+                                </td>
+                                <td class="p-3">
+                                    <input type="file" id="file-${safeSku}" accept="image/*" class="text-xs w-48">
+                                </td>
+                                <td class="p-3">${baseStock}</td>
+                                <td class="p-3">
+                                    <select id="status-${safeSku}" class="border border-gray-300 rounded p-1 text-sm bg-green-50 text-green-700">
+                                        <option ${baseStock!=='0'?'selected':''}>Published / In Stock</option>
+                                        <option ${baseStock==='0'?'selected':''}>Out of Stock (Disabled)</option>
+                                    </select>
+                                </td>
+                                <td class="p-3">
+                                    <button class="bg-[#482C6A] text-white px-3 py-1 rounded text-xs" onclick="saveInventory('${safeSku}')" id="btn-${safeSku}">Save Update</button>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                }
+            } catch (err) {
+                console.error('Failed to load inventory', err);
+            }
+        });
+
+        async function saveInventory(sku) {
+            const btn = document.getElementById(`btn-${sku}`);
+            const fileInput = document.getElementById(`file-${sku}`);
+            const statusSelect = document.getElementById(`status-${sku}`);
+            
+            btn.textContent = 'Saving...';
+            btn.disabled = true;
+
+            const formData = new FormData();
+            formData.append('sku', sku);
+            formData.append('status', statusSelect.value);
+            
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                if (file.size > 2 * 1024 * 1024) { // 2MB limit
+                    alert('Error: Image is too large (' + (file.size / 1024 / 1024).toFixed(1) + ' MB). Bluehost limits standard uploads to 2MB. Please compress the image.');
+                    btn.textContent = 'Save Update';
+                    btn.disabled = false;
+                    return;
+                }
+                formData.append('image', file);
+            }
+
+            try {
+                let res;
+                let rawText;
+                let retries = 0;
+                let success = false;
+                
+                while (retries < 2) {
+                    res = await fetch('/wholesale/update_inventory.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    rawText = await res.text();
+                    
+                    // Check for WAF Anti-Bot Challenge (HTTP 409)
+                    if (res.status === 409 && rawText.includes('document.cookie = "humans_')) {
+                        const cookieMatch = rawText.match(/document\.cookie\s*=\s*"([^"]+)"/);
+                        if (cookieMatch) {
+                            console.log("WAF Challenge detected. Setting cookie: ", cookieMatch[1]);
+                            document.cookie = cookieMatch[1] + "; path=/";
+                            retries++;
+                            continue; // Retry fetch
+                        }
+                    }
+                    break;
+                }
+                
+                if (!res.ok) {
+                    const errorBox = document.getElementById('error-output');
+                    errorBox.classList.remove('hidden');
+                    errorBox.innerHTML = '🚨 HTTP ERROR ' + res.status + ' (' + res.statusText + ')<br><br><b>Raw Server Output:</b><br><pre class="text-xs bg-gray-100 p-2 mt-2 border">' + rawText.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</pre>';
+                    btn.textContent = 'Error';
+                    btn.classList.replace('bg-[#482C6A]', 'bg-red-600');
+                    return;
+                }
+
+                let result;
+                try {
+                    result = JSON.parse(rawText);
+                } catch (parseErr) {
+                    const errorBox = document.getElementById('error-output');
+                    errorBox.classList.remove('hidden');
+                    errorBox.innerHTML = '🚨 CRITICAL NETWORK/PHP ERROR: Unexpected token<br><br><b>Raw Server Output:</b><br><pre class="text-xs bg-gray-100 p-2 mt-2 border">' + rawText.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</pre>';
+                    btn.textContent = 'Error';
+                    btn.classList.replace('bg-[#482C6A]', 'bg-red-600');
+                    return;
+                }
+                
+                if (result.success) {
+                    btn.textContent = 'Saved!';
+                    btn.classList.replace('bg-[#482C6A]', 'bg-green-600');
+                    if (result.new_image) {
+                        document.getElementById(`img-link-${sku}`).href = result.new_image;
+                    }
+                    document.getElementById('error-output').classList.add('hidden');
+                } else {
+                    document.getElementById('error-output').classList.remove('hidden');
+                    document.getElementById('error-output').innerHTML = '🚨 SYSTEM ERROR: ' + result.message;
+                    btn.textContent = 'Failed';
+                    btn.classList.replace('bg-[#482C6A]', 'bg-red-600');
+                }
+            } catch (e) {
+                console.error(e);
+                document.getElementById('error-output').classList.remove('hidden');
+                document.getElementById('error-output').innerHTML = '🚨 FETCH FAILED: ' + e.message;
+                btn.textContent = 'Error';
+                btn.classList.replace('bg-[#482C6A]', 'bg-red-600');
+            }
+
+            setTimeout(() => {
+                btn.textContent = 'Save Update';
+                btn.classList.remove('bg-green-600', 'bg-red-600');
+                btn.classList.add('bg-[#482C6A]');
+                btn.disabled = false;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
+
+

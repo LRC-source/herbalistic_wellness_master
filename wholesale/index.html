@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbalistic Wellness | B2B Wholesale Portal</title>
+    <!-- Tailwind via CDN for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Header / Navigation -->
+    <header class="bg-[#482C6A] text-[#FAF9F6] sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/wholesale/index">
+                        <img class="h-12 w-auto" src="https://www.herbalisticwellness.com/assets/images/logo.png" alt="Herbalistic Wellness Logo">
+                    </a>
+                    <span class="ml-3 font-heading text-2xl hidden sm:block tracking-wide">Wholesale Portal</span>
+                </div>
+                <!-- Navigation -->
+                <nav class="flex space-x-6 items-center font-medium">
+                    <a href="/wholesale/index" class="hover:text-[#D88C43] transition">Catalog</a>
+                    <a href="/wholesale/about" class="hover:text-[#D88C43] transition">About Us</a>
+                    <a href="/wholesale/admin" class="hover:text-[#D88C43] transition">Admin</a>
+                    <a href="/wholesale/checkout" class="hover:text-[#D88C43] transition flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        Cart
+                    </a>
+                    <a href="#" id="logout-btn" class="bg-[#D88C43] px-4 py-2 rounded text-[#FAF9F6] hover:bg-opacity-90 hidden">Logout</a>
+                    <a href="/wholesale/login" id="login-btn" class="bg-[#D88C43] px-4 py-2 rounded text-[#FAF9F6] hover:bg-opacity-90">Login</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        <div class="mb-8 text-center">
+            <h1 class="font-heading text-4xl mb-2 text-[#482C6A]">Master Wholesale Catalog</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">Explore our small-batch apothecary collections. All items below are strictly subject to a minimum order quantity (MOQ) of 12 units to qualify for trade pricing.</p>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Dynamic Injection via app.js -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#482C6A] text-[#FAF9F6] py-12 mt-12 border-t-4 border-[#D88C43]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <img class="h-10 w-auto mb-4" src="https://www.herbalisticwellness.com/assets/images/logo.png" alt="Herbalistic Wellness Logo">
+                <p class="text-sm opacity-80 leading-relaxed">
+                    Dedicated to the artistry of traditional herbalism. Our small-batch formulations bring the pure power of nature to your retail shelves.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-heading text-xl mb-4 text-[#D88C43]">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/wholesale/index" class="hover:underline">Catalog & Quick Order</a></li>
+                    <li><a href="/wholesale/apply" class="hover:underline">Wholesale Partnership Application</a></li>
+                    <li><a href="/wholesale/about" class="hover:underline">About Our Craft</a></li>
+                    <li><a href="/wholesale/faq" class="hover:underline">Wholesale FAQ</a></li>
+                    <li><a href="/wholesale/terms" class="hover:underline">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-heading text-xl mb-4 text-[#D88C43]">Trade Bulletin</h4>
+                <p class="text-sm opacity-80 mb-4">Sign up to receive updates on seasonal batch releases and trade-only pricing adjustments.</p>
+                <form class="flex gap-2">
+                    <input type="email" placeholder="Your Email Address" class="px-3 py-2 rounded text-gray-800 w-full focus:outline-none focus:ring-2 focus:ring-[#D88C43]">
+                    <button type="button" class="bg-[#D88C43] px-4 py-2 rounded font-semibold hover:bg-opacity-90">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-white/20 text-xs opacity-60 text-center">
+            <p>&copy; 2026 Herbalistic Wellness. All rights reserved.</p>
+            <p class="mt-2">Disclaimer: Products are formulated based on traditional herbal practices. These statements have not been evaluated by the FDA. Products are not intended to diagnose, treat, cure, or prevent any disease.</p>
+        </div>
+    </footer>
+
+    <script src="app.js?v=1.1"></script>
+</body>
+</html>
+
+

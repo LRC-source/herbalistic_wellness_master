@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Bulk Orders | Herbalistic Wellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <header class="bg-[#482C6A] text-[#FAF9F6] sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4"><div class="flex justify-between items-center h-16"><span class="font-heading text-2xl">Wholesale Admin Interface</span><a href="/wholesale/admin" class="text-[#D88C43]">Admin Home</a></div></div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-8 w-full">
+        <div class="bg-white p-6 rounded shadow-sm border-t-4 border-[#482C6A]">
+            <h2 class="font-heading text-2xl text-[#482C6A] mb-4">Bulk Orders Pipeline</h2>
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-gray-50 border-b">
+                        <th class="p-3 font-semibold text-sm">Order ID</th>
+                        <th class="p-3 font-semibold text-sm">Date</th>
+                        <th class="p-3 font-semibold text-sm">Trade Client</th>
+                        <th class="p-3 font-semibold text-sm">Value</th>
+                        <th class="p-3 font-semibold text-sm">Status</th>
+                        <th class="p-3 font-semibold text-sm">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b text-sm">
+                        <td class="p-3 font-mono">#WH-1045</td>
+                        <td class="p-3">Oct 12, 2026</td>
+                        <td class="p-3">Healing Hands Spa</td>
+                        <td class="p-3">$1,250.00</td>
+                        <td class="p-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Pending Fulfillment</span></td>
+                        <td class="p-3"><button class="text-[#D88C43] underline" onclick="document.getElementById('orderModal').classList.remove('hidden')">View Details</button></td>
+                    </tr>
+                    <tr class="border-b text-sm">
+                        <td class="p-3 font-mono">#WH-1044</td>
+                        <td class="p-3">Oct 10, 2026</td>
+                        <td class="p-3">Urban Apothecary NYC</td>
+                        <td class="p-3">$3,400.00</td>
+                        <td class="p-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Shipped</span></td>
+                        <td class="p-3"><button class="text-[#D88C43] underline" onclick="document.getElementById('orderModal').classList.remove('hidden')">View Details</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Order Details Modal -->
+    <div id="orderModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div class="bg-white rounded-lg shadow-lg w-full max-w-3xl max-h-screen overflow-y-auto m-4">
+            <div class="flex justify-between items-center p-6 border-b">
+                <h3 class="font-heading text-2xl text-[#482C6A]">Order Details #WH-1045</h3>
+                <button class="text-gray-500 hover:text-black text-2xl leading-none" onclick="document.getElementById('orderModal').classList.add('hidden')">&times;</button>
+            </div>
+            <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-bold text-[#D88C43] mb-2">Customer & Contact</h4>
+                    <p class="text-sm text-gray-700"><strong>Name:</strong> Healing Hands Spa (Jane Doe)</p>
+                    <p class="text-sm text-gray-700"><strong>Email:</strong> jane.doe@example.com</p>
+                    <p class="text-sm text-gray-700"><strong>Phone:</strong> (555) 123-4567</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#D88C43] mb-2">Shipping Information</h4>
+                    <p class="text-sm text-gray-700"><strong>Address:</strong> 123 Wellness Way, Suite 100</p>
+                    <p class="text-sm text-gray-700"><strong>City/State:</strong> Los Angeles, CA 90001</p>
+                    <p class="text-sm text-gray-700"><strong>Method:</strong> UPS Ground</p>
+                </div>
+                <div class="md:col-span-2 border-t pt-4">
+                    <h4 class="font-bold text-[#D88C43] mb-2">Order Items</h4>
+                    <table class="w-full text-sm text-left">
+                        <tr class="border-b bg-gray-50">
+                            <th class="p-2">Item</th>
+                            <th class="p-2">Qty</th>
+                            <th class="p-2">Unit Price</th>
+                            <th class="p-2">Total</th>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-2">Arnica Flower Dried Organic</td>
+                            <td class="p-2">24</td>
+                            <td class="p-2">$6.60</td>
+                            <td class="p-2">$158.40</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">Butterfly Pea Tea Blend</td>
+                            <td class="p-2">12</td>
+                            <td class="p-2">$8.25</td>
+                            <td class="p-2">$99.00</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

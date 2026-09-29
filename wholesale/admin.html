@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wholesale Admin Dashboard | Herbalistic Wellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    
+    <header class="bg-[#482C6A] text-[#FAF9F6] sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <span class="font-heading text-2xl tracking-wide">Wholesale Admin Interface</span>
+                <nav class="flex space-x-4 text-sm">
+                    <a href="/wholesale/index" class="hover:text-[#D88C43]">Return to Catalog</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-8 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            
+            <!-- Sidebar Navigation -->
+            <div class="md:col-span-1 space-y-2">
+                <div class="bg-white p-4 rounded shadow-sm">
+                    <h3 class="font-bold text-[#482C6A] mb-4 border-b pb-2">Admin Modules</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/wholesale/admin" class="block text-[#D88C43] font-medium bg-[#482C6A]/5 p-2 rounded">Wholesale Partnership Applications</a></li>
+                        <li><a href="/wholesale/admin_orders" class="block text-gray-600 hover:bg-gray-50 p-2 rounded">Bulk Orders Pipeline</a></li>
+                        <li><a href="/wholesale/admin_pricing" class="block text-gray-600 hover:bg-gray-50 p-2 rounded">Pricing Tier Management</a></li>
+                        <li><a href="/wholesale/admin_sync" class="block text-gray-600 hover:bg-gray-50 p-2 rounded">Inventory Sync (Sheets)</a></li>
+                        <li><a href="/wholesale/admin_inventory" class="block text-gray-600 hover:bg-gray-50 p-2 rounded">Inventory Control Panel</a></li>
+                        <li><a href="/wholesale/admin_whitelabel" class="block text-gray-600 hover:bg-gray-50 p-2 rounded">White Label Clients</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Panel -->
+            <div class="md:col-span-3 space-y-6">
+                
+                <!-- Approvals Widget -->
+                <div class="bg-white p-6 rounded shadow-sm border-t-4 border-[#D88C43]">
+                    <h2 class="font-heading text-2xl text-[#482C6A] mb-4">Pending Wholesale Partnership Applications</h2>
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-50 border-b">
+                                <th class="p-3 font-semibold text-sm">Business Name</th>
+                                <th class="p-3 font-semibold text-sm">Contact</th>
+                                <th class="p-3 font-semibold text-sm">Documents</th>
+                                <th class="p-3 font-semibold text-sm">Requested Tier</th>
+                                <th class="p-3 font-semibold text-sm">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b text-sm">
+                                <td class="p-3">Apothecary Roots LLC</td>
+                                <td class="p-3">jane@example.com</td>
+                                <td class="p-3"><button class="text-[#D88C43] hover:underline" onclick="this.textContent = 'Downloading Docs...'; setTimeout(() => this.textContent = 'View Docs (2)', 1500)">View Docs (2)</button></td>
+                                <td class="p-3">Tier 1 (55%)</td>
+                                <td class="p-3">
+                                    <button class="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700" onclick="this.textContent = 'Approved'; this.disabled = true;">Approve</button>
+                                    <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 ml-2" onclick="this.textContent = 'Denied'; this.disabled = true;">Deny</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Order Pipeline Widget -->
+                <div class="bg-white p-6 rounded shadow-sm border-t-4 border-[#482C6A]">
+                    <h2 class="font-heading text-2xl text-[#482C6A] mb-4">Recent Bulk Orders</h2>
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-50 border-b">
+                                <th class="p-3 font-semibold text-sm">Order ID</th>
+                                <th class="p-3 font-semibold text-sm">Client</th>
+                                <th class="p-3 font-semibold text-sm">Units (MOQ Enforced)</th>
+                                <th class="p-3 font-semibold text-sm">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b text-sm">
+                                <td class="p-3">#WH-1002</td>
+                                <td class="p-3">Healing Hands Spa</td>
+                                <td class="p-3">144 Units</td>
+                                <td class="p-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Pending Fulfillment</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Enforce Admin Role
+        document.addEventListener('DOMContentLoaded', () => {
+            const userRole = localStorage.getItem('hw_role');
+            if (userRole !== 'wholesale_admin' && userRole !== 'wholesale') {
+                document.body.innerHTML = '<h1 class="p-10 text-center text-red-600">Secure Area. Admin Access Required.</h1>';
+            }
+        });
+    </script>
+</body>
+</html>
+
+

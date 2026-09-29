@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Application | Herbalistic Wellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <header class="bg-[#482C6A] text-[#FAF9F6] sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4"><div class="flex justify-between items-center h-20"><a href="/wholesale/index" class="font-heading text-2xl tracking-wide text-[#FAF9F6] no-underline">Wholesale Portal</a></div></div>
+    </header>
+
+    <main class="flex-grow max-w-5xl mx-auto px-4 py-16 w-full flex flex-col md:flex-row gap-12">
+        
+        <!-- Left Column: Wholesale Node & Info -->
+        <div class="md:w-1/2 space-y-8">
+            <div class="text-center md:text-left">
+                <img src="https://www.herbalisticwellness.com/assets/images/logo.png" alt="Herbalistic Wellness" class="h-24 mx-auto md:mx-0 mb-6">
+                <h1 class="font-heading text-4xl text-[#482C6A] mb-4">Herbalistic Wellness Partnership Program</h1>
+                <p class="text-gray-700 leading-relaxed">
+                    Partnering with Herbalistic Wellness means bringing uncompromising, small-batch apothecary craft to your retail shelves. We meticulously formulate every product using organic, wildcrafted botanicals.
+                </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#D88C43]">
+                <h3 class="font-bold text-[#482C6A] text-lg mb-2">Ordering Process & MOQs</h3>
+                <p class="text-sm text-gray-600 mb-2">Our portal offers seamless bulk ordering with dynamic pricing tiers (Tier 1: 55%, Tier 2: 50%). Minimum Order Quantities (MOQs) are strictly enforced to ensure optimal freshness for your inventory.</p>
+                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                    <li>All Products: 24 Unit MOQ</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-[#482C6A] text-lg mb-4">White Label Customization</h3>
+                <p class="text-sm text-gray-600 mb-4">Approved partners operating at our 80% IP Tier can request bespoke labeling. Below are examples of our standard trade-ready packaging versus white-label capable jars.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Strategic Image Placements -->
+                    <img src="pomelli_photoshoot_image_1_1_0903%20(1).png" alt="White Label Jar Example" class="w-full h-auto rounded shadow-sm object-cover" onerror="this.onerror=null; this.src='https://www.herbalisticwellness.com/assets/images/placeholder-product.png';">
+                    <img src="pomelli_photoshoot_image_1_1_0903%20(2).png" alt="Trade Labeled Product" class="w-full h-auto rounded shadow-sm object-cover" onerror="this.onerror=null; this.src='https://www.herbalisticwellness.com/assets/images/placeholder-product.png';">
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Application Form -->
+        <div class="md:w-1/2">
+            <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-[#482C6A]">
+                <h2 class="font-heading text-2xl text-[#482C6A] mb-2">Wholesale Partnership Application</h2>
+                <p class="text-gray-600 mb-6 text-sm">Submit your credentials for secure access to our B2B portal.</p>
+                
+                <form class="space-y-4" onsubmit="event.preventDefault(); window.location.href='thank-you.html';">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Business / Store Name</label>
+                        <input type="text" class="mt-1 block w-full border border-gray-300 rounded p-2 focus:ring-[#D88C43]" required>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Contact Name</label>
+                            <input type="text" class="mt-1 block w-full border border-gray-300 rounded p-2 focus:ring-[#D88C43]" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Contact Number</label>
+                            <input type="tel" class="mt-1 block w-full border border-gray-300 rounded p-2 focus:ring-[#D88C43]" required placeholder="(555) 000-0000">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input type="email" class="mt-1 block w-full border border-gray-300 rounded p-2 focus:ring-[#D88C43]" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Resale License / Tax ID Number</label>
+                        <input type="text" class="mt-1 block w-full border border-gray-300 rounded p-2 focus:ring-[#D88C43]" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Upload Business Documents (Resale License, Permits, etc.)</label>
+                        <input type="file" multiple accept=".pdf,.jpg,.jpeg,.png" class="mt-1 block w-full border border-gray-300 rounded p-2 focus:ring-[#D88C43]" required>
+                        <p class="text-xs text-gray-500 mt-1">Acceptable formats: PDF, JPG, PNG.</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Business Type</label>
+                        <select class="mt-1 block w-full border border-gray-300 rounded p-2 focus:ring-[#D88C43]">
+                            <option>Boutique Retailer</option>
+                            <option>Spa / Wellness Center</option>
+                            <option>Holistic Practitioner</option>
+                            <option>White Label / Private Label</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-[#D88C43] text-white font-bold py-3 px-4 rounded mt-6 hover:opacity-90 transition">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+

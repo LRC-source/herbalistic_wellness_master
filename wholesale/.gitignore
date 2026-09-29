@@ -1,0 +1,43 @@
+# Environment Variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.env
+
+# Dependencies
+node_modules/
+vendor/
+
+# System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and Databases
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.sql
+*.sqlite
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Secrets and Keys
+firebase-keys.json
+service-account.json
+*.pem
+*.key
+*.cert
+square_production_keys.txt
+
+# Temp Uploads
+temp-zip-check/
+temp_extracted/
+*.zip

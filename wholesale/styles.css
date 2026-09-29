@@ -1,0 +1,30 @@
+/* Wholesale Portal CSS */
+:root {
+  --color-purple: #482C6A; /* Amethyst Purple */
+  --color-amber: #D88C43;  /* Warm Amber */
+  --color-cream: #FAF9F6;  /* Cream */
+  --font-ui: 'Jost', sans-serif;
+  --font-heading: 'Cormorant Garamond', serif;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-purple);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.btn-primary {
+  background-color: var(--color-amber);
+  color: var(--color-cream);
+  transition: opacity 0.3s ease;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Hide tailwind preflight conflicts if any */
