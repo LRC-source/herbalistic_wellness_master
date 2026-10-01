@@ -1926,6 +1926,9 @@ if (CART[id]) {
       var product = DB.products.find(function(p) {
         return (p.slug === slug || p.id === slug);
       });
+      if (product && product.slug && slug !== product.slug) {
+          window.history.replaceState(null, '', '/products/' + product.slug);
+      }
       renderProduct(product);
     
       // NON-DESTRUCTIVE MOBILE PRICE SYNC
