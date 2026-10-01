@@ -230,7 +230,7 @@ var APOTHECARY_DATABASE = {
     "inclusions": "",
     "svg": "herb-pouch",
     "acc": "#829399",
-    "size": "Size: With Tea Bags-1.5 fl oz",
+    "size": "Size: With Tea Bags-1.5 oz",
     "imageSlug": "butterfly-pea-flower",
     "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/835455aee9ada8be47b65bb65c2431aa73cf4010/original.png",
     "visibility": "visible",
@@ -239,7 +239,7 @@ var APOTHECARY_DATABASE = {
     "variations": [
       {
         "id": "K7NAAHACXMRG4ETSV5NYH34H",
-        "name": "Size: With Tea Bags-1.5 fl oz",
+        "name": "Size: With Tea Bags-1.5 oz",
         "price": 15,
         "compareAtPrice": 15,
         "sku": "G748170",
@@ -249,7 +249,7 @@ var APOTHECARY_DATABASE = {
       },
       {
         "id": "YFS27PWYRWDIG2CYXCAJFOSM",
-        "name": "Size: With Tea Bags- .5 fl oz",
+        "name": "Size: With Tea Bags- .5 oz",
         "price": 5.5,
         "compareAtPrice": 5.5,
         "sku": "Q666661",
@@ -399,7 +399,7 @@ var APOTHECARY_DATABASE = {
     "inclusions": "",
     "svg": "jar",
     "acc": "#1A3021",
-    "size": "Size: 1.5 fl oz",
+    "size": "Size: 1.5 oz",
     "imageSlug": "product-default",
     "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/5e592dc0461cf15f2ce41ed30b28c6b4f588f40a/original.jpeg",
     "visibility": "archived",
@@ -408,7 +408,7 @@ var APOTHECARY_DATABASE = {
     "variations": [
       {
         "id": "S6NE5GAFG6U7ZRAFNIZHJSXY",
-        "name": "Size: 1.5 fl oz",
+        "name": "Size: 1.5 oz",
         "price": 13.5,
         "compareAtPrice": 13.5,
         "sku": "2016824",
@@ -469,7 +469,7 @@ var APOTHECARY_DATABASE = {
     "inclusions": "",
     "svg": "herb-pouch",
     "acc": "#829399",
-    "size": "Size: 1.5 fl oz",
+    "size": "Size: 1.5 oz",
     "imageSlug": "chamomile-flowers",
     "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/c8a5b190afb5e014eb18b149288b9d07a6b9ab7f/original.png",
     "visibility": "visible",
@@ -478,7 +478,7 @@ var APOTHECARY_DATABASE = {
     "variations": [
       {
         "id": "7PSXTWUOWA5FMQDSBXRHO5VE",
-        "name": "Size: 1.5 fl oz",
+        "name": "Size: 1.5 oz",
         "price": 14,
         "compareAtPrice": 14,
         "sku": "3731742",
@@ -488,7 +488,7 @@ var APOTHECARY_DATABASE = {
       },
       {
         "id": "TAP3SXXPFKUWAKBE7T24H6RY",
-        "name": "Size: .6 fl oz",
+        "name": "Size: .6 oz",
         "price": 6,
         "compareAtPrice": 6,
         "sku": "768960S",
@@ -539,15 +539,15 @@ var APOTHECARY_DATABASE = {
     ]
   },
   {
-    "id": "chickweed-calendula-lavender-ezcema-cream",
-    "square_id": "chickweed-calendula-lavender-ezcema-cream",
+    "id": "chickweed-calendula-lavender-eczema-cream",
+    "square_id": "chickweed-calendula-lavender-eczema-cream",
     "square_variation_id": "IGGZATJSUOTTAWK5XA4Y4GPG",
     "sku": "132939Q",
-    "name": "Chickweed Calendula & Lavender Ezcema Cream",
+    "name": "Chickweed Calendula & Lavender Eczema Cream",
     "cat": "specialty-blends",
     "price": 20,
     "compareAtPrice": 0,
-    "desc": "This soothing ezcema cream was formulated with you in mind. Calms the itching, redness, & dry flaking skin that often accompanies Ezcema, Psoriasis, and many other bothersome skin conditions.\n\nChickweed is often used topically to alleviate itching secondary to insect bites. It is often applied as a cream several times daily to rashes and inflammatory skin conditions, such as eczema, to ease itching and inflammation.\n\nCalendula flower has antifungal, anti-inflammatory, and antibacterial properties that may make it useful in healing wounds, soothing eczema, and relieving diaper rash. It's also used as an antiseptic.\n\nLavender has antifungal properties and reduces inflammation, it can help keep eczema at bay. Lavender can also be made into an oil that can also be used to treat psoriasis. The lavender oil is known to help cleanse your skin and lessen redness and irritation.\n\nThis combination infused with mother nature's best antifungal Tea Trea make this cream a powerhouse",
+    "desc": "This soothing eczema cream was formulated with you in mind. Calms the itching, redness, & dry flaking skin that often accompanies Eczema, Psoriasis, and many other bothersome skin conditions.\n\nChickweed is often used topically to alleviate itching secondary to insect bites. It is often applied as a cream several times daily to rashes and inflammatory skin conditions, such as eczema, to ease itching and inflammation.\n\nCalendula flower has antifungal, anti-inflammatory, and antibacterial properties that may make it useful in healing wounds, soothing eczema, and relieving diaper rash. It's also used as an antiseptic.\n\nLavender has antifungal properties and reduces inflammation, it can help keep eczema at bay. Lavender can also be made into an oil that can also be used to treat psoriasis. The lavender oil is known to help cleanse your skin and lessen redness and irritation.\n\nThis combination infused with mother nature's best antifungal Tea Trea make this cream a powerhouse",
     "fullDesc": "Handcrafted for skin that asks for a little extra kindness. We slow-infuse wildcrafted chickweed (Stellaria media), organic calendula blossoms, and French lavender into unrefined shea butter, cold-pressed jojoba, and pure beeswax. The result is a rich, golden cream that melts on contact and leaves skin feeling soft, cushioned, and comforted. Chickweed and calendula are old apothecary favorites for dry, reactive-looking skin, and the lavender keeps it smelling like a proper herbal workshop. Free of artificial fragrance and parabens. Massage a small amount onto clean skin as often as you like. Each jar is 4 oz in amber glass. For external use only; patch-test first if your skin is sensitive.",
     "ingredients": "",
     "inclusions": "",
@@ -631,7 +631,7 @@ var APOTHECARY_DATABASE = {
     "cat": "infused-oils",
     "price": 19,
     "compareAtPrice": 0,
-    "desc": "Comfrey is well known for its amazingly benefits. This oil is beneficial to all skin types; it helps to moisturise and soothe dry irritated skin, promotes rapid skin-cell growth, contributes to skin renewal, protects against bacteria and other microorganisms, reduces inflammation and helps to keep skin healthy.\n\nComfrey is applied to the skin for ulcers, wounds, muscle soreness, bruises, rheumatoid arthritis, varicose veins, gout, and even fractures.\n\nComfrey Oil is also a great moisturizer for Ezcema and Psoriasis. When pair with our Chickweed Lavender and Calendula Ezcema Salve the two have been known to work wonders for easing symptoms when used consistently.\n\nThese statements have not been evaluated by the Food and Drug Administration. This product is not?intended to diagnose, treat, cure, or prevent any disease.\n\n\nHerbalistic Wellness is a proud supporter of the National Multiple Sclerosis Society Visit them today to donate @ www.nationalmssociety.org",
+    "desc": "Comfrey is well known for its amazingly benefits. This oil is beneficial to all skin types; it helps to moisturise and soothe dry irritated skin, promotes rapid skin-cell growth, contributes to skin renewal, protects against bacteria and other microorganisms, reduces inflammation and helps to keep skin healthy.\n\nComfrey is applied to the skin for ulcers, wounds, muscle soreness, bruises, rheumatoid arthritis, varicose veins, gout, and even fractures.\n\nComfrey Oil is also a great moisturizer for Eczema and Psoriasis. When pair with our Chickweed Lavender and Calendula Eczema Salve the two have been known to work wonders for easing symptoms when used consistently.\n\nThese statements have not been evaluated by the Food and Drug Administration. This product is not?intended to diagnose, treat, cure, or prevent any disease.\n\n\nHerbalistic Wellness is a proud supporter of the National Multiple Sclerosis Society Visit them today to donate @ www.nationalmssociety.org",
     "fullDesc": "Known as 'knitbone' in the old herbals, comfrey has been a folk favorite of gardeners, makers, and hands-on people for centuries. We solar-macerate organic comfrey leaves and roots (Symphytum officinale) in cold-pressed carrier oils until the oil turns deep and green. It's thick, slow to absorb, and made for long, attentive massage on shoulders, legs, feet \u2014 anywhere that works hard. A true apothecary bodywork oil. For external use only, on unbroken skin.",
     "ingredients": "",
     "inclusions": "",
@@ -1562,8 +1562,8 @@ var APOTHECARY_DATABASE = {
     ]
   },
   {
-    "id": "lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-ezcema-bath-scrub",
-    "square_id": "lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-ezcema-bath-scrub",
+    "id": "lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-eczema-bath-scrub",
+    "square_id": "lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-eczema-bath-scrub",
     "square_variation_id": "XDBHOG3IJKHTQEDVUNNYY4LZ",
     "sku": "811663R",
     "name": "Lavender Body Scrub",
@@ -1613,7 +1613,7 @@ var APOTHECARY_DATABASE = {
     "inclusions": "",
     "svg": "herb-pouch",
     "acc": "#829399",
-    "size": "Size: 1.5 fl oz",
+    "size": "Size: 1.5 oz",
     "imageSlug": "lavender-flowers",
     "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/bbfbddc40b252f0892a5e8b1470b063009a9d71c/original.jpeg",
     "visibility": "visible",
@@ -1622,7 +1622,7 @@ var APOTHECARY_DATABASE = {
     "variations": [
       {
         "id": "BKDQFYFXB47ZONGBWZ2OYT2V",
-        "name": "Size: 1.5 fl oz",
+        "name": "Size: 1.5 oz",
         "price": 14,
         "compareAtPrice": 14,
         "sku": "D113574",
@@ -1646,11 +1646,11 @@ var APOTHECARY_DATABASE = {
     ]
   },
   {
-    "id": "lavender-milk-honey-bath-soak-milk-bath-milk-bath-powder-herbal-infused-bath-ezcema-psoriasis-sensitive-skin-soak",
-    "square_id": "lavender-milk-honey-bath-soak-milk-bath-milk-bath-powder-herbal-infused-bath-ezcema-psoriasis-sensitive-skin-soak",
+    "id": "lavender-milk-honey-bath-soak-milk-bath-milk-bath-powder-herbal-infused-bath-eczema-psoriasis-sensitive-skin-soak",
+    "square_id": "lavender-milk-honey-bath-soak-milk-bath-milk-bath-powder-herbal-infused-bath-eczema-psoriasis-sensitive-skin-soak",
     "square_variation_id": "M3R5DOAP5QMSSDWO23AZOXVK",
     "sku": "R134968",
-    "name": "Lavender Milk & Honey Bath Soak,  Milk Bath, Milk bath Powder, Herbal Infused Bath, Ezcema, Psoriasis, Sensitive Skin Soak",
+    "name": "Lavender Milk & Honey Bath Soak,  Milk Bath, Milk bath Powder, Herbal Infused Bath, Eczema, Psoriasis, Sensitive Skin Soak",
     "cat": "dried-herbs",
     "price": 19.99,
     "compareAtPrice": 0,
@@ -2355,7 +2355,7 @@ var APOTHECARY_DATABASE = {
       },
       {
         "id": "3SA23NXZCXP2WMNZDRBDBZES",
-        "name": "Size: 1.5 fl oz",
+        "name": "Size: 1.5 oz",
         "price": 13,
         "compareAtPrice": 13,
         "sku": "B137150",
@@ -3227,7 +3227,7 @@ var APOTHECARY_DATABASE = {
       },
       {
         "id": "ABZ2KZLE5S3XMOPPJ5WFIXMG",
-        "name": "Size: 6 Bars | each 4 fl oz, Scent: Tea Tree Peppermint",
+        "name": "Size: 6 Bars | each 4.5 oz, Scent: Tea Tree Peppermint",
         "price": 31.2,
         "compareAtPrice": 31.2,
         "sku": "667917X",
@@ -3317,7 +3317,7 @@ var APOTHECARY_DATABASE = {
       },
       {
         "id": "UTFUY4MJW4OAN4TYKWPAADF3",
-        "name": "Size: 12 Bars | each 4 fl oz, Scent: Tea Tree Peppermint",
+        "name": "Size: 12 Bars | each 4.5 oz, Scent: Tea Tree Peppermint",
         "price": 62.4,
         "compareAtPrice": 62.4,
         "sku": "256395Y",
@@ -3407,7 +3407,7 @@ var APOTHECARY_DATABASE = {
       },
       {
         "id": "KIEBAD5AB2PNKNWKDYYQ6A6C",
-        "name": "Size: 24 Bars | each 4 fl oz, Scent: Tea Tree Peppermint",
+        "name": "Size: 24 Bars | each 4.5 oz, Scent: Tea Tree Peppermint",
         "price": 124.8,
         "compareAtPrice": 124.8,
         "sku": "398138X",
@@ -3458,41 +3458,7 @@ var APOTHECARY_DATABASE = {
     ],
     "gallery": []
   },
-  {
-    "id": "AIJ7YNAFWGLAOB2FLHWFGZPP",
-    "square_id": "AIJ7YNAFWGLAOB2FLHWFGZPP",
-    "square_variation_id": "LEDR7GYZ2RQAP4KS573PM4GB",
-    "sku": "N820367",
-    "name": "Turmeric Ginger Lemon Body Oil",
-    "cat": "infused-oils",
-    "price": 19,
-    "compareAtPrice": 0,
-    "desc": "Turmeric Ginger & Lemon?Oil is formulated with our special blend of carrier oils?& is designed to be used on acne. Being an anti-fungal and antiseptic, it will dry out the pimples and also prevent further breakouts. Turmeric?is often used as in anti-marks and anti-spots herbal preparation. When used persistently, turmeric ginger & lemon oil can fade acne gradually & reduce marks giving you a blemish-free glow on your skin with this anti-inflammatory oil.\n\nPlease be advised: Turmeric can naturally stain clothing so do not used an excess but easily washes away during cleaning.\n\n\n\nThese statements have not been evaluated by the Food and Drug Administration. This product is not?intended to diagnose, treat, cure, or prevent any disease.\n\n\nHerbalistic Wellness is a proud supporter of the National Multiple Sclerosis Society Visit them today to donate @ www.nationalmssociety.org",
-    "fullDesc": "Turmeric Ginger & Lemon?Oil is formulated with our special blend of carrier oils?& is designed to be used on acne. Being an anti-fungal and antiseptic, it will dry out the pimples and also prevent further breakouts. Turmeric?is often used as in anti-marks and anti-spots herbal preparation. When used persistently, turmeric ginger & lemon oil can fade acne gradually & reduce marks giving you a blemish-free glow on your skin with this anti-inflammatory oil.\n\nPlease be advised: Turmeric can naturally stain clothing so do not used an excess but easily washes away during cleaning.\n\n\n\nThese statements have not been evaluated by the Food and Drug Administration. This product is not?intended to diagnose, treat, cure, or prevent any disease.\n\n\nHerbalistic Wellness is a proud supporter of the National Multiple Sclerosis Society Visit them today to donate @ www.nationalmssociety.org",
-    "ingredients": "",
-    "inclusions": "",
-    "svg": "oil-bottle",
-    "acc": "#D88C43",
-    "size": "Volume: 2 Fluid ounces",
-    "imageSlug": "product-default",
-    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/975a97b7f9a488048a746ce460c9ae0502238187/original.png",
-    "visibility": "hidden",
-    "is_archived": false,
-    "inStock": true,
-    "variations": [
-      {
-        "id": "LEDR7GYZ2RQAP4KS573PM4GB",
-        "name": "Volume: 2 Fluid ounces",
-        "price": 19,
-        "compareAtPrice": 19,
-        "sku": "N820367",
-        "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/975a97b7f9a488048a746ce460c9ae0502238187/original.png",
-        "inStock": true,
-        "inventoryCount": 6
-      }
-    ],
-    "gallery": []
-  },
+  
   {
     "id": "Y5MCWKIUR4A225UY2Z5G6SR6",
     "square_id": "Y5MCWKIUR4A225UY2Z5G6SR6",
@@ -3508,7 +3474,7 @@ var APOTHECARY_DATABASE = {
     "inclusions": "",
     "svg": "herb-pouch",
     "acc": "#829399",
-    "size": "Size: With Tea Bags- .5 fl oz",
+    "size": "Size: With Tea Bags- .5 oz",
     "imageSlug": "product-default",
     "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/fc2201dc393d19b2c85e3e3e8328e42e03da82e3/original.jpeg",
     "visibility": "archived",
@@ -3517,7 +3483,7 @@ var APOTHECARY_DATABASE = {
     "variations": [
       {
         "id": "G7DOEITLERYLHH7NRMCM4GSD",
-        "name": "Size: With Tea Bags- .5 fl oz",
+        "name": "Size: With Tea Bags- .5 oz",
         "price": 5.5,
         "compareAtPrice": 5.5,
         "sku": "329443W",
@@ -3527,7 +3493,7 @@ var APOTHECARY_DATABASE = {
       },
       {
         "id": "V2BFVOWNVT2BUEJVXUZVF5U6",
-        "name": "Size: With Tea Bags-  1 fl oz",
+        "name": "Size: With Tea Bags- 1 oz",
         "price": 9,
         "compareAtPrice": 9,
         "sku": "281578C",

@@ -8,6 +8,29 @@
     }
   </script>
   <meta charset="UTF-8"/>
+
+  <!-- Google Analytics GA4 - G-31WB310BPN -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-31WB310BPN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // GA4 User-ID Tracking
+    var userEmail = localStorage.getItem('hw_student_email');
+    if (userEmail) {
+      var hash = 0;
+      for (var i = 0; i < userEmail.length; i++) {
+          var char = userEmail.charCodeAt(i);
+          hash = ((hash << 5) - hash) + char;
+          hash = hash & hash;
+      }
+      var safeUserId = 'hw_user_' + Math.abs(hash);
+      gtag('config', 'G-31WB310BPN', { 'user_id': safeUserId });
+    } else {
+      gtag('config', 'G-31WB310BPN');
+    }
+  </script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <meta name="description" content="Secure Checkout — Complete your botanical remedies order securely via Square."/>
   <meta name="theme-color" content="#1A3021"/>
