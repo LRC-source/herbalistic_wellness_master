@@ -510,7 +510,6 @@ RewriteRule ^(.*)$ $1.html [L]
     RewriteRule ^s/episode/(.*)$ index.html#podcast [NE,NC,R=301,L]
 
 # - INDIVIDUAL PRODUCT PAGE SLUG ROUTES -
-RewriteRule ^products/chickweed-calendula-lavender-ezcema-cream/?$ /products/chickweed-calendula-lavender-eczema-cream [R=301,L]
 RewriteRule ^products/nerve-joint-muscle-pain-relief-salve-ease-arthritis-sciatica-fybromyalgia-neuropathy/?$ /products/nerve-joint-muscle-pain-relief-salve [R=301,L]
 # Route /products/<slug>, /product/<slug>, and /s/shop/<slug> directly to product.html
 RewriteRule ^products/([^/]+)/?$ product.html?slug=$1 [L,QSA]

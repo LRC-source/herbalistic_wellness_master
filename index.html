@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <script>
@@ -1332,18 +1332,20 @@ textarea:-webkit-autofill:active {
   <section id="view-home" class="view view--active hw-hero-container relative w-full min-h-screen flex flex-col justify-between overflow-hidden px-4 sm:px-8 py-6 z-10" aria-label="Home">
     
 
-    <!-- Background Video Layer -->
+    <!-- Static Background Poster Image Layer -->
     <div class="absolute inset-0 w-full h-full z-0 pointer-events-none" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;">
-        <img class="object-cover w-full h-full opacity-[0.85]" style="width: 100%; height: 100%; object-fit: cover;" src="assets/images/homepage-bg-poster.jpg" alt="Background">
+        <img src="assets/images/homepage-bg-poster.jpg" alt="" class="object-cover w-full h-full opacity-[0.85]" style="width: 100%; height: 100%; object-fit: cover;">
         <div class="absolute inset-0 bg-gradient-to-r from-[#faf9f6]/95 via-[#faf9f6]/80 to-transparent"></div>
         <div class="absolute inset-0 bg-[#482c6a]/5 mix-blend-overlay pointer-events-none"></div>
     </div>
     
     <!-- Main Above-The-Fold Dual-Intent Split Grid -->
     <main class="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto py-12">
-<!-- Large Centered Logo Added -->
-<div class="col-span-full flex justify-center mb-8"><img src="assets/images/logo.png" alt="Herbalistic Wellness Logo" style="max-width: 400px; width: 100%; height: auto; object-fit: contain;"></div>
 
+        <!-- Large Centered Hero Logo -->
+        <div class="col-span-1 lg:col-span-12 flex justify-center items-center pb-4">
+          <img src="assets/images/logo.png" alt="Herbalistic Wellness" style="max-width: 380px; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 4px 24px rgba(72,44,106,0.18));" fetchpriority="high">
+        </div>
         
         <!-- Left Column: Physical Apothecary Anchor (Instant Bestsellers) -->
         <div class="lg:col-span-7 flex flex-col justify-center space-y-6 text-left">
@@ -1667,9 +1669,6 @@ textarea:-webkit-autofill:active {
                 <div class="form-group" style="margin-bottom: 0; width: 100%; text-align: left;">
                   <label for="class-login-password" class="form-label" style="color: #482C6A; font-weight: 500;">Password</label>
                   <input type="password" id="class-login-password" class="form-input" style="background: #ffffff; border: 1px solid #dadce0; color: #202124; padding: 10px 14px; border-radius: 4px; width: 100%; box-sizing: border-box;" required autocomplete="current-password">
-                  <div style="text-align: right; margin-top: 4px;">
-                    <a href="#" id="classroom-forgot-password-link" style="color: var(--color-sage); font-size: 0.75rem; text-decoration: none;">Forgot Password?</a>
-                  </div>
                 </div>
                 
                 <button type="submit" class="btn-primary btn-amber btn-full" style="justify-content: center; height: 48px; margin-top: var(--space-2); background: var(--color-amber); border-color: var(--color-amber); color: #482C6A; cursor: pointer; display: flex; align-items: center; width: 100%; font-weight: 600; border-radius: 4px; border: 1px solid var(--color-amber); transition: all 0.3s ease;">
@@ -2154,9 +2153,6 @@ textarea:-webkit-autofill:active {
           </button>
           <button type="button" onclick="switchAdminTab('discounts')" class="admin-nav-btn" id="admin-tab-btn-discounts" style="text-align: left; padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-sage); width: 100%; display: block; border: 1px solid transparent; transition: all 0.2s; cursor: pointer;">
             Discount Codes
-          </button>
-          <button type="button" onclick="switchAdminTab('affiliates')" class="admin-nav-btn" id="admin-tab-btn-affiliates" style="text-align: left; padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-sage); width: 100%; display: block; border: 1px solid transparent; transition: all 0.2s; cursor: pointer;">
-            Affiliates
           </button>
           <button type="button" onclick="adminLogout()" style="text-align: left; padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: #e05a5a; width: 100%; display: block; border: 1px solid transparent; transition: all 0.2s; margin-top: auto; cursor: pointer;">
             Exit Session
@@ -2887,52 +2883,6 @@ textarea:-webkit-autofill:active {
             </div>
           </div>
 
-          <!-- PANEL: AFFILIATES -->
-          <div id="admin-panel-affiliates" class="admin-panel" style="display: none;">
-            <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: var(--space-4); flex-wrap: wrap; gap: var(--space-3);">
-              <div>
-                <h3 style="font-family: var(--font-editorial); font-size: var(--text-lg); color: var(--color-cream); margin-bottom: var(--space-1); margin-top: 0;"> -  Affiliate Applicant Tracker</h3>
-                <p style="font-size: var(--text-xs); color: var(--color-sage); margin-bottom: 0;">Manage and review affiliate program applications.</p>
-              </div>
-            </div>
-
-            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden;">
-              <table style="width: 100%; border-collapse: collapse; font-size: var(--text-xs);">
-                <thead>
-                  <tr style="border-bottom: 1px solid var(--border-subtle);">
-                    <th style="text-align: left; padding: var(--space-3) var(--space-4); color: var(--color-sage); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em;">Name</th>
-                    <th style="text-align: left; padding: var(--space-3) var(--space-4); color: var(--color-sage); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em;">Email</th>
-                    <th style="text-align: left; padding: var(--space-3) var(--space-4); color: var(--color-sage); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em;">Date Applied</th>
-                    <th style="text-align: left; padding: var(--space-3) var(--space-4); color: var(--color-sage); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em;">Status</th>
-                    <th style="text-align: left; padding: var(--space-3) var(--space-4); color: var(--color-sage); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em;">Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="admin-affiliates-table-body">
-                  <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                    <td style="padding: var(--space-3) var(--space-4); color: var(--color-cream);">Jane Doe</td>
-                    <td style="padding: var(--space-3) var(--space-4); color: var(--color-sage);">jane.doe@example.com</td>
-                    <td style="padding: var(--space-3) var(--space-4); color: var(--color-sage);">Oct 12, 2026</td>
-                    <td style="padding: var(--space-3) var(--space-4);"><span style="background: rgba(224, 160, 37, 0.2); color: var(--color-amber); padding: 2px 6px; border-radius: 4px; font-size: 10px;">Pending</span></td>
-                    <td style="padding: var(--space-3) var(--space-4);">
-                      <button style="background: transparent; border: 1px solid var(--border-subtle); color: var(--color-cream); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 10px; margin-right: 4px;">Approve</button>
-                      <button style="background: transparent; border: 1px solid var(--border-subtle); color: #e05a5a; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 10px;">Reject</button>
-                    </td>
-                  </tr>
-                  <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                    <td style="padding: var(--space-3) var(--space-4); color: var(--color-cream);">John Smith</td>
-                    <td style="padding: var(--space-3) var(--space-4); color: var(--color-sage);">jsmith@herbalist.com</td>
-                    <td style="padding: var(--space-3) var(--space-4); color: var(--color-sage);">Oct 10, 2026</td>
-                    <td style="padding: var(--space-3) var(--space-4);"><span style="background: rgba(140, 200, 160, 0.2); color: #8cc8a0; padding: 2px 6px; border-radius: 4px; font-size: 10px;">Approved</span></td>
-                    <td style="padding: var(--space-3) var(--space-4);">
-                      <button style="background: transparent; border: 1px solid var(--border-subtle); color: var(--color-sage); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 10px;">View</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-
         </div>
 
       </div>
@@ -2948,11 +2898,6 @@ textarea:-webkit-autofill:active {
     <div class="footer-brand" style="display: flex; flex-direction: column; gap: var(--s3); max-width: 260px;">
       <span class="logo-text" style="font-family: var(--fe); font-size: var(--lg); font-style: italic; color: #FAF9F6;"><span class="logo-mark" aria-hidden="true" style="color: var(--accent-primary);"></span> Herbalistic Wellness</span>
       <p class="footer-tagline" style="font-size: var(--xs); color: rgba(250, 249, 246, 0.85); line-height: 1.6;">Ancient wisdom. Modern formulation. Handcrafted in harmony with circadian and botanical cycles.</p>
-      
-      <div style="font-size: var(--xs); color: rgba(250, 249, 246, 0.85); line-height: 1.6;">
-        <p><strong>Phone:</strong> <a href="tel:4104490208" style="color: inherit; text-decoration: none;">(410) 449-0208</a></p>
-        <p><strong>Hours:</strong> Mon&ndash;Fri 9 AM&ndash;4 PM</p>
-      </div>
       
       <!-- Footer Newsletter Form -->
       <div class="footer-newsletter" style="margin-top: var(--s4);">
@@ -2985,7 +2930,7 @@ textarea:-webkit-autofill:active {
     <div class="footer-tree-col">
       <h4 style="font-family: var(--fe); font-size: var(--md); font-style: italic; color: #FAF9F6; margin-bottom: var(--s4); border-bottom: 1px solid rgba(216, 140, 67, 0.2); padding-bottom: var(--s2);">About Us</h4>
       <ul style="display: flex; flex-direction: column; gap: var(--s2); font-size: var(--xs); color: var(--text-secondary);">
-        <li><a href="/#about" class="footer-link">About Us</a></li>
+        <li><a href="/" class="footer-link">About Us</a></li>
         <li><a href="/podcast" class="footer-link">Herb &amp; Soul Podcast</a></li>
         <li><a href="affiliate-marketplace" class="footer-link">Affiliate Marketplace</a></li>
         <li><a href="alumni-discount" class="footer-link">CCBC Alumni Discount</a></li>
@@ -3433,7 +3378,7 @@ setTimeout(function() {
 }, 20);
 
 /* ””” DATA ””” */
-var AVAILABLE_IMAGES = ["arnica-flower","arnica-oil","ashwagandha","burdock-root","butterfly-pea-flower-tincture","butterfly-pea-flower","butterfly-pea-sea-moss-face-mask","chamomile-flowers-1-5oz","chamomile-flowers-5oz","chamomile-flowers","chamomile-tincture","cucumber-green-tea-soap","dandelion-root","echinacea-tincture","elderberry-tincture","elderberry","eucalyptus-mint-bath-scrub","eucalyptus-mint-body-butter","frankincense-myrrh-body-butter","garlic-tincture","ginger-grapefruit-body-butter","ginger-grapefruit-peel-powder-bath-scrub","ginger-tincture","harvest-spice-limited-edition-seasonal","herbal-treasure-storage-guide","lavender-body-butter","lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-eczema-bath-scrub","lavender-flowers-1-5oz","lavender-flowers-5oz","lavender-flowers","lavender-oatmeal-artisan-soap","lavender-rose-calendula-soap","lemongrass-leaf-1-5oz","lemongrass-leaf-5oz","lemongrass-leaf","mullein-leaf","nerve-joint-muscle-pain-relief-salve","oatmeal-honey-artisan-soap","orange-calendula-artisan-soap","peach-mango-artisan-soap","peach-mango-bath-salt-scrub","peppermint-leaf-1-5oz","peppermint-leaf-5oz","peppermint-leaf","personalized-herbal-wellness-protocol","rosemary-leaf-1-oz-bag-w-tea-bags","rosemary-leaf-2-3-oz-tea-bags-w-tea-bags","rosemary-leaf","rosemary-lemon-poppyseed-artisan-soap","rosemary-peppermint-hair-growth-serum","rosemary-tincture-1oz","sacred-botanical-legacy-storage-potency-manual","south-african-rooibos","spearmint-leaf","st-john-s-body-oil","st-johns-wort-dried-mood-regulating-herb-herbal-healing-diy-herbal-infusions","tea-tree-peppermint-artisan-soap","the-amethyst-lavender-calming-repair-bath-ritual","the-artisanal-herbal-infused-handmade-soaps-alchemy-synthesis-wholesale","turmeric-frankincense-and-myrrh-soap","turmeric-ginger-lemon-glow-serum","turmeric-lemon-body-butter","turmeric-root-repair-soap","turmeric-tincture","valerian-root"];
+var AVAILABLE_IMAGES = ["arnica-flower","arnica-oil","ashwagandha","burdock-root","butterfly-pea-flower-tincture","butterfly-pea-flower","butterfly-pea-sea-moss-face-mask","chamomile-flowers-1-5oz","chamomile-flowers-5oz","chamomile-flowers","chamomile-tincture","cucumber-green-tea-soap","dandelion-root","echinacea-tincture","elderberry-tincture","elderberry","eucalyptus-mint-bath-scrub","eucalyptus-mint-body-butter","frankincense-myrrh-body-butter","garlic-tincture","ginger-grapefruit-body-butter","ginger-grapefruit-peel-powder-bath-scrub","ginger-tincture","harvest-spice-limited-edition-seasonal","herbal-treasure-storage-guide","lavender-body-butter","lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-ezcema-bath-scrub","lavender-flowers-1-5oz","lavender-flowers-5oz","lavender-flowers","lavender-oatmeal-artisan-soap","lavender-rose-calendula-soap","lemongrass-leaf-1-5oz","lemongrass-leaf-5oz","lemongrass-leaf","mullein-leaf","nerve-joint-muscle-pain-relief-salve","oatmeal-honey-artisan-soap","orange-calendula-artisan-soap","peach-mango-artisan-soap","peach-mango-bath-salt-scrub","peppermint-leaf-1-5oz","peppermint-leaf-5oz","peppermint-leaf","personalized-herbal-wellness-protocol","rosemary-leaf-1-oz-bag-w-tea-bags","rosemary-leaf-2-3-oz-tea-bags-w-tea-bags","rosemary-leaf","rosemary-lemon-poppyseed-artisan-soap","rosemary-peppermint-hair-growth-serum","rosemary-tincture-1oz","sacred-botanical-legacy-storage-potency-manual","south-african-rooibos","spearmint-leaf","st-john-s-body-oil","st-johns-wort-dried-mood-regulating-herb-herbal-healing-diy-herbal-infusions","tea-tree-peppermint-artisan-soap","the-amethyst-lavender-calming-repair-bath-ritual","the-artisanal-herbal-infused-handmade-soaps-alchemy-synthesis-wholesale","turmeric-frankincense-and-myrrh-soap","turmeric-ginger-lemon-glow-serum","turmeric-lemon-body-butter","turmeric-root-repair-soap","turmeric-tincture","valerian-root"];
 
 var DB = {
   categories:[
@@ -3441,260 +3386,6 @@ var DB = {
     {id:'natural-soaps',name:'Natural Soaps'},{id:'specialty-blends',name:'Specialty Blends'},{id:'dried-herbs',name:'Dried Herbs'}
   ],
       products: [
-{
-    "id": "quick-herbal-reference-guide",\n    "seo": {"id":"quick-herbal-reference-guide","sku":"95","name":"Quick Herbal Reference Guide — 103 Herbs with Photos, Preparation Ratios & Tincture Chapter","price":18.99,"pages":67,"feedIds":["GUIDE_QHRG","HW-GUIDE-QHRG","95"],"seoTitle":"Herbal Reference Guide with Photos | Preparation Ratios Chart","seoDesc":"An herbal reference guide with real photos for beginners. The best herb identification book with pictures and herbal preparation ratios chart.","buyKeywords":["herbal reference guide with real photos for beginners","best herb identification book with pictures","herbal preparation ratios chart for teas and tinctures"],"learnKeyword":"how to make herbal tinctures at home step by step","relatedProducts":["butterfly-pea-flower","echinacea-purpurea"],"toc":["Herb Identification Photos","Preparation Ratios Chart","Tincture Making Guide"],"crossSellTarget":"echinacea-purpurea"},
-    "square_id": "quick-herbal-reference-guide",
-    "sku": "95",
-    "name": "Quick Herbal Reference Guide",
-    "cat": "books",
-    "price": 18.99,
-    "compareAtPrice": 18.99,
-    "desc": "66-page illustrated herbal reference, 103 herbs, preparation ratios, MAKER15 discount inside. Coming soon to Amazon in hard copy.",
-    "fullDesc": "66-page illustrated herbal reference, 103 herbs, preparation ratios, MAKER15 discount inside. Coming soon to Amazon in hard copy.",
-    "ingredients": "",
-    "inclusions": "",
-    "svg": "book",
-    "acc": "#829399",
-    "size": "Digital PDF",
-    "imageSlug": "quick-herbal-reference-guide",
-    "image": "",
-    "visibility": "visible",
-    "is_archived": false,
-    "inStock": true,
-    "isDigital": true,
-    "digitalFile": "HW-Quick-Herbal-Reference-Guide-v3.pdf"
-},
-{
-    "id": "the-crown-canvas",
-    "square_id": "the-crown-canvas",
-    "sku": "84",
-    "name": "The Crown & Canvas",
-    "cat": "books",
-    "price": 14.99,
-    "compareAtPrice": 14.99,
-    "desc": "Coming soon to Amazon in hard copy.",
-    "fullDesc": "Coming soon to Amazon in hard copy.",
-    "ingredients": "",
-    "inclusions": "",
-    "svg": "book",
-    "acc": "#829399",
-    "size": "Digital PDF",
-    "imageSlug": "the-crown-canvas",
-    "image": "",
-    "visibility": "visible",
-    "is_archived": false,
-    "inStock": true,
-    "isDigital": true,
-    "digitalFile": ""
-},
-{
-    "id": "botanical-breathwork-business",
-    "square_id": "botanical-breathwork-business",
-    "sku": "85",
-    "name": "Botanical Breathwork & Business",
-    "cat": "books",
-    "price": 12.99,
-    "compareAtPrice": 12.99,
-    "desc": "Coming soon to Amazon in hard copy.",
-    "fullDesc": "Coming soon to Amazon in hard copy.",
-    "ingredients": "",
-    "inclusions": "",
-    "svg": "book",
-    "acc": "#829399",
-    "size": "Digital PDF",
-    "imageSlug": "botanical-breathwork-business",
-    "image": "",
-    "visibility": "visible",
-    "is_archived": false,
-    "inStock": true,
-    "isDigital": true,
-    "digitalFile": ""
-},
-{
-    "id": "the-soft-life-blueprint",\n    "seo": {"id":"the-soft-life-blueprint","sku":"86","name":"The Soft Life Blueprint — Daily Affirmations & Boundary-Setting Coloring Journal","price":9.99,"pages":90,"feedIds":["BOOK_86","HW-BOOK-86","86"],"seoTitle":"Soft Life Journal for Black Women | Boundaries & Affirmations","seoDesc":"The ultimate soft life journal for Black women. An empowering affirmations and boundaries journal and anti-burnout coloring journal for high-achieving women.","buyKeywords":["soft life journal for Black women","affirmations and boundaries journal for Black women","anti-burnout coloring journal for high-achieving women"],"learnKeyword":"how to set boundaries without guilt as a Black woman","relatedProducts":["butterfly-pea-flower","hibiscus-leaf"],"toc":["Daily Affirmations","Boundary Setting Scripts","Anti-Burnout Coloring"],"crossSellTarget":"hibiscus-leaf"},
-    "square_id": "the-soft-life-blueprint",
-    "sku": "86",
-    "name": "The Soft Life Blueprint",
-    "cat": "books",
-    "price": 9.99,
-    "compareAtPrice": 9.99,
-    "desc": "Coming soon to Amazon in hard copy.",
-    "fullDesc": "Coming soon to Amazon in hard copy.",
-    "ingredients": "",
-    "inclusions": "",
-    "svg": "book",
-    "acc": "#829399",
-    "size": "Digital PDF",
-    "imageSlug": "the-soft-life-blueprint",
-    "image": "",
-    "visibility": "visible",
-    "is_archived": false,
-    "inStock": true,
-    "isDigital": true,
-    "digitalFile": ""
-},
-{
-    "id": "rooted-resilient",
-    "square_id": "rooted-resilient",
-    "sku": "87",
-    "name": "Rooted & Resilient",
-    "cat": "books",
-    "price": 14.99,
-    "compareAtPrice": 14.99,
-    "desc": "Coming soon to Amazon in hard copy.",
-    "fullDesc": "Coming soon to Amazon in hard copy.",
-    "ingredients": "",
-    "inclusions": "",
-    "svg": "book",
-    "acc": "#829399",
-    "size": "Digital PDF",
-    "imageSlug": "rooted-resilient",
-    "image": "",
-    "visibility": "visible",
-    "is_archived": false,
-    "inStock": true,
-    "isDigital": true,
-    "digitalFile": ""
-},
-{
-    "id": "the-momentum-map",\n    "seo": {"id":"the-momentum-map","sku":"88","name":"The Momentum Map — A Quarterly OKR & Action Planner for Black Women Founders","price":14.99,"pages":94,"feedIds":["BOOK_88","HW-BOOK-88","88"],"seoTitle":"Quarterly Goal Planner for Black Women Business Owners | OKRs","seoDesc":"A quarterly goal planner for Black women business owners. The perfect OKR planner for women founders and 90-day action planner for side hustlers.","buyKeywords":["quarterly goal planner for Black women business owners","OKR planner for women founders in plain English","90-day action planner for side hustlers"],"learnKeyword":"how to set OKRs for a small business in plain English","relatedProducts":["gotu-kola","peppermint-leaf-organic-premium-loose-herb"],"toc":["Quarterly Goal Setting","OKR Breakdown","90-Day Action Plan"],"crossSellTarget":"gotu-kola"},
-    "square_id": "the-momentum-map",
-    "sku": "88",
-    "name": "The Momentum Map",
-    "cat": "books",
-    "price": 14.99,
-    "compareAtPrice": 14.99,
-    "desc": "Coming soon to Amazon in hard copy.",
-    "fullDesc": "Coming soon to Amazon in hard copy.",
-    "ingredients": "",
-    "inclusions": "",
-    "svg": "book",
-    "acc": "#829399",
-    "size": "Digital PDF",
-    "imageSlug": "the-momentum-map",
-    "image": "",
-    "visibility": "visible",
-    "is_archived": false,
-    "inStock": true,
-    "isDigital": true,
-    "digitalFile": ""
-},
-{
-    "id": "imposter-to-icon",\n    "seo": {"id":"imposter-to-icon","sku":"89","name":"Imposter to Icon — A Guided Journey from Imposter Syndrome to Unshakeable Confidence","price":11.99,"pages":87,"feedIds":["BOOK_89","HW-BOOK-89","89"],"seoTitle":"Imposter Syndrome Workbook for Black Women | Confidence Journal","seoDesc":"An imposter syndrome workbook for Black women. A confidence building journal for professional Black women and self-doubt worksheets for women in leadership.","buyKeywords":["imposter syndrome workbook for Black women","confidence building journal for professional Black women","self-doubt worksheets for women in leadership"],"learnKeyword":"how to overcome imposter syndrome as a Black woman","relatedProducts":["south-african-rooibos","st-john-s-body-oil-massage-oil-sunburn-oil-rubbing-oil"],"toc":["Overcoming Self-Doubt","Confidence Building Worksheets","Leadership Affirmations"],"crossSellTarget":false},
-    "square_id": "imposter-to-icon",
-    "sku": "89",
-    "name": "Imposter to Icon",
-    "cat": "books",
-    "price": 11.99,
-    "compareAtPrice": 11.99,
-    "desc": "Coming soon to Amazon in hard copy.",
-    "fullDesc": "Coming soon to Amazon in hard copy.",
-    "ingredients": "",
-    "inclusions": "",
-    "svg": "book",
-    "acc": "#829399",
-    "size": "Digital PDF",
-    "imageSlug": "imposter-to-icon",
-    "image": "",
-    "visibility": "visible",
-    "is_archived": false,
-    "inStock": true,
-    "isDigital": true,
-    "digitalFile": ""
-},
-{
-    "id": "the-network-the-nest",
-    "square_id": "the-network-the-nest",
-    "sku": "90",
-    "name": "The Network & The Nest",
-    "cat": "books",
-    "price": 12.99,
-    "compareAtPrice": 12.99,
-    "desc": "Coming soon to Amazon in hard copy.",
-    "fullDesc": "Coming soon to Amazon in hard copy.",
-    "ingredients": "",
-    "inclusions": "",
-    "svg": "book",
-    "acc": "#829399",
-    "size": "Digital PDF",
-    "imageSlug": "the-network-the-nest",
-    "image": "",
-    "visibility": "visible",
-    "is_archived": false,
-    "inStock": true,
-    "isDigital": true,
-    "digitalFile": ""
-},
-{
-    "id": "pivot-prosper",
-    "square_id": "pivot-prosper",
-    "sku": "91",
-    "name": "Pivot & Prosper",
-    "cat": "books",
-    "price": 14.99,
-    "compareAtPrice": 14.99,
-    "desc": "Coming soon to Amazon in hard copy.",
-    "fullDesc": "Coming soon to Amazon in hard copy.",
-    "ingredients": "",
-    "inclusions": "",
-    "svg": "book",
-    "acc": "#829399",
-    "size": "Digital PDF",
-    "imageSlug": "pivot-prosper",
-    "image": "",
-    "visibility": "visible",
-    "is_archived": false,
-    "inStock": true,
-    "isDigital": true,
-    "digitalFile": ""
-},
-{
-    "id": "the-daily-ceo-ritual",\n    "seo": {"id":"the-daily-ceo-ritual","sku":"92","name":"The Daily CEO Ritual — Daily Habits & Rituals System for Women Running Empires","price":9.99,"pages":109,"feedIds":["BOOK_92","HW-BOOK-92","92"],"seoTitle":"Morning Routine Planner for Women Entrepreneurs | CEO Habits","seoDesc":"A morning routine planner for women entrepreneurs. The perfect daily habits tracker for busy moms in business and CEO daily planner for women running a business.","buyKeywords":["morning routine planner for women entrepreneurs","daily habits tracker for busy moms in business","CEO daily planner for women running a business"],"learnKeyword":"how to build a morning routine that sticks for moms","relatedProducts":["peppermint-leaf-organic-premium-loose-herb","maca-root-powdered"],"toc":["Morning Routine Design","Daily Habits Tracker","CEO Daily Planner"],"crossSellTarget":"peppermint-leaf-organic-premium-loose-herb"},
-    "square_id": "the-daily-ceo-ritual",
-    "sku": "92",
-    "name": "The Daily CEO Ritual",
-    "cat": "books",
-    "price": 9.99,
-    "compareAtPrice": 9.99,
-    "desc": "Coming soon to Amazon in hard copy.",
-    "fullDesc": "Coming soon to Amazon in hard copy.",
-    "ingredients": "",
-    "inclusions": "",
-    "svg": "book",
-    "acc": "#829399",
-    "size": "Digital PDF",
-    "imageSlug": "the-daily-ceo-ritual",
-    "image": "",
-    "visibility": "visible",
-    "is_archived": false,
-    "inStock": true,
-    "isDigital": true,
-    "digitalFile": ""
-},
-{
-    "id": "botanical-alchemy-redefined",\n    "seo": {"id":"botanical-alchemy-redefined","sku":"93","name":"Botanical Alchemy Redefined — The Modern Herbal Formulator's Journal & Recipe Book","price":18.99,"pages":104,"feedIds":["BOOK_93","HW-BOOK-93","93"],"seoTitle":"Herbal Formulation Journal for Beginners | Tea Recipe Book","seoDesc":"An herbal formulation journal for beginners and tea blend recipe book with batch records. The ultimate tincture making planner for home herbalists.","buyKeywords":["herbal formulation journal for beginners","tea blend recipe book with batch records","tincture making planner for home herbalists"],"learnKeyword":"how to formulate your own herbal tea blends","relatedProducts":["echinacea-purpurea","mullein-leaf"],"toc":["Herbal Formulation Basics","Tea Blending Recipes","Batch Records"],"crossSellTarget":"mullein-leaf"},
-    "square_id": "botanical-alchemy-redefined",
-    "sku": "93",
-    "name": "Botanical Alchemy Redefined",
-    "cat": "books",
-    "price": 18.99,
-    "compareAtPrice": 18.99,
-    "desc": "Coming soon to Amazon in hard copy.",
-    "fullDesc": "Coming soon to Amazon in hard copy.",
-    "ingredients": "",
-    "inclusions": "",
-    "svg": "book",
-    "acc": "#829399",
-    "size": "Digital PDF",
-    "imageSlug": "botanical-alchemy-redefined",
-    "image": "",
-    "visibility": "visible",
-    "is_archived": false,
-    "inStock": true,
-    "isDigital": true,
-    "digitalFile": ""
-},
-
   {
     "id": "anti-viral-flush-herbal-blend-tea-cough-suppressant-tea-strep-throat-tea-cold-flu-tea-virus-ease-tea",
     "name": "Anti-Viral Flush Herbal Blend Tea, Cough Suppressant Tea, Strep Throat Tea, Cold & Flu Tea, Virus Ease Tea",
@@ -3885,16 +3576,15 @@ var DB = {
     "size": "",
     "imageSlug": "chamomile-tincture",
     "visibility": "visible",
-    "sku": "37",
-    "inStock": false
+    "sku": "37"
   },
   {
-    "id": "chickweed-calendula-lavender-eczema-cream",
-    "name": "Chickweed Calendula & Lavender Eczema Cream",
+    "id": "chickweed-calendula-lavender-ezcema-cream",
+    "name": "Chickweed Calendula & Lavender Ezcema Cream",
     "cat": "infused-oils",
     "price": 15.11,
-    "desc": "This soothing eczema cream was formulated with you in mind. Calms the itching, redness, & dry flaking skin that often accompanies ...",
-    "fullDesc": "This soothing eczema cream was formulated with you in mind. Calms the itching, redness, & dry flaking skin that often accompanies Eczema, Psoriasis, and many other bothersome skin conditions. \n\nChickweed is often used topically to alleviate itching secondary to insect bites. It is often applied as a cream several times daily to rashes and inflammatory skin conditions, such as eczema, to ease itching and inflammation.\n\nCalendula flower has antifungal, anti-inflammatory, and antibacterial properties that may make it useful in healing wounds, soothing eczema, and relieving diaper rash. It's also used as an antiseptic.\n\nLavender has antifungal properties and reduces inflammation, it can help keep eczema at bay. Lavender can also be made into an oil that can also be used to treat psoriasis. The lavender oil is known to help cleanse your skin and lessen redness and irritation.\n\nThis combination infused with mother nature's best antifungal Tea Trea make this cream a powerhouse",
+    "desc": "This soothing ezcema cream was formulated with you in mind. Calms the itching, redness, & dry flaking skin that often accompanies ...",
+    "fullDesc": "This soothing ezcema cream was formulated with you in mind. Calms the itching, redness, & dry flaking skin that often accompanies Ezcema, Psoriasis, and many other bothersome skin conditions. \n\nChickweed is often used topically to alleviate itching secondary to insect bites. It is often applied as a cream several times daily to rashes and inflammatory skin conditions, such as eczema, to ease itching and inflammation.\n\nCalendula flower has antifungal, anti-inflammatory, and antibacterial properties that may make it useful in healing wounds, soothing eczema, and relieving diaper rash. It's also used as an antiseptic.\n\nLavender has antifungal properties and reduces inflammation, it can help keep eczema at bay. Lavender can also be made into an oil that can also be used to treat psoriasis. The lavender oil is known to help cleanse your skin and lessen redness and irritation.\n\nThis combination infused with mother nature's best antifungal Tea Trea make this cream a powerhouse",
     "ingredients": "",
     "inclusions": "",
     "svg": "jar",
@@ -3926,7 +3616,7 @@ var DB = {
     "cat": "dried-herbs",
     "price": 15.19,
     "desc": "Comfrey is well known for its amazingly benefits. This oil is beneficial to all skin types; it helps to moisturise and soothe dry ...",
-    "fullDesc": "Comfrey is well known for its amazingly benefits. This oil is beneficial to all skin types; it helps to moisturise and soothe dry irritated skin, promotes rapid skin-cell growth, contributes to skin renewal, protects against bacteria and other microorganisms, reduces inflammation and helps to keep skin healthy. \n\nComfrey is applied to the skin for ulcers, wounds, muscle soreness, bruises, rheumatoid arthritis, varicose veins, gout, and even fractures.\n\nComfrey Oil is also a great moisturizer for Eczema and Psoriasis. When pair with our Chickweed Lavender and Calendula Eczema Salve the two have been known to work wonders for easing symptoms when used consistently. \n\nThese statements have not been evaluated by the Food and Drug Administration. This product is notintended to diagnose, treat, cure, or prevent any disease.\n\n\nHerbalistic Wellness is a proud supporter of the National Multiple Sclerosis Society Visit them today to donate @ www.nationalmssociety.org",
+    "fullDesc": "Comfrey is well known for its amazingly benefits. This oil is beneficial to all skin types; it helps to moisturise and soothe dry irritated skin, promotes rapid skin-cell growth, contributes to skin renewal, protects against bacteria and other microorganisms, reduces inflammation and helps to keep skin healthy. \n\nComfrey is applied to the skin for ulcers, wounds, muscle soreness, bruises, rheumatoid arthritis, varicose veins, gout, and even fractures.\n\nComfrey Oil is also a great moisturizer for Ezcema and Psoriasis. When pair with our Chickweed Lavender and Calendula Ezcema Salve the two have been known to work wonders for easing symptoms when used consistently. \n\nThese statements have not been evaluated by the Food and Drug Administration. This product is notintended to diagnose, treat, cure, or prevent any disease.\n\n\nHerbalistic Wellness is a proud supporter of the National Multiple Sclerosis Society Visit them today to donate @ www.nationalmssociety.org",
     "ingredients": "",
     "inclusions": "",
     "svg": "herb-pouch",
@@ -4179,7 +3869,7 @@ var DB = {
   {
     "id": "herbal-remedies-journal-black-edition",
     "name": "Herbal Remedies Journal - Black Edition",
-    "cat": "specialty-blends",
+    "cat": "dried-herbs",
     "price": 33.97,
     "desc": "This book was created by Herbalist La'Toya Renee, owner of Herbalistic Wellness. Designed for the entry level home Herbalist in yo...",
     "fullDesc": "This book was created by Herbalist La'Toya Renee, owner of Herbalistic Wellness. Designed for the entry level home Herbalist in you.\n\nCreated to provide a safe space to document your handmade natural medicines, cures, and remedies. Healing yourself is the greatest comeback and having your very own herbal remedies journal to pass down to family and friends gives you the opportunity to share and to make others aware of the healing benefits of plants and herbs while building your own arsenal of herbal recipes.\n\nSo go ahead let mother nature inspire you. This book will serve as your personal herbal bible / journal to document ancient wisdom in modern times with your own personal flare. The ancestors passed there knowledge down simply by word of mouth in ancient times.\nNow Herbalistic Wellness Herbal Remedies Journal is here!! Three Editions Available, the same in very way - 295 pages - with 3 Cover Variations to choose from!",
@@ -4195,7 +3885,7 @@ var DB = {
   {
     "id": "herbal-remedies-journal-brown-edition",
     "name": "Herbal Remedies Journal - Brown Edition",
-    "cat": "specialty-blends",
+    "cat": "dried-herbs",
     "price": 33.97,
     "desc": "This book was created by Herbalist La'Toya Renee, owner of Herbalistic Wellness. Designed for the entry level home Herbalist in yo...",
     "fullDesc": "This book was created by Herbalist La'Toya Renee, owner of Herbalistic Wellness. Designed for the entry level home Herbalist in you.\n\nCreated to provide a safe space to document your handmade natural medicines, cures, and remedies. Healing yourself is the greatest comeback and having your very own herbal remedies journal to pass down to family and friends gives you the opportunity to share and to make others aware of the healing benefits of plants and herbs while building your own arsenal of herbal recipes.\n\nSo go ahead let mother nature inspire you. This book will serve as your personal herbal bible / journal to document ancient wisdom in modern times with your own personal flare. The ancestors passed there knowledge down simply by word of mouth in ancient times.\nNow Herbalistic Wellness Herbal Remedies Journal is here!! Three Editions Available, the same in very way - 295 pages - with 3 Cover Variations to choose from!",
@@ -4211,7 +3901,7 @@ var DB = {
   {
     "id": "herbal-remedies-journal-purple-edition",
     "name": "Herbal Remedies Journal - Purple Edition",
-    "cat": "specialty-blends",
+    "cat": "dried-herbs",
     "price": 33.97,
     "desc": "This book was created by Herbalist La'Toya Renee, owner of Herbalistic Wellness. Designed for the entry level home Herbalist in yo...",
     "fullDesc": "This book was created by Herbalist La'Toya Renee, owner of Herbalistic Wellness. Designed for the entry level home Herbalist in you.\n\nCreated to provide a safe space to document your handmade natural medicines, cures, and remedies. Healing yourself is the greatest comeback and having your very own herbal remedies journal to pass down to family and friends gives you the opportunity to share and to make others aware of the healing benefits of plants and herbs while building your own arsenal of herbal recipes.\n\nSo go ahead let mother nature inspire you. This book will serve as your personal herbal bible / journal to document ancient wisdom in modern times with your own personal flare. The ancestors passed there knowledge down simply by word of mouth in ancient times.\nNow Herbalistic Wellness Herbal Remedies Journal is here!! Three Editions Available, the same in very way - 295 pages - with 3 Cover Variations to choose from!",
@@ -4321,8 +4011,8 @@ var DB = {
     "sku": "V191121"
   },
   {
-    "id": "lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-eczema-bath-scrub",
-    "name": "Lavender Body Scrub, Calming Bath Scrub, Anxiety Calming Bath Scrub, Herbal Infused Eczema Bath Scrub",
+    "id": "lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-ezcema-bath-scrub",
+    "name": "Lavender Body Scrub, Calming Bath Scrub, Anxiety Calming Bath Scrub, Herbal Infused Ezcema Bath Scrub",
     "cat": "dried-herbs",
     "price": 13.4,
     "desc": "Lavender Body Scrub is the great end to a long stressful day, with a warm bath it not only boosts potent anti-inflammatory propert...",
@@ -4332,7 +4022,7 @@ var DB = {
     "svg": "herb-pouch",
     "acc": "#829399",
     "size": "8oz",
-    "imageSlug": "lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-eczema-bath-scrub",
+    "imageSlug": "lavender-body-scrub-calming-bath-scrub-anxiety-calming-bath-scrub-herbal-infused-ezcema-bath-scrub",
     "visibility": "visible",
     "sku": "811663R"
   },
@@ -4353,8 +4043,8 @@ var DB = {
     "sku": "9047421"
   },
   {
-    "id": "lavender-milk-honey-bath-soak-milk-bath-milk-bath-powder-herbal-infused-bath-eczema-psoriasis-sensitive-skin-soak",
-    "name": "Lavender Milk & Honey Bath Soak,  Milk Bath, Milk bath Powder, Herbal Infused Bath, Eczema, Psoriasis, Sensitive Skin Soak",
+    "id": "lavender-milk-honey-bath-soak-milk-bath-milk-bath-powder-herbal-infused-bath-ezcema-psoriasis-sensitive-skin-soak",
+    "name": "Lavender Milk & Honey Bath Soak,  Milk Bath, Milk bath Powder, Herbal Infused Bath, Ezcema, Psoriasis, Sensitive Skin Soak",
     "cat": "dried-herbs",
     "price": 14.31,
     "desc": "A Herbalistic Wellness Lavender Oatmeal & Honey milk bath leaves your skin feeling soft and supple. The fat and protein in the mil...",
@@ -5403,7 +5093,7 @@ var DB = {
     "cat": "Biomedical Analysis",
     "date": "Jan 30, 2026",
     "excerpt": "Hey Herbies... In the pursuit of luscious locks, the allure of herbal remedies for hair growth has gained remarkable traction and attention. Ditching ...",
-    "content": "<!-- wp:html /-->\n\n<!-- wp:image {\"id\":3111,\"sizeSlug\":\"large\",\"linkDestination\":\"custom\"} -->\n<figure class=\"wp-block-image size-large\"><a href=\"herbalisticwellness.com\"><img src=\"assets/images/blog/blog_img_6.png\" alt=\"\" class=\"wp-image-3111\"/></a></figure>\n<!-- /wp:image -->\n\n<!-- wp:paragraph -->\n<p><br>Hey Herbies... In the pursuit of luscious locks, the allure of herbal remedies for hair growth has gained remarkable traction and attention. Ditching synthetic products in favor of nature's wisdom is a rejuvenating choice. Unveiling the power of our herbal allies like peppermint, lavender, tea tree oil, and rosemary is empowering and teaches us about the importance of nurturing our hair's growth journey naturally. Discover the natural essence of hair care and how these herbs can be harnessed for hair loss, hair thinning, and promoting radiant healthy tresses.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":3112,\"sizeSlug\":\"large\",\"linkDestination\":\"custom\"} -->\n<figure class=\"wp-block-image size-large\"><a href=\"herbalisticwellness.com\"><img src=\"assets/images/blog/blog_img_5.png\" alt=\"\" class=\"wp-image-3112\"/></a></figure>\n<!-- /wp:image -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\"><strong>The Herbal Marvel of Peppermint for Hair Growth</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><br><a href=\"https://herbalisticwellness.com/s/shop/peppermint-leaf-organic-premium-loose-herb/\">Peppermint</a> (Mentha piperita), with its invigorating aroma, is not just a kitchen staple but is also a potent herbal remedy for hair growth. Its natural compounds stimulate blood circulation to the scalp, promoting nutrient-rich blood flow to hair follicles. The tingling sensation is indicative of its awakening effect on dormant hair follicles. <a href=\"https://herbalisticwellness.com/s/shop/peppermint-leaf-organic-premium-loose-herb/\">Peppermint</a> oil can be diluted and gently massaged onto the scalp for a refreshing experience that encourages hair growth.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":3113,\"sizeSlug\":\"large\",\"linkDestination\":\"custom\"} -->\n<figure class=\"wp-block-image size-large\"><a href=\"herbalisticwellness.com\"><img src=\"assets/images/fallback_3.png\" alt=\"\" class=\"wp-image-3113\"/></a></figure>\n<!-- /wp:image -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\"><strong>Lavender's Tranquil Touch for Hair Nourishment</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><br><a href=\"https://herbalisticwellness.com/s/shop/lavender-flowers/\">Lavender</a> (Lavandula angustifolia) isn't just known for its calming scent - it's also an herbal elixir for hair nourishment. Its antimicrobial properties create a conducive environment for healthy hair growth by preventing scalp infections that could inhibit hair follicles. <a href=\"https://herbalisticwellness.com/s/shop/lavender-flowers/\">Lavender</a> oil can be mixed with a carrier oil and applied to the scalp, soothing inflammation and enhancing hair strength.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":3114,\"sizeSlug\":\"large\",\"linkDestination\":\"custom\"} -->\n<figure class=\"wp-block-image size-large\"><a href=\"herbalisticwellness.com\"><img src=\"assets/images/blog/blog_img_1.png\" alt=\"\" class=\"wp-image-3114\"/></a></figure>\n<!-- /wp:image -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\"><strong>Tea Tree Oil: Nature's Antiseptic for Hair Regrowth</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><br>Tea tree oil (Melaleuca alternifolia) boasts potent antiseptic properties that help maintain a clean and healthy scalp. A healthy scalp is essential for fostering hair growth. Tea tree oil effectively clears away excess oil, dandruff, and impurities, allowing hair follicles to flourish. Incorporating a few drops of diluted tea tree oil into your regular shampoo routine can provide the scalp with the nurturing it craves while also soothing psoriasis and eczema.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:html -->\n<a href=\"https://shareasale.com/r.cfm?b=1045345&u=3628367&m=73376&urllink=&afftrack=\">100% Pure Essential Oils</a>\n<!-- /wp:html -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\"><strong>Rosemary's Revitalizing Touch for Thicker Tresses</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><br>Rosemary (Rosmarinus officinalis) is a time-honored herb renowned for its ability to promote hair growth and strengthen existing hair. Its phytochemicals stimulate hair follicles, leading to thicker, stronger strands. A rosemary-infused oil treatment can be prepared by steeping rosemary leaves in a carrier oil for a few weeks. This infused oil can then be massaged into the scalp to encourage hair growth and vitality.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":3115,\"sizeSlug\":\"large\",\"linkDestination\":\"custom\"} -->\n<figure class=\"wp-block-image size-large\"><a href=\"herbalisticwellness.com\"><img src=\"assets/images/blog/blog_img_6.png\" alt=\"\" class=\"wp-image-3115\"/></a></figure>\n<!-- /wp:image -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\"><strong>Crafting Herbal Hair Growth Blends: The Power of Synergy</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><br>While each of these herbs exhibits remarkable benefits on its own, the magic truly unfolds when they synergize. Creating a herbal blend using peppermint, lavender, tea tree oil, and rosemary can enhance their combined effects. Mixing a few drops of each essential oil with a carrier oil, such as coconut or jojoba oil, offers a holistic approach to promoting hair growth. This blend not only supports hair growth but also addresses other hair concerns like dryness, flakiness, and thinning.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":3116,\"sizeSlug\":\"large\",\"linkDestination\":\"custom\"} -->\n<figure class=\"wp-block-image size-large\"><a href=\"herbalisticwellness.com\"><img src=\"assets/images/blog/blog_img_1.png\" alt=\"\" class=\"wp-image-3116\"/></a></figure>\n<!-- /wp:image -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\"><strong>Herbal Oil Infusion Recipe: Peppermint, Rosemary, Lavender, and Tea Tree</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Herbal oil infusions are a wonderful way to harness the healing properties of herbs for various applications, from skincare to aromatherapy. This particular infusion combines the invigorating scent of peppermint, the rejuvenating qualities of rosemary, the soothing aroma of lavender, and the antimicrobial power of tea tree oil. Let's create this versatile herbal oil infusion together. A go to blend for many herbies experiencing hair loss and thinning. Considered by many to be the best blend of herbal remedies for hair growth.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong>Ingredients:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>1/4 cup dried peppermint leaves or 1/2 cup fresh peppermint leaves</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>1/4 cup dried rosemary leaves or 1/2 cup fresh rosemary leaves</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>1/4 cup dried lavender flowers or 1/2 cup fresh lavender flowers</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>1/4 cup dried tea tree leaves or 1/2 cup fresh tea tree leaves (you can also use tea tree essential oil)</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Carrier oil of your choice (e.g., hempseed oil sunflower oil, avocado oil, olive oil, jojoba oil, sweet almond oil)</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>Equipment:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Glass jar with a tight-fitting lid</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Cheesecloth or a fine mesh strainer</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Funnel (optional)</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Dark glass bottles for storing the infused oil</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:html -->\n<iframe sandbox=\"allow-popups allow-scripts allow-modals allow-forms allow-same-origin\" style=\"width:120px;height:240px;\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" frameborder=\"0\" src=\"assets/images/fallback_3.png\"></iframe>\n<!-- /wp:html -->\n\n<!-- wp:paragraph -->\n<p><strong>Instructions:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong>1. Preparation:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Start by ensuring that your herbs are clean and dry. Fresh herbs should be allowed to air dry for a few hours to remove any moisture.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>2. Herb Selection:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Choose your herbs carefully. In this infusion, peppermint provides a refreshing scent, rosemary offers rejuvenation, lavender brings a calming aroma, and tea tree adds antimicrobial properties. </li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Visit <a href=\"http://herbalisticwellness.com\">Herbalistic Wellness</a> for premium quality herbs for your herbal infusions.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>3. Herb Crushing:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Gently crush the dried herbs to release their essential oils. This step enhances the infusion process. You can use a mortar and pestle or simply use your hands to crumble the herbs.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>4. Layering in the Jar:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>In a clean, dry glass jar, begin layering the herbs. Start with peppermint, followed by rosemary, lavender, and finally, tea tree leaves or a few drops of tea tree essential oil.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>5. Adding Carrier Oil:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Pour your chosen carrier oil into the jar, covering the herbs completely. Ensure that there's enough oil to submerge the herbs entirely.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>6. Mixing and Settling:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Gently stir the mixture with a clean, dry spoon to eliminate air bubbles. Make sure the herbs are fully immersed in the oil.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>7. Infusing Time:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Seal the jar tightly with a lid. Place the jar in a cool, dark place, away from direct sunlight. Then allow the herbs to infuse in the oil for at least two weeks. You can leave them for up to six weeks for a more potent infusion.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:html -->\n<iframe sandbox=\"allow-popups allow-scripts allow-modals allow-forms allow-same-origin\" style=\"width:120px;height:240px;\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" frameborder=\"0\" src=\"assets/images/blog/blog_img_5.png\"></iframe>\n<!-- /wp:html -->\n\n<!-- wp:paragraph -->\n<p><strong>8. Shaking Daily:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>During the infusion period, shake the jar gently every day to help the herbs release their beneficial compounds into the oil.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>9. Straining:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>After the desired infusion time, strain the oil using cheesecloth or a fine mesh strainer into a clean bowl or another glass jar. Squeeze the herbs in the cheesecloth to extract as much oil as possible.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:html -->\n<iframe sandbox=\"allow-popups allow-scripts allow-modals allow-forms allow-same-origin\" style=\"width:120px;height:240px;\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" frameborder=\"0\" src=\"assets/images/blog/blog_img_7.png\"></iframe>\n<!-- /wp:html -->\n\n<!-- wp:paragraph -->\n<p><strong>10. Storing:</strong><br>- Transfer the strained oil into dark glass bottles to protect it from light, which can cause the oil to deteriorate. Label the bottles with the infusion date and ingredients.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong>11. Usage:</strong><br>- Your herbal oil infusion is now ready to use. Apply it to your scalp for massages, as a natural moisturizer, or for aromatherapy. Remember to perform a patch test before using on your skin to check for any allergies or sensitivities.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Enjoy the delightful scents and benefits of this herbal oil infusion recipe formulated by Herbalist La' Toya Renee to include in your daily wellness routine.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong>Embrace Nature's Bounty for Hair Growth</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><br>In the world of hair care, herbal remedies for hair growth have stood the test of time as vibrant testaments to the beauty and power of nature. Peppermint, lavender, tea tree, and rosemary embody the essence of holistic wellness, offering a natural pathway to luscious locks this is the perfect blend of herbal remedies for hair growth. </p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p> In fact our trusted go to blend of herbs for hair loss and thinning not only stimulates hair follicles but can also contribute to scalp health, nourishment, and strength as you can see. Make sure not to hestitate in making it your own depending on the unique needs of your hair. Embrace the botanical brilliance of these herbal allies and many more on your hair growth journey and experience a transformation that only nature's touch can bring.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>*References:</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list {\"ordered\":true} -->\n<ol><!-- wp:list-item -->\n<li>Adhirajan, N., Ravi Kumar, T., &amp; Shanmugasundaram, N. (2003). In vivo and in vitro evaluation of hair growth potential of Hibiscus rosa-sinensis Linn. Journal of Ethnopharmacology, 88(2-3), 235-239.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Oh, J. Y., Park, M. A., &amp; Kim, Y. C. (2013). Peppermint oil promotes hair growth without toxic signs. Toxicological Research, 29(2), 157-164.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Hay, I. C., Jamieson, M., &amp; Ormerod, A. D. (1998). Randomized trial of aromatherapy: Successful treatment for alopecia areata. Archives of Dermatology, 134(11), 1349-1352.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Bassett, I. B., Pannowitz, D. L., &amp; Barnetson, R. S. (1990). A comparative study of tea-tree oil versus benzoylperoxide in the treatment of acne. Medical Journal of Australia, 153(8), 455-458.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Panahi, Y., Taghizadeh, M., Marzony, E. T., &amp; Sahebkar, A. (2015). Rosemary oil vs minoxidil 2% for the treatment of androgenetic alopecia: a randomized comparative trial. Skinmed, 13(1), 15-21.\"*</li>\n<!-- /wp:list-item --></ol>\n<!-- /wp:list -->",
+    "content": "<!-- wp:html /-->\n\n<!-- wp:image {\"id\":3111,\"sizeSlug\":\"large\",\"linkDestination\":\"custom\"} -->\n<figure class=\"wp-block-image size-large\"><a href=\"herbalisticwellness.com\"><img src=\"assets/images/blog/blog_img_6.png\" alt=\"\" class=\"wp-image-3111\"/></a></figure>\n<!-- /wp:image -->\n\n<!-- wp:paragraph -->\n<p><br>Hey Herbies... In the pursuit of luscious locks, the allure of herbal remedies for hair growth has gained remarkable traction and attention. Ditching synthetic products in favor of nature's wisdom is a rejuvenating choice. Unveiling the power of our herbal allies like peppermint, lavender, tea tree oil, and rosemary is empowering and teaches us about the importance of nurturing our hair's growth journey naturally. Discover the natural essence of hair care and how these herbs can be harnessed for hair loss, hair thinning, and promoting radiant healthy tresses.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":3112,\"sizeSlug\":\"large\",\"linkDestination\":\"custom\"} -->\n<figure class=\"wp-block-image size-large\"><a href=\"herbalisticwellness.com\"><img src=\"assets/images/blog/blog_img_5.png\" alt=\"\" class=\"wp-image-3112\"/></a></figure>\n<!-- /wp:image -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\"><strong>The Herbal Marvel of Peppermint for Hair Growth</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><br><a href=\"https://herbalisticwellness.com/s/shop/peppermint-leaf-organic-premium-loose-herb/\">Peppermint</a> (Mentha piperita), with its invigorating aroma, is not just a kitchen staple but is also a potent herbal remedy for hair growth. Its natural compounds stimulate blood circulation to the scalp, promoting nutrient-rich blood flow to hair follicles. The tingling sensation is indicative of its awakening effect on dormant hair follicles. <a href=\"https://herbalisticwellness.com/s/shop/peppermint-leaf-organic-premium-loose-herb/\">Peppermint</a> oil can be diluted and gently massaged onto the scalp for a refreshing experience that encourages hair growth.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":3113,\"sizeSlug\":\"large\",\"linkDestination\":\"custom\"} -->\n<figure class=\"wp-block-image size-large\"><a href=\"herbalisticwellness.com\"><img src=\"assets/images/fallback_3.png\" alt=\"\" class=\"wp-image-3113\"/></a></figure>\n<!-- /wp:image -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\"><strong>Lavender's Tranquil Touch for Hair Nourishment</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><br><a href=\"https://herbalisticwellness.com/s/shop/lavender-flowers/\">Lavender</a> (Lavandula angustifolia) isn't just known for its calming scent - it's also an herbal elixir for hair nourishment. Its antimicrobial properties create a conducive environment for healthy hair growth by preventing scalp infections that could inhibit hair follicles. <a href=\"https://herbalisticwellness.com/s/shop/lavender-flowers/\">Lavender</a> oil can be mixed with a carrier oil and applied to the scalp, soothing inflammation and enhancing hair strength.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":3114,\"sizeSlug\":\"large\",\"linkDestination\":\"custom\"} -->\n<figure class=\"wp-block-image size-large\"><a href=\"herbalisticwellness.com\"><img src=\"assets/images/blog/blog_img_1.png\" alt=\"\" class=\"wp-image-3114\"/></a></figure>\n<!-- /wp:image -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\"><strong>Tea Tree Oil: Nature's Antiseptic for Hair Regrowth</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><br>Tea tree oil (Melaleuca alternifolia) boasts potent antiseptic properties that help maintain a clean and healthy scalp. A healthy scalp is essential for fostering hair growth. Tea tree oil effectively clears away excess oil, dandruff, and impurities, allowing hair follicles to flourish. Incorporating a few drops of diluted tea tree oil into your regular shampoo routine can provide the scalp with the nurturing it craves while also soothing psoriasis and ezcema.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:html -->\n<a href=\"https://shareasale.com/r.cfm?b=1045345&u=3628367&m=73376&urllink=&afftrack=\">100% Pure Essential Oils</a>\n<!-- /wp:html -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\"><strong>Rosemary's Revitalizing Touch for Thicker Tresses</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><br>Rosemary (Rosmarinus officinalis) is a time-honored herb renowned for its ability to promote hair growth and strengthen existing hair. Its phytochemicals stimulate hair follicles, leading to thicker, stronger strands. A rosemary-infused oil treatment can be prepared by steeping rosemary leaves in a carrier oil for a few weeks. This infused oil can then be massaged into the scalp to encourage hair growth and vitality.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":3115,\"sizeSlug\":\"large\",\"linkDestination\":\"custom\"} -->\n<figure class=\"wp-block-image size-large\"><a href=\"herbalisticwellness.com\"><img src=\"assets/images/blog/blog_img_6.png\" alt=\"\" class=\"wp-image-3115\"/></a></figure>\n<!-- /wp:image -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\"><strong>Crafting Herbal Hair Growth Blends: The Power of Synergy</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><br>While each of these herbs exhibits remarkable benefits on its own, the magic truly unfolds when they synergize. Creating a herbal blend using peppermint, lavender, tea tree oil, and rosemary can enhance their combined effects. Mixing a few drops of each essential oil with a carrier oil, such as coconut or jojoba oil, offers a holistic approach to promoting hair growth. This blend not only supports hair growth but also addresses other hair concerns like dryness, flakiness, and thinning.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":3116,\"sizeSlug\":\"large\",\"linkDestination\":\"custom\"} -->\n<figure class=\"wp-block-image size-large\"><a href=\"herbalisticwellness.com\"><img src=\"assets/images/blog/blog_img_1.png\" alt=\"\" class=\"wp-image-3116\"/></a></figure>\n<!-- /wp:image -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\"><strong>Herbal Oil Infusion Recipe: Peppermint, Rosemary, Lavender, and Tea Tree</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Herbal oil infusions are a wonderful way to harness the healing properties of herbs for various applications, from skincare to aromatherapy. This particular infusion combines the invigorating scent of peppermint, the rejuvenating qualities of rosemary, the soothing aroma of lavender, and the antimicrobial power of tea tree oil. Let's create this versatile herbal oil infusion together. A go to blend for many herbies experiencing hair loss and thinning. Considered by many to be the best blend of herbal remedies for hair growth.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong>Ingredients:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>1/4 cup dried peppermint leaves or 1/2 cup fresh peppermint leaves</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>1/4 cup dried rosemary leaves or 1/2 cup fresh rosemary leaves</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>1/4 cup dried lavender flowers or 1/2 cup fresh lavender flowers</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>1/4 cup dried tea tree leaves or 1/2 cup fresh tea tree leaves (you can also use tea tree essential oil)</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Carrier oil of your choice (e.g., hempseed oil sunflower oil, avocado oil, olive oil, jojoba oil, sweet almond oil)</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>Equipment:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Glass jar with a tight-fitting lid</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Cheesecloth or a fine mesh strainer</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Funnel (optional)</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Dark glass bottles for storing the infused oil</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:html -->\n<iframe sandbox=\"allow-popups allow-scripts allow-modals allow-forms allow-same-origin\" style=\"width:120px;height:240px;\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" frameborder=\"0\" src=\"assets/images/fallback_3.png\"></iframe>\n<!-- /wp:html -->\n\n<!-- wp:paragraph -->\n<p><strong>Instructions:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong>1. Preparation:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Start by ensuring that your herbs are clean and dry. Fresh herbs should be allowed to air dry for a few hours to remove any moisture.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>2. Herb Selection:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Choose your herbs carefully. In this infusion, peppermint provides a refreshing scent, rosemary offers rejuvenation, lavender brings a calming aroma, and tea tree adds antimicrobial properties. </li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Visit <a href=\"http://herbalisticwellness.com\">Herbalistic Wellness</a> for premium quality herbs for your herbal infusions.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>3. Herb Crushing:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Gently crush the dried herbs to release their essential oils. This step enhances the infusion process. You can use a mortar and pestle or simply use your hands to crumble the herbs.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>4. Layering in the Jar:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>In a clean, dry glass jar, begin layering the herbs. Start with peppermint, followed by rosemary, lavender, and finally, tea tree leaves or a few drops of tea tree essential oil.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>5. Adding Carrier Oil:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Pour your chosen carrier oil into the jar, covering the herbs completely. Ensure that there's enough oil to submerge the herbs entirely.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>6. Mixing and Settling:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Gently stir the mixture with a clean, dry spoon to eliminate air bubbles. Make sure the herbs are fully immersed in the oil.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>7. Infusing Time:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>Seal the jar tightly with a lid. Place the jar in a cool, dark place, away from direct sunlight. Then allow the herbs to infuse in the oil for at least two weeks. You can leave them for up to six weeks for a more potent infusion.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:html -->\n<iframe sandbox=\"allow-popups allow-scripts allow-modals allow-forms allow-same-origin\" style=\"width:120px;height:240px;\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" frameborder=\"0\" src=\"assets/images/blog/blog_img_5.png\"></iframe>\n<!-- /wp:html -->\n\n<!-- wp:paragraph -->\n<p><strong>8. Shaking Daily:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>During the infusion period, shake the jar gently every day to help the herbs release their beneficial compounds into the oil.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p><strong>9. Straining:</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><!-- wp:list-item -->\n<li>After the desired infusion time, strain the oil using cheesecloth or a fine mesh strainer into a clean bowl or another glass jar. Squeeze the herbs in the cheesecloth to extract as much oil as possible.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:html -->\n<iframe sandbox=\"allow-popups allow-scripts allow-modals allow-forms allow-same-origin\" style=\"width:120px;height:240px;\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" frameborder=\"0\" src=\"assets/images/blog/blog_img_7.png\"></iframe>\n<!-- /wp:html -->\n\n<!-- wp:paragraph -->\n<p><strong>10. Storing:</strong><br>- Transfer the strained oil into dark glass bottles to protect it from light, which can cause the oil to deteriorate. Label the bottles with the infusion date and ingredients.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong>11. Usage:</strong><br>- Your herbal oil infusion is now ready to use. Apply it to your scalp for massages, as a natural moisturizer, or for aromatherapy. Remember to perform a patch test before using on your skin to check for any allergies or sensitivities.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Enjoy the delightful scents and benefits of this herbal oil infusion recipe formulated by Herbalist La' Toya Renee to include in your daily wellness routine.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong>Embrace Nature's Bounty for Hair Growth</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><br>In the world of hair care, herbal remedies for hair growth have stood the test of time as vibrant testaments to the beauty and power of nature. Peppermint, lavender, tea tree, and rosemary embody the essence of holistic wellness, offering a natural pathway to luscious locks this is the perfect blend of herbal remedies for hair growth. </p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p> In fact our trusted go to blend of herbs for hair loss and thinning not only stimulates hair follicles but can also contribute to scalp health, nourishment, and strength as you can see. Make sure not to hestitate in making it your own depending on the unique needs of your hair. Embrace the botanical brilliance of these herbal allies and many more on your hair growth journey and experience a transformation that only nature's touch can bring.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>*References:</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list {\"ordered\":true} -->\n<ol><!-- wp:list-item -->\n<li>Adhirajan, N., Ravi Kumar, T., &amp; Shanmugasundaram, N. (2003). In vivo and in vitro evaluation of hair growth potential of Hibiscus rosa-sinensis Linn. Journal of Ethnopharmacology, 88(2-3), 235-239.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Oh, J. Y., Park, M. A., &amp; Kim, Y. C. (2013). Peppermint oil promotes hair growth without toxic signs. Toxicological Research, 29(2), 157-164.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Hay, I. C., Jamieson, M., &amp; Ormerod, A. D. (1998). Randomized trial of aromatherapy: Successful treatment for alopecia areata. Archives of Dermatology, 134(11), 1349-1352.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Bassett, I. B., Pannowitz, D. L., &amp; Barnetson, R. S. (1990). A comparative study of tea-tree oil versus benzoylperoxide in the treatment of acne. Medical Journal of Australia, 153(8), 455-458.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Panahi, Y., Taghizadeh, M., Marzony, E. T., &amp; Sahebkar, A. (2015). Rosemary oil vs minoxidil 2% for the treatment of androgenetic alopecia: a randomized comparative trial. Skinmed, 13(1), 15-21.\"*</li>\n<!-- /wp:list-item --></ol>\n<!-- /wp:list -->",
     "image": "assets/images/blog/blog_img_7.png"
   },
   {
@@ -7542,7 +7232,7 @@ var DB = {
       id: 'ev1',
       name: 'Live Extraction Demonstration',
       title: 'Live Extraction Demonstration',
-      date: '2026-10-15',
+      date: '2026-06-15',
       time: '7:00 PM EST',
       location: 'Online Classroom',
       desc: 'Explore physical-chemical parameters of menstruum ratios, marc calculations, and gravity-feed filtering methods live in the lab.',
@@ -7557,7 +7247,7 @@ var DB = {
       id: 'ev2',
       name: 'Formulation Chemistry Session',
       title: 'Formulation Chemistry Session',
-      date: '2026-10-22',
+      date: '2026-06-22',
       time: '6:00 PM EST',
       location: 'Online Classroom',
       desc: 'Learn advanced syrup, glycerite, and oxymel blending logic, addressing shelf-stability, Brix density, and active constituent preservation.',
@@ -7572,7 +7262,7 @@ var DB = {
       id: 'ev3',
       name: 'Clinical Application Q&A',
       title: 'Clinical Application Q&A',
-      date: '2026-10-29',
+      date: '2026-06-29',
       time: '8:00 PM EST',
       location: 'Online Classroom',
       desc: 'Join an interactive case study review focusing on adaptogenic protocols, nervous system support, and custom formulation client intakes.',
@@ -8977,9 +8667,7 @@ function renderShop(force){
         ? '<div class="outofstock-badge">Out of Stock</div>'
         : '<div class="product-hover-overlay"><button class="btn-quick-add" data-pid="' + p.id + '" data-name="' + p.name + '" data-pr="' + p.price + '" type="button">Quick Add</button></div>';
 
-      var pPrice = Number(p.price || 0);
-      var ariaLabel = (p.name || '') + ' - ' + catName + ' - $' + pPrice.toFixed(2);
-      return '<a href="/products/' + (p.slug || p.id) + '" class="' + cardClass + '" data-category="' + p.cat + '" aria-label="' + ariaLabel.replace(/"/g, '&quot;') + '">' +
+      return '<a href="/products/' + (p.slug || p.id) + '" class="' + cardClass + '" data-category="' + p.cat + '" role="listitem" id="pc-' + p.id + '" tabindex="0" style="text-decoration:none; color:inherit; display:block;">' +
         '<script type="application/ld+json">' +
         JSON.stringify({
           "@context": "https://schema.org/",
@@ -9169,7 +8857,7 @@ function renderBlog(){
     r.onclick=function(){
       var mappedSlug = BLOG_ID_TO_SLUG[r.dataset.id];
       if (mappedSlug) {
-        window.location.href = 'blog/' + mappedSlug + '.html';
+        window.location.href = 'blog/' + mappedSlug;
       } else {
         openBlogModal(r.dataset.id);
       }
@@ -10302,9 +9990,6 @@ function renderAccount() {
                 '<div class="form-group" style="margin-bottom: 0; width: 100%; text-align: left;">' +
                   '<label for="acct-login-password" class="form-label" style="color: #482C6A; font-weight: 500;">Password</label>' +
                   '<input type="password" id="acct-login-password" class="form-input" style="background: #ffffff; border: 1px solid #dadce0; color: #202124; padding: 10px 14px; border-radius: 4px; width: 100%;" required autocomplete="current-password">' +
-                  '<div style="text-align: right; margin-top: 4px;">' +
-                    '<a href="#" id="acct-forgot-password-link" style="color: var(--color-sage); font-size: 0.75rem; text-decoration: none;">Forgot Password?</a>' +
-                  '</div>' +
                 '</div>' +
                 
                 '<button type="submit" class="btn-primary btn-amber btn-full" style="justify-content: center; height: 48px; margin-top: var(--space-2);">' +
@@ -10909,44 +10594,6 @@ window.handlePortalRegister = function() {
   }
 };
 
-window.promptPasswordReset = function() {
-    var email = prompt("Please enter your account email address to reset your password:");
-    if (email && email.trim() !== '') {
-      fetch('sender_api.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          action: 'send_email',
-          toEmail: email.trim(),
-          toName: 'Student',
-          subject: 'Password Reset Request',
-          html: '<div style="font-family:sans-serif;padding:20px;"><h2 style="color:#482C6A;">Password Reset</h2><p>You requested a password reset. Please reply to this email or contact support to receive your new login details.</p></div>'
-        })
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          alert("Password reset email sent! Please check your inbox (and spam folder) for instructions.");
-          if (window.location.pathname.indexOf('lost-password') !== -1) {
-            history.pushState({view: 'account'}, '', '/account');
-          }
-        } else {
-          alert("Error sending password reset email. Please try again.");
-        }
-      })
-      .catch(err => {
-        alert("Error: " + err);
-      });
-    }
-  };
-
-document.addEventListener('click', function(e) {
-  if (e.target && (e.target.id === 'acct-forgot-password-link' || e.target.id === 'classroom-forgot-password-link')) {
-    e.preventDefault();
-    window.promptPasswordReset();
-  }
-});
-
 window.triggerLogout = function() {
   if (typeof firebase !== 'undefined' && firebase.auth) {
     firebase.auth().signOut()
@@ -11516,17 +11163,14 @@ function renderAdmin() {
 
 // pushState popstate listener (browser back/forward)
 window.addEventListener('popstate', function(e) {
-  var v = (e.state && e.state.view) ? e.state.view : (window.location.pathname.replace(/^\//,'').split('/')[0] || 'home');
-  if (v === 'my-account') v = 'account';
+  var v = (e.state && e.state.view) ? e.state.view : (window.location.pathname.replace(/^\//,'') || 'home');
   var valid = ['home', 'shop', 'blog', 'podcast', 'education', 'contact', 'account', 'admin'];
   if (valid.indexOf(v) >= 0) { go(v); } else { go('home'); }
 });
 
 // Read path on initial load and route to correct view
 (function() {
-  var fullPath = window.location.pathname.replace(/^\//, '');
-  var path = fullPath.split('/')[0] || 'home';
-  if (path === 'my-account') path = 'account';
+  var path = window.location.pathname.replace(/^\//, '').split('/')[0] || 'home';
   // Also support legacy hash URLs for bookmarks
   if (!path || path === 'index.html') {
     path = window.location.hash.substring(1) || 'home';
@@ -11534,13 +11178,6 @@ window.addEventListener('popstate', function(e) {
   var valid = ['home', 'shop', 'blog', 'podcast', 'education', 'contact', 'account', 'admin'];
   if (valid.indexOf(path) >= 0) {
     go(path);
-    if (fullPath.indexOf('lost-password') !== -1) {
-      setTimeout(function() {
-        if (typeof window.promptPasswordReset === 'function') {
-          window.promptPasswordReset();
-        }
-      }, 500);
-    }
   } else {
     go('home');
   }
@@ -14321,4 +13958,21 @@ window.uploadAdminReviewImage = function(e, key) {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

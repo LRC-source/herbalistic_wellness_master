@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="/index.html" />
+  <base href="/" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Herbalistic Wellness | Blog</title>
@@ -26,13 +26,13 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between">
   <header class="w-full max-w-7xl mx-auto flex items-center justify-between py-6 px-4 border-b border-[#41494c]/10">
-      <a href="/index.html" class="flex items-center justify-start focus:outline-none" aria-label="Herbalistic Wellness Home">
+      <a href="/" class="flex items-center justify-start focus:outline-none" aria-label="Herbalistic Wellness Home">
           <img src="assets/images/logo.png" alt="Herbalistic Wellness" class="h-10 sm:h-12 w-auto object-contain" width="240" height="135" onerror="this.src='assets/brand/logo.png'">
       </a>
       <nav class="flex items-center space-x-6 text-sm">
           <a href="/index.html#shop" class="text-[#482c6a] hover:text-[#748e63] transition-colors font-medium">Apothecary</a>
           <a href="/index.html#education" class="text-[#482c6a] hover:text-[#748e63] transition-colors font-medium">The Collective</a>
-          <a href="/index.html" class="text-[#482c6a] hover:text-[#748e63] transition-colors font-medium">Home</a>
+          <a href="/" class="text-[#482c6a] hover:text-[#748e63] transition-colors font-medium">Home</a>
       </nav>
   </header>
 
@@ -41,7 +41,7 @@
       <div id="blog-error" style="display:none; text-align:center; padding: 40px 0;">
         <h2 class="text-2xl text-[#482c6a]">Article Not Found</h2>
         <p class="mt-4 text-[#41494c]/70">We couldn't find the article you're looking for. It may have been removed or the link is incorrect.</p>
-        <a href="/index.html" class="mt-8 inline-block px-6 py-2 bg-[#748e63] text-white rounded-full">Return Home</a>
+        <a href="/" class="mt-8 inline-block px-6 py-2 bg-[#748e63] text-white rounded-full">Return Home</a>
       </div>
       
       <article id="blog-article" style="display:none;">
@@ -69,7 +69,7 @@
       </div>
   </footer>
 
-  <script src="data.js"></script>
+  <script src="data.js?v=12"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var searchParams = new URLSearchParams(window.location.search);
@@ -113,8 +113,9 @@
 
       // Try local DB first (which includes hardcoded ones from data.js)
       var localPost = null;
-      if (typeof DB !== 'undefined' && DB.blog) {
-        localPost = DB.blog.find(function(b) { 
+      if (typeof DB !== 'undefined' && (DB.blog || DB.blogArticles)) {
+        var blogSource = DB.blog || DB.blogArticles;
+        localPost = blogSource.find(function(b) { 
           if (b.slug === slug || b.slug === '/blog/'+slug || b.id === slug) return true;
           var generatedSlug = b.title ? b.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '';
           return generatedSlug === slug;

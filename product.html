@@ -1404,7 +1404,7 @@ textarea:-webkit-autofill:active {
   <header id="site-header" role="banner" style="background: rgba(250, 249, 246, 0.96); border-bottom: 1px solid var(--border-subtle);">
 <base href="/" />
   <div class="header-inner">
-    <a href="/index.html" class="logo" data-view="home" id="nav-logo" aria-label="Herbalistic Wellness home">
+    <a href="/" class="logo" data-view="home" id="nav-logo" aria-label="Herbalistic Wellness home">
       <img loading="lazy" src="assets/images/logo.png" alt="Herbalistic Wellness" class="logo-img" width="960" height="540" style="max-height: 52px; width: auto; object-fit: contain;" fetchpriority="high">
     </a>
     <nav class="primary-nav" role="navigation" aria-label="Primary navigation">
@@ -1522,7 +1522,7 @@ textarea:-webkit-autofill:active {
   </div>
 </footer>
 
-  <script src="data.js"></script>
+  <script src="data.js?v=13"></script>
 <script>
 // Restore admin panel overrides/  Restore admin panel overrides from localStorage (matches index.html logic) 
 try {
@@ -1926,9 +1926,6 @@ if (CART[id]) {
       var product = DB.products.find(function(p) {
         return (p.slug === slug || p.id === slug);
       });
-      if (product && product.slug && slug !== product.slug) {
-          window.history.replaceState(null, '', '/products/' + product.slug);
-      }
       renderProduct(product);
     
       // NON-DESTRUCTIVE MOBILE PRICE SYNC
@@ -1951,7 +1948,10 @@ if (CART[id]) {
 
               // Update main product price if on screen
               var liveProduct = dbArray.find(function(p) { return p.slug === slug || p.id === slug || p.square_variation_id === slug; });
-              if (liveProduct && liveProduct.price !== undefined) {
+              if (liveProduct && detailContainer.innerHTML.indexOf('Product Not Found') !== -1) {
+                  // Fully re-render if it was previously not found
+                  renderProduct(liveProduct);
+              } else if (liveProduct && liveProduct.price !== undefined) {
                  var mainPriceEl = document.getElementById('async-live-price');
                  if (mainPriceEl) mainPriceEl.textContent = '$' + Number(liveProduct.price).toFixed(2);
                  if (window.selectedProductPrice !== undefined) window.selectedProductPrice = Number(liveProduct.price);
@@ -2128,148 +2128,5 @@ if (CART[id]) {
           }
         };
 </script>
-
-  <script>
-    function injectBookSEOAndCrossSells(product) {
-        if (!product) return;
-
-        // --- 1. Cross-Sell Block on Remedy Pages ---
-        var crossSells = {
-            'butterfly-pea-lavender-chamomile-calming-signature-blend-herbalistic-wellness': { id: 'botanical-breathwork-and-business', name: 'Botanical Breathwork & Business' },
-            'hibiscus-leaf': { id: 'the-soft-life-blueprint', name: 'The Soft Life Blueprint' },
-            'gotu-kola': { id: 'the-momentum-map', name: 'The Momentum Map' },
-            'peppermint-leaf-organic-premium-loose-herb': { id: 'the-daily-ceo-ritual', name: 'The Daily CEO Ritual' },
-            'mullein-leaf': { id: 'botanical-alchemy-redefined', name: 'Botanical Alchemy Redefined' },
-            'echinacea-purpurea': { id: 'quick-herbal-reference-guide', name: 'Quick Herbal Reference Guide' }
-        };
-
-        if (crossSells[product.id]) {
-            var bookTarget = crossSells[product.id];
-            var crossSellHtml = '<div style="margin-top:2rem; padding:1.5rem; background:#f9f9f9; border-radius:12px; border:1px solid #ddd; text-align:center;">' + 
-                                '<h4 style="margin-bottom:0.5rem; color:var(--text-primary);">Deepen Your Knowledge</h4>' +
-                                '<p style="margin-bottom:1rem; color:var(--text-secondary); font-size:0.9rem;">Pair it with the <strong>' + bookTarget.name + '</strong></p>' +
-                                '<a href="/products/' + bookTarget.id + '" class="btn-secondary" style="font-size:0.85rem; padding:0.5rem 1rem;">View Companion Book</a>' +
-                                '</div>';
-            var infoCard = document.querySelector('.product-info-card');
-            if (infoCard) {
-                infoCard.insertAdjacentHTML('beforeend', crossSellHtml);
-            }
-        }
-
-        // --- 2. Book Specific Logic ---
-        if (product.cat === 'books' && product.seo) {
-            // SEO Meta Tags
-            document.title = product.seo.seoTitle;
-            var metaDesc = document.querySelector('meta[name="description"]');
-            if (metaDesc) metaDesc.setAttribute('content', product.seo.seoDesc);
-            
-            var ogTitle = document.querySelector('meta[property="og:title"]');
-            if (ogTitle) ogTitle.setAttribute('content', product.seo.seoTitle);
-            
-            var ogDesc = document.querySelector('meta[property="og:description"]');
-            if (ogDesc) ogDesc.setAttribute('content', product.seo.seoDesc);
-
-            // Schema.org
-            var schema = {
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Product",
-                  "name": product.name,
-                  "description": product.seo.seoDesc,
-                  "offers": {
-                    "@type": "Offer",
-                    "price": product.price,
-                    "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock"
-                  }
-                },
-                {
-                  "@type": "Book",
-                  "name": product.name,
-                  "author": {
-                    "@type": "Person",
-                    "name": "LaToya Renee Carter, the Herbalist",
-                    "url": "https://herbalisticwellness.com/about"
-                  },
-                  "numberOfPages": product.seo.pages,
-                  "bookFormat": "https://schema.org/EBook"
-                }
-              ]
-            };
-            var script = document.createElement('script');
-            script.type = 'application/ld+json';
-            script.innerHTML = JSON.stringify(schema);
-            document.head.appendChild(script);
-
-            // Author Byline
-            var titleEl = document.querySelector('.product-info-card h1');
-            if (titleEl) {
-                titleEl.insertAdjacentHTML('afterend', '<p style="margin-top:-0.5rem; margin-bottom:1.25rem; font-style:italic; color:var(--text-secondary);">by <a href="/about" style="text-decoration:underline; color:var(--accent);">LaToya Renee Carter, the Herbalist</a></p>');
-            }
-
-            // TOC & Preview Block
-            var descArea = document.querySelector('.product-info-card p:nth-of-type(2)'); // Approximating description paragraph
-            if (descArea) {
-                var tocHtml = '<details style="margin-top:1.5rem; background:#fff; border:1px solid var(--border-subtle); border-radius:8px; padding:0.5rem 1rem; cursor:pointer;">' +
-                              '<summary style="font-weight:600; outline:none; display:flex; align-items:center; gap:0.5rem;">&#128214; Peek Inside (Table of Contents)</summary>' +
-                              '<ul style="margin-top:1rem; padding-left:1.5rem; font-size:0.9rem; color:var(--text-secondary); line-height:1.6;">' +
-                              product.seo.toc.map(function(t){ return '<li>' + t + '</li>'; }).join('') +
-                              '</ul>' +
-                              '</details>';
-                
-                descArea.insertAdjacentHTML('afterend', tocHtml);
-
-                // GA4 Events for Engagement
-                var tocEl = descArea.nextElementSibling;
-                if (tocEl) {
-                    tocEl.addEventListener('toggle', function(e) {
-                        if (tocEl.open && typeof gtag === 'function') {
-                            gtag('event', 'expand_toc', {
-                                'item_id': product.id,
-                                'item_name': product.name,
-                                'item_category': 'books'
-                            });
-                        }
-                    });
-                }
-            }
-
-            // Interior Preview tracking
-            var galleryImages = document.querySelectorAll('.product-media-card img:not(#main-prod-image)');
-            galleryImages.forEach(function(img) {
-                img.addEventListener('click', function() {
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'view_sample', {
-                            'item_id': product.id,
-                            'item_name': product.name,
-                            'item_category': 'books'
-                        });
-                    }
-                });
-            });
-
-            // Modify Add To Cart tracking to include category
-            var atcBtn = document.getElementById('btn-add-to-cart');
-            if (atcBtn) {
-                atcBtn.addEventListener('click', function() {
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'add_to_cart', {
-                            'currency': 'USD',
-                            'value': product.price,
-                            'items': [{
-                                'item_id': product.id,
-                                'item_name': product.name,
-                                'item_category': 'books',
-                                'price': product.price,
-                                'quantity': 1
-                            }]
-                        });
-                    }
-                });
-            }
-        }
-    }
-  </script>
-  \n</body>
+</body>
 </html>
