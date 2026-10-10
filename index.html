@@ -3324,17 +3324,29 @@ function updateOGTags(product, catName) {
   if (titleTag) titleTag.setAttribute('content', product.name);
   if (descTag) descTag.setAttribute('content', product.desc || product.fullDesc || '');
   var twImgTag = document.querySelector('meta[name="twitter:image"]');
-  var ogImgSrc = product.image && product.image.length > 0
-    ? product.image
-    : (product.imageSlug && product.imageSlug !== 'product-default'
-        ? '/assets/images/products/' + product.imageSlug + '.webp'
-        : '/assets/images/products/product-default.webp');
-  if (ogImgSrc && ogImgSrc.indexOf('http://') !== 0 && ogImgSrc.indexOf('https://') !== 0) {
-    if (ogImgSrc.indexOf('/') === 0) ogImgSrc = 'https://herbalisticwellness.com' + ogImgSrc;
-    else ogImgSrc = 'https://herbalisticwellness.com/' + ogImgSrc;
+  var ogImgSrc = null;
+  if (product) {
+    if (product.image && typeof product.image === 'string' && product.image.length > 0 && product.image.indexOf('product-default') === -1) {
+      ogImgSrc = product.image;
+    } else if (product.gallery && Array.isArray(product.gallery) && product.gallery.length > 0 && product.gallery[0]) {
+      ogImgSrc = product.gallery[0];
+    } else if (product.imageSlug && typeof product.imageSlug === 'string' && product.imageSlug !== 'product-default') {
+      ogImgSrc = product.imageSlug.indexOf('http') === 0 ? product.imageSlug : ('/assets/images/products/' + product.imageSlug + '.webp');
+    }
   }
-  if (imgTag && ogImgSrc) imgTag.setAttribute('content', ogImgSrc);
-  if (twImgTag && ogImgSrc) twImgTag.setAttribute('content', ogImgSrc);
+
+  if (ogImgSrc && (ogImgSrc.indexOf('product-default') !== -1 || ogImgSrc.indexOf('banner-hero') !== -1)) {
+    ogImgSrc = null;
+  }
+
+  if (ogImgSrc) {
+    if (ogImgSrc.indexOf('http://') !== 0 && ogImgSrc.indexOf('https://') !== 0) {
+      if (ogImgSrc.indexOf('/') === 0) ogImgSrc = 'https://herbalisticwellness.com' + ogImgSrc;
+      else ogImgSrc = 'https://herbalisticwellness.com/' + ogImgSrc;
+    }
+    if (imgTag) imgTag.setAttribute('content', ogImgSrc);
+    if (twImgTag) twImgTag.setAttribute('content', ogImgSrc);
+  }
   if (priceAmtTag) priceAmtTag.setAttribute('content', product.price.toFixed(2));
   if (priceCurTag) priceCurTag.setAttribute('content', 'USD');
 }

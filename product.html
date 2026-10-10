@@ -1701,6 +1701,33 @@ if (CART[id]) {
         });
       }
 
+      function getProductSpecificImageUrl(p) {
+        if (!p) return null;
+        var img = null;
+        if (p.image && typeof p.image === 'string' && p.image.length > 0 && p.image.indexOf('product-default') === -1) {
+          img = p.image;
+        } else if (p.gallery && Array.isArray(p.gallery) && p.gallery.length > 0 && p.gallery[0]) {
+          img = p.gallery[0];
+        } else if (p.imageSlug && typeof p.imageSlug === 'string' && p.imageSlug !== 'product-default') {
+          img = p.imageSlug.indexOf('http') === 0 ? p.imageSlug : ('/assets/images/products/' + p.imageSlug + '.webp');
+        } else if (p.images && Array.isArray(p.images) && p.images.length > 0 && p.images[0]) {
+          img = typeof p.images[0] === 'string' ? p.images[0] : (p.images[0].url || p.images[0].src);
+        }
+        
+        if (!img || typeof img !== 'string' || img.indexOf('product-default') !== -1 || img.indexOf('banner-hero') !== -1) {
+          return null; // NEVER fall back to generic image for og:image
+        }
+        
+        if (img.indexOf('http://') !== 0 && img.indexOf('https://') !== 0) {
+          if (img.indexOf('/') === 0) {
+            img = 'https://herbalisticwellness.com' + img;
+          } else {
+            img = 'https://herbalisticwellness.com/' + img;
+          }
+        }
+        return img;
+      }
+
       //  Resolve slug from URL 
       var pathParts = window.location.pathname.split('/').filter(Boolean);
       var slug = pathParts[pathParts.length - 1];
@@ -1740,19 +1767,14 @@ if (CART[id]) {
           mainImgSrc = '/assets/images/products/product-default.webp';
         }
 
-        // Update Open Graph & Twitter image meta tags for social sharing
-        var ogImgUrl = mainImgSrc;
-        if (ogImgUrl && ogImgUrl.indexOf('http://') !== 0 && ogImgUrl.indexOf('https://') !== 0) {
-          if (ogImgUrl.indexOf('/') === 0) {
-            ogImgUrl = 'https://herbalisticwellness.com' + ogImgUrl;
-          } else {
-            ogImgUrl = 'https://herbalisticwellness.com/' + ogImgUrl;
-          }
+        // Update Open Graph & Twitter image meta tags ONLY when a real product-specific image exists
+        var realOgImgUrl = getProductSpecificImageUrl(product);
+        if (realOgImgUrl) {
+          var ogImgTag = document.querySelector('meta[property="og:image"]');
+          if (ogImgTag) ogImgTag.setAttribute('content', realOgImgUrl);
+          var twImgTag = document.querySelector('meta[name="twitter:image"]');
+          if (twImgTag) twImgTag.setAttribute('content', realOgImgUrl);
         }
-        var ogImgTag = document.querySelector('meta[property="og:image"]');
-        if (ogImgTag && ogImgUrl) ogImgTag.setAttribute('content', ogImgUrl);
-        var twImgTag = document.querySelector('meta[name="twitter:image"]');
-        if (twImgTag && ogImgUrl) twImgTag.setAttribute('content', ogImgUrl);
 
         var galleryImages = [mainImgSrc];
         if (product.gallery && product.gallery.length > 0) {
@@ -1975,13 +1997,22 @@ if (CART[id]) {
 
               // Update main product price if on screen
               var liveProduct = dbArray.find(function(p) { return p.slug === slug || p.id === slug || p.square_variation_id === slug; });
-              if (liveProduct && detailContainer.innerHTML.indexOf('Product Not Found') !== -1) {
-                  // Fully re-render if it was previously not found
-                  renderProduct(liveProduct);
-              } else if (liveProduct && liveProduct.price !== undefined) {
-                 var mainPriceEl = document.getElementById('async-live-price');
-                 if (mainPriceEl) mainPriceEl.textContent = '$' + Number(liveProduct.price).toFixed(2);
-                 if (window.selectedProductPrice !== undefined) window.selectedProductPrice = Number(liveProduct.price);
+              if (liveProduct) {
+                  var asyncOgImgUrl = getProductSpecificImageUrl(liveProduct);
+                  if (asyncOgImgUrl) {
+                    var ogImgTag = document.querySelector('meta[property="og:image"]');
+                    if (ogImgTag) ogImgTag.setAttribute('content', asyncOgImgUrl);
+                    var twImgTag = document.querySelector('meta[name="twitter:image"]');
+                    if (twImgTag) twImgTag.setAttribute('content', asyncOgImgUrl);
+                  }
+                  if (detailContainer.innerHTML.indexOf('Product Not Found') !== -1) {
+                      // Fully re-render if it was previously not found
+                      renderProduct(liveProduct);
+                  } else if (liveProduct.price !== undefined) {
+                     var mainPriceEl = document.getElementById('async-live-price');
+                     if (mainPriceEl) mainPriceEl.textContent = '$' + Number(liveProduct.price).toFixed(2);
+                     if (window.selectedProductPrice !== undefined) window.selectedProductPrice = Number(liveProduct.price);
+                  }
               }
               
               // Update related botanical elements prices
