@@ -52,6 +52,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:title" content="Herbalistic Wellness - Botanical Apothecary &amp; Herbal Artistry"/>
 <meta property="og:description" content="Herbalistic Wellness - Premium botanical remedies, herbal education, and apothecary artistry rooted in ancient plant wisdom."/>
 <meta property="og:image" content="https://herbalisticwellness.com/assets/images/banner-hero.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta property="og:type" content="website"/>
 <meta property="og:price:amount" content=""/>
 <meta property="og:price:currency" content="USD"/>
@@ -3321,7 +3323,18 @@ function updateOGTags(product, catName) {
 
   if (titleTag) titleTag.setAttribute('content', product.name);
   if (descTag) descTag.setAttribute('content', product.desc || product.fullDesc || '');
-  if (imgTag) imgTag.setAttribute('content', 'https://herbalisticwellness.com/assets/images/products/' + product.imageSlug + '.webp');
+  var twImgTag = document.querySelector('meta[name="twitter:image"]');
+  var ogImgSrc = product.image && product.image.length > 0
+    ? product.image
+    : (product.imageSlug && product.imageSlug !== 'product-default'
+        ? '/assets/images/products/' + product.imageSlug + '.webp'
+        : '/assets/images/products/product-default.webp');
+  if (ogImgSrc && ogImgSrc.indexOf('http://') !== 0 && ogImgSrc.indexOf('https://') !== 0) {
+    if (ogImgSrc.indexOf('/') === 0) ogImgSrc = 'https://herbalisticwellness.com' + ogImgSrc;
+    else ogImgSrc = 'https://herbalisticwellness.com/' + ogImgSrc;
+  }
+  if (imgTag && ogImgSrc) imgTag.setAttribute('content', ogImgSrc);
+  if (twImgTag && ogImgSrc) twImgTag.setAttribute('content', ogImgSrc);
   if (priceAmtTag) priceAmtTag.setAttribute('content', product.price.toFixed(2));
   if (priceCurTag) priceCurTag.setAttribute('content', 'USD');
 }

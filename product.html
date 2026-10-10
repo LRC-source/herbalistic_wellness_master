@@ -35,6 +35,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:title" content="Herbalistic Wellness - Botanical Apothecary &amp; Herbal Artistry"/>
 <meta property="og:description" content="Herbalistic Wellness - Premium botanical remedies, herbal education, and apothecary artistry rooted in ancient plant wisdom."/>
 <meta property="og:image" content="https://herbalisticwellness.com/assets/images/banner-hero.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta property="og:type" content="website"/>
 <meta property="og:price:amount" content=""/>
 <meta property="og:price:currency" content="USD"/>
@@ -1737,6 +1739,20 @@ if (CART[id]) {
         } else {
           mainImgSrc = '/assets/images/products/product-default.webp';
         }
+
+        // Update Open Graph & Twitter image meta tags for social sharing
+        var ogImgUrl = mainImgSrc;
+        if (ogImgUrl && ogImgUrl.indexOf('http://') !== 0 && ogImgUrl.indexOf('https://') !== 0) {
+          if (ogImgUrl.indexOf('/') === 0) {
+            ogImgUrl = 'https://herbalisticwellness.com' + ogImgUrl;
+          } else {
+            ogImgUrl = 'https://herbalisticwellness.com/' + ogImgUrl;
+          }
+        }
+        var ogImgTag = document.querySelector('meta[property="og:image"]');
+        if (ogImgTag && ogImgUrl) ogImgTag.setAttribute('content', ogImgUrl);
+        var twImgTag = document.querySelector('meta[name="twitter:image"]');
+        if (twImgTag && ogImgUrl) twImgTag.setAttribute('content', ogImgUrl);
 
         var galleryImages = [mainImgSrc];
         if (product.gallery && product.gallery.length > 0) {
